@@ -1,0 +1,7 @@
+.ul-left-menu a.users {background: #f2f2f2; border-left: 3px solid #0b5ed7}
+.ul-left-menu a.users span, .ul-left-menu a.users svg {color: #0b5ed7}
+.tbl-users {background: #fff; width: 100%; padding: 12px 16px; border-collapse: separate;}
+.tbl-users th, .tbl-users td {color: #a6a6a6; font-size: 13px;}
+.tbl-users th:last-child {width: 10%}
+.tbl-users td:last-child {display: inline-flex; justify-content: space-around; width: 100%;}
+.tbl-users td {padding: 9px 0px}
