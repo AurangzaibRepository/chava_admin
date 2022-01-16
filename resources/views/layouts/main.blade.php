@@ -2,10 +2,12 @@
 <html>
 
 <head>
-    <title>{{$pageTitle}}</title>
+    <title>{{'Lily - '.$pageTitle}}</title>
     <link rel="stylesheet" href={{asset('css/app.css')}}>
     </link>
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
+    </link>
+    <link rel="stylesheet" href="{{asset('css/dataTables.bootstrap4.min.css')}}">
     </link>
     @stack('styles')
 </head>
@@ -26,7 +28,10 @@
     </div>
 </body>
 
+<script src="{{asset('js/jquery-3.5.1.js')}}"></script>
 <script src="{{asset('js/app.js')}}"></script>
+<script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('js/dataTables.bootstrap4.min.js')}}"></script>
 @stack('scripts')
 
 </html>

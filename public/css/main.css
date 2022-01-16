@@ -16,3 +16,9 @@ body {height: 100%; margin: 0px}
 .ul-left-menu a:hover span, .ul-left-menu a:hover svg {color: #0b5ed7}
 .dv-contents {background: #f2f2f2; padding: 30px 20px; width: 81%}
 .dv-base {margin-top: 18px}
+table {margin: 0px !important}
+.page-item.active .page-link {background: #0b53d7}
+.paginate_button .page-link {padding: 0.2rem 0.75rem}
+.page-layout {padding: 15px 20px; background-color: white;}
+
+.modal {top: 10%}

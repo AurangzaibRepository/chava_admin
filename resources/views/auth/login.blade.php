@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <title>Lily - Login</title>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 

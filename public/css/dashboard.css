@@ -16,7 +16,8 @@
 
 .dv-active-users {background-color: #fff; height:370px}
 .tbl-active-users, .tbl-whatsapp-sessions {margin-top: 17px; width: 100%}
-.tbl-active-users tr, .tbl-whatsapp-sessions tr {border-bottom: 1px solid #a6a6a6; }
+.tbl-active-users tr:first-child, .tbl-whatsapp-sessions tr:first-child {border-bottom: 1px solid #c0c0c0;}
+.tbl-active-users tr:not(:last-child), .tbl-whatsapp-sessions tr:not(:last-child) {border-bottom: 1px solid #c0c0c0; }
 .tbl-active-users th, .tbl-whatsapp-sessions th {color: #a6a6a6; font-size: 11px; padding: 8px 0px}
 .tbl-active-users tr th:first-child, .tbl-whatsapp-sessions tr th:first-child {padding-left: 20px; width: 60%}
 .tbl-active-users tr th:not(:first-child), .tbl-whatsapp-sessions tr th:not(:first-child) {width: 40%}

@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\CommunityController;
+use App\Http\Controllers\TopicsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +25,6 @@ Auth::routes();
 Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('users', [UsersController::class, 'index'])->name('users');
+Route::get('users-listing', [UsersController::class, 'listing'])->name('usersListing');
+Route::get('community', [CommunityController::class, 'index'])->name('community');
+Route::get('topics', [TopicsController::class, 'index'])->name('topics');
