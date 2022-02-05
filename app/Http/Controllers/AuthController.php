@@ -3,12 +3,61 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
+use App\Models\User;
 
 class AuthController extends Controller
 {
     // Login function
-    public function login(Request $request)
+    public function login(): view
     {
         return view('auth/login');
+    }
+
+    public function loginUser(Request $request)
+    {
+       //password => lily_admin
+        $validator = Validator::make($request->all(),[
+            'email' => 'required',
+            'password' => 'required'
+        ],[
+            'required' => ':attribute is required'
+        ]);
+
+        if ($validator->fails()){
+            return redirect()
+                    ->back()
+                    ->withErrors($validator)
+                    ->withInput();
+        }
+
+        $user = User::where('email', $request->email)->where('role', 'admin')->first();
+
+        if (!$user){
+            return redirect()
+            ->back()
+            ->withErrors(['Incorrect email or password'])
+            ->withInput();
+        }
+
+        if (!Hash::check($request->password, $user->password)){
+            return redirect()
+                    ->back()
+                    ->withErrors(['Incorrect email or password'])
+                    ->withInput();
+        }
+
+        Auth::login($user);
+        return redirect()->to('/dashboard');
+    }
+
+    public function logout(): RedirectResponse
+    {
+        Auth::logout();
+        return redirect()->to('/');
     }
 }

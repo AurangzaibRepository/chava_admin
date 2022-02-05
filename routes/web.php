@@ -19,12 +19,16 @@ use App\Http\Controllers\TopicsController;
 */
 
 Route::get('/', [AuthController::class, 'login'])->name('login');
+Route::post('login', [AuthController::class, 'loginUser'])->name('loginUser');
+Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
-Auth::routes();
+//Auth::routes();
 
-Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('users', [UsersController::class, 'index'])->name('users');
-Route::get('users-listing', [UsersController::class, 'listing'])->name('usersListing');
-Route::get('community', [CommunityController::class, 'index'])->name('community');
-Route::get('topics', [TopicsController::class, 'index'])->name('topics');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('users', [UsersController::class, 'index'])->name('users');
+    Route::get('users-listing', [UsersController::class, 'listing'])->name('usersListing');
+    Route::get('community', [CommunityController::class, 'index'])->name('community');
+    Route::get('topics', [TopicsController::class, 'index'])->name('topics');
+});

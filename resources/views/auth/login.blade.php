@@ -26,7 +26,16 @@
             <div class="row">
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
-                    {{Form::open(['route' => 'dashboard', 'method' => 'GET'])}}
+
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        @foreach ($errors->all() as $err)
+                        <span>{{ucfirst($err)}}</span> <br />
+                        @endforeach
+                    </div>
+                    @endif
+
+                    {{Form::open(['route' => 'loginUser', 'method' => 'POST'])}}
                     <div class="form-group">
                         {{Form::label('email', 'Email')}}
                         {{Form::text('email', null, ['class' => 'form-control'])}}

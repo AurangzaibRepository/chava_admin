@@ -18,4 +18,7 @@
     <li>
         <a class="ads"><i class="far fa-file-alt"></i><span> Manage Ads</span></a>
     </li>
+    <li>
+        <a href="{{route('logout')}}">&nbsp;<i class="fas fa-sign-out-alt"></i><span>  Logout</span></a>
+    </li>
 </ul>
