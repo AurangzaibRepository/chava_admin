@@ -42,7 +42,7 @@ class User extends Authenticatable
         $date = date('Y-m-d H:i:s');
         $words = ['hour', 'hours', 'minute', 'minutes','second', 'seconds'];
 
-        $userListing = $this->orderBy('id', 'desc')->get();
+        $userListing = $this->where('role', 'User')->orderBy('id', 'desc')->get();
 
         foreach ($userListing as $user) {
             $lastActivity = Carbon::createFromFormat('Y-m-d H:i:s', $user->last_active);
