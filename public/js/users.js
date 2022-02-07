@@ -11,7 +11,11 @@ function PopulateUsers()
         'searching': false,
         'lengthChange': false,
         'bSort': false,
-        'ajax': '/users-listing',
+        //'ajax': '/users-listing',
+        'ajax': {
+            type: 'POST',
+            url : '/users-listing'
+        },
         columnDefs:[
             {'targets': 4, 'data': null,
         render: function(){

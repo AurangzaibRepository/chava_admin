@@ -20,48 +20,6 @@
                     <th></th>
                 </tr>
             </thead>
-            <!--<tbody>
-            <tr>
-                <td>Lindsey</td>
-                <td>9876</td>
-                <td>4.3.1</td>
-                <td>7 hours ago</td>
-                <td><i class="far fa-question-circle" style="color: red"></i> <i class="far fa-trash-alt"
-                        style="color: #0b5ed7"></i></td>
-            </tr>
-            <tr>
-                <td>Lindsey</td>
-                <td>9876</td>
-                <td>4.3.1</td>
-                <td>7 hours ago</td>
-                <td><i class="far fa-question-circle" style="color: red"></i> <i class="far fa-trash-alt"
-                        style="color: #0b5ed7"></i></td>
-            </tr>
-            <tr>
-                <td>Lindsey</td>
-                <td>9876</td>
-                <td>4.3.1</td>
-                <td>7 hours ago</td>
-                <td><i class="far fa-question-circle" style="color: red"></i> <i class="far fa-trash-alt"
-                        style="color: #0b5ed7"></i></td>
-            </tr>
-            <tr>
-                <td>Lindsey</td>
-                <td>9876</td>
-                <td>4.3.1</td>
-                <td>7 hours ago</td>
-                <td><i class="far fa-question-circle" style="color: red"></i> <i class="far fa-trash-alt"
-                        style="color: #0b5ed7"></i></td>
-            </tr>
-            <tr>
-                <td>Lindsey</td>
-                <td>9876</td>
-                <td>4.3.1</td>
-                <td>7 hours ago</td>
-                <td><i class="far fa-question-circle" style="color: red"></i> <i class="far fa-trash-alt"
-                        style="color: #0b5ed7"></i></td>
-            </tr>
-        </tbody> -->
         </table>
     </div>
 </div>

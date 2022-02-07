@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <meta name="csrf-token" content="{{csrf_token()}}" />
     <title>{{'Lily - '.$pageTitle}}</title>
     <link rel="stylesheet" href={{asset('css/app.css')}}>
     </link>
@@ -32,6 +33,13 @@
 <script src="{{asset('js/app.js')}}"></script>
 <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('js/dataTables.bootstrap4.min.js')}}"></script>
+<script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+</script>
 @stack('scripts')
 
 </html>

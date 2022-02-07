@@ -9,6 +9,11 @@ use App\Models\User;
 
 class UsersController extends Controller
 {
+    public function __construct(
+        private User $user
+    ) {
+    }
+
     // Default function index
     public function index(): view
     {
@@ -19,17 +24,6 @@ class UsersController extends Controller
     // Function to get listing
     public function listing(): JsonResponse
     {
-        $responseArray = [ 'data' => [
-            ['Lindsey', 9876, '4.3.1', '7 hours ago', ''],
-            ['Lindsey', 9873, '4.3.1', '6 hours ago', ''],
-            ['Lindsey', 9872, '4.3.1', '2 Days ago', ''],
-            ['Lindsey', 9871, '4.3.1', '7 hours ago', ''],
-            ['Lindsey', 9871, '4.3.1', '7 hours ago', ''],
-            ['Lindsey', 9872, '4.3.1', '7 hours ago', ''],
-            ['Lindsey', 9873, '4.3.1', '7 hours ago', '']
-        ]
-        ];
-
-        return response()->json($responseArray);
+        return $this->user->getListing();
     }
 }
