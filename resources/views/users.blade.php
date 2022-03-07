@@ -39,7 +39,7 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-5"><img class="img-user" src="{{asset('/images/female-prof.jpeg')}}"></img></div>
+                    <div class="col-5"><img class="img-user" src="{{asset('/images/leaf-icon.png')}}"></img></div>
                     <div class="col-7 dv-user-info">
                         <span id="name"></span><br />
                         <span>Country - <span id="country">Nicaragua</span></span>
