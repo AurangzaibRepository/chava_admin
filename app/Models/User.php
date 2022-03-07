@@ -11,6 +11,7 @@ use Carbon\Carbon;
 
 class User extends Authenticatable
 {
+    public $timestamps = false;
     protected $dates = ['createdAt', 'updatedAt'];
 
     public function getListing(): JsonResponse
@@ -48,5 +49,13 @@ class User extends Authenticatable
         }
 
         return response()->json($response);
+    }
+
+    public static function changeStatus(int $userID, string $status)
+    {
+        User::where('id', $userID)
+            ->update([
+                'status' => $status
+            ]);
     }
 }
