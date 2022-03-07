@@ -11,6 +11,8 @@ use Carbon\Carbon;
 
 class User extends Authenticatable
 {
+    protected $dates = ['createdAt', 'updatedAt'];
+
     public function getListing(): JsonResponse
     {
         $response= ['data' => []];
@@ -40,7 +42,7 @@ class User extends Authenticatable
                 $lastActivityMsg,
                 $user->country,
                 $user->phone_no,
-                $user->createdAt->format('d/m/yy')
+                $user->createdAt->format('d/m/Y')
             ]);
         }
 
