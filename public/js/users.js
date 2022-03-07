@@ -34,13 +34,24 @@ function PopulateUsers()
             {'targets': [0,1,2,3,4], 'width': '15%' },
             {'targets': 5, 'width': '10%', 'data': null,
         render: function(row, data){
-            return `<a class="user-modal" data-bs-toggle="modal" data-bs-target="#modal-user" data-name="${row[0]}" data-last-active="${row[3]}" 
+
+            if (row[4] === 'Active'){
+                status = 'Inactive';
+            }
+
+            if (row[4] === 'Inactive'){
+                status = 'Active';
+            }
+
+            return `
+            <a class="user-modal" data-bs-toggle="modal" data-bs-target="#modal-user" data-name="${row[0]}" data-last-active="${row[3]}" 
             data-country="${row[5]}"
             data-phone-no="${row[6]}" data-created-at="${row[7]}">
             <i class="far fa-question-circle"></i></a>
-            <a class="change-status" href="/users/change-status/${row[1]}/${row[4]}">
+            <a class="change-status" href="/users/change-status/${row[1]}/${status}">
             <i class="far fa-trash-alt"></i>
-            </a>`
+            </a>
+            `;
         }}
         ]
     });
