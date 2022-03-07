@@ -1,6 +1,6 @@
 html {height: 100%}
 body {height: 100%; margin: 0px}
-#lbl-page-header {font-weight: 600; color:#4c4c4c }
+#lbl-page-header {color:#4c4c4c; font-weight: 600; margin-bottom: 12px }
 .base-container {height: inherit}
 .dv-top-menu{align-items: center; background: #0b5ed7; display: flex;height: 7%; padding: 8px 18px;}
 .dv-top-menu .app-title{color: white; font-size: 22px; letter-spacing: 1px; text-transform: uppercase;}
@@ -15,10 +15,15 @@ body {height: 100%; margin: 0px}
 .ul-left-menu .fa-cog, .ul-left-menu .fa-fan {margin-left: 1px;font-size: 14px;margin-right: 5px;}
 .ul-left-menu a:hover span, .ul-left-menu a:hover svg {color: #0b5ed7}
 .dv-contents {background: #f2f2f2; padding: 30px 20px; width: 81%}
-.dv-base {margin-top: 18px}
+.dv-base {margin-top: 12px}
 table {margin: 0px !important}
 .page-item.active .page-link {background: #0b53d7}
 .paginate_button .page-link {padding: 0.2rem 0.75rem}
 .page-layout {padding: 15px 20px; background-color: white;}
 
 .modal {top: 10%}
+.alert{
+    font-size: 14px;
+    margin: 0px;
+    padding: 8px 14px;
+}
