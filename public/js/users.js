@@ -31,7 +31,8 @@ function PopulateUsers()
             url : '/users-listing'
         },
         columnDefs:[
-            {'targets': 5, 'data': null,
+            {'targets': [0,1,2,3,4], 'width': '15%' },
+            {'targets': 5, 'width': '10%', 'data': null,
         render: function(row, data){
             return `<a data-bs-toggle="modal" data-bs-target="#modal-user" data-name="${row[0]}" data-last-active="${row[3]}" 
             data-country="${row[5]}"
