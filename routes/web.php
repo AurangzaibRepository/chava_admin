@@ -27,6 +27,7 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::post('dashboard/get-activity-data', [DashboardController::class, 'activityData'])->name('activityData');
     Route::get('users', [UsersController::class, 'index'])->name('users');
     Route::post('users-listing', [UsersController::class, 'listing'])->name('usersListing');
     Route::get('users/change-status/{id}/{status}', [UsersController::class, 'changeStatus'])->name('changeStatus');
