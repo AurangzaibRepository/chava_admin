@@ -17,6 +17,7 @@
                     <th>UserID</th>
                     <th>Android Version</th>
                     <th>Last Activity</th>
+                    <th>Status</th>
                     <th></th>
                 </tr>
             </thead>

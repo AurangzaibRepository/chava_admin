@@ -31,11 +31,11 @@ function PopulateUsers()
             url : '/users-listing'
         },
         columnDefs:[
-            {'targets': 4, 'data': null,
+            {'targets': 5, 'data': null,
         render: function(row, data){
             return `<a data-bs-toggle="modal" data-bs-target="#modal-user" data-name="${row[0]}" data-last-active="${row[3]}" 
-            data-country="${row[4]}"
-            data-phone-no="${row[5]}" data-created-at="${row[6]}">
+            data-country="${row[5]}"
+            data-phone-no="${row[6]}" data-created-at="${row[7]}">
             <i class="far fa-question-circle" style="color: red"></i></a>
             <a><i class="far fa-trash-alt" style="color: #0b5ed7"></i></a>`
         }}

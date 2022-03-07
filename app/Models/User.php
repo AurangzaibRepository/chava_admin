@@ -40,9 +40,10 @@ class User extends Authenticatable
                 $user->id,
                 $user->phone_version,
                 $lastActivityMsg,
+                $user->status,
                 $user->country,
                 $user->phone_no,
-                $user->createdAt->format('d/m/Y')
+                $user->createdAt->format('d/m/Y'),
             ]);
         }
 
