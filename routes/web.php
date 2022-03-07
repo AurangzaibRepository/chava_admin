@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('users', [UsersController::class, 'index'])->name('users');
     Route::post('users-listing', [UsersController::class, 'listing'])->name('usersListing');
+    Route::get('users/change-status/{id}/{status}', [UsersController::class, 'changeStatus'])->name('changeStatus');
     Route::get('community', [CommunityController::class, 'index'])->name('community');
     Route::get('topics', [TopicsController::class, 'index'])->name('topics');
 });
