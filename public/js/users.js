@@ -34,11 +34,11 @@ function PopulateUsers()
             {'targets': [0,1,2,3,4], 'width': '15%' },
             {'targets': 5, 'width': '10%', 'data': null,
         render: function(row, data){
-            return `<a data-bs-toggle="modal" data-bs-target="#modal-user" data-name="${row[0]}" data-last-active="${row[3]}" 
+            return `<a class="user-modal" data-bs-toggle="modal" data-bs-target="#modal-user" data-name="${row[0]}" data-last-active="${row[3]}" 
             data-country="${row[5]}"
             data-phone-no="${row[6]}" data-created-at="${row[7]}">
-            <i class="far fa-question-circle" style="color: red"></i></a>
-            <a><i class="far fa-trash-alt" style="color: #0b5ed7"></i></a>`
+            <i class="far fa-question-circle"></i></a>
+            <a class="change-status"><i class="far fa-trash-alt"></i></a>`
         }}
         ]
     });

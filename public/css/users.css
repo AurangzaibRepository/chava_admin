@@ -20,6 +20,8 @@ table thead tr{background: #0b5ed7; color: white}
 #tbl-user-info tr {border-bottom: 1px solid rgba(0, 0, 0, 0.1)}
 #tbl-user-info tr td {color: #7aa3cc; font-size: 13px; padding: 9px 16px; width: 50%; }
 #tbl-user-info tr td:nth-child(2) {text-align: right;}
+.user-modal svg {color: red}
+.change-status svg {color: #0b5ed7}
 /*.tbl-users {width: 100%; padding: 12px 16px; border-collapse: separate;}*/
 /*.tbl-users th, .tbl-users td {color: #a6a6a6; font-size: 13px;}
 .tbl-users th:last-child {width: 10%}
