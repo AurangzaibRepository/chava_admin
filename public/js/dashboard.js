@@ -1,11 +1,21 @@
 $(function(){
 
     // Load activity chart
-    RenderActivityChart();
+    getActivityData();
 });
 
+
+function getActivityData(){
+
+    $.post('/dashboard/get-activity-data', 
+    function(response){
+        renderActivityChart(response.data);
+    }, 'JSON');
+}
+
 // Function to load activitu chart
-function RenderActivityChart(){
+function renderActivityChart(data){
+
     Highcharts.chart('dv-activity', {
         chart: {
             type: 'column',
