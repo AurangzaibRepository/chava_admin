@@ -38,7 +38,9 @@ function PopulateUsers()
             data-country="${row[5]}"
             data-phone-no="${row[6]}" data-created-at="${row[7]}">
             <i class="far fa-question-circle"></i></a>
-            <a class="change-status"><i class="far fa-trash-alt"></i></a>`
+            <a class="change-status" href="/users/change-status/${row[1]}/${row[4]}">
+            <i class="far fa-trash-alt"></i>
+            </a>`
         }}
         ]
     });
