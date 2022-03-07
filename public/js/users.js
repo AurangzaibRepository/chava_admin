@@ -36,10 +36,12 @@ function PopulateUsers()
         render: function(row, data){
 
             if (row[4] === 'Active'){
+                icon = 'fa-toggle-on';
                 status = 'Inactive';
             }
 
             if (row[4] === 'Inactive'){
+                icon = 'fa-toggle-off';
                 status = 'Active';
             }
 
@@ -48,11 +50,21 @@ function PopulateUsers()
             data-country="${row[5]}"
             data-phone-no="${row[6]}" data-created-at="${row[7]}">
             <i class="far fa-question-circle"></i></a>
-            <a class="change-status" href="/users/change-status/${row[1]}/${status}">
-            <i class="far fa-trash-alt"></i>
+            <a class="change-status" onClick="confirmStatusChange(${row[1]}, '${status}')">
+            <i class="fa ${icon}"></i>
             </a>
             `;
         }}
         ]
     });
+}
+
+function confirmStatusChange(userID, status)
+{
+    let statusText = (status === 'Active' ? 'activate' : 'deactivate');
+
+    if (confirm(`Are you sure you want to ${statusText}?`))
+    {
+        window.location.href = `/users/change-status/${userID}/${status}`;
+    }
 }
