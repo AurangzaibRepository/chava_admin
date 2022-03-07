@@ -11,37 +11,12 @@ use Carbon\Carbon;
 
 class User extends Authenticatable
 {
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
-
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
-
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
-
     public function getListing(): JsonResponse
     {
         $response= ['data' => []];
         $date = date('Y-m-d H:i:s');
         $words = ['hour', 'hours', 'minute', 'minutes','second', 'seconds'];
-
+    
         $userListing = $this->where('role', 'User')->orderBy('id', 'desc')->get();
 
         foreach ($userListing as $user) {
@@ -58,7 +33,15 @@ class User extends Authenticatable
                 $lastActivityMsg = (explode(' ', $lastActivityMsg)[0]) . ' ' . explode(' ', $lastActivityMsg)[1] . ' ago';
             }
         
-            array_push($response['data'], [$user->user_name, $user->id, $user->phone_version, $lastActivityMsg]);
+            array_push($response['data'], [
+                $user->user_name,
+                $user->id,
+                $user->phone_version,
+                $lastActivityMsg,
+                $user->country,
+                $user->phone_no,
+                $user->createdAt->format('d/m/yy')
+            ]);
         }
 
         return response()->json($response);

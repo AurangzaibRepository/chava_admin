@@ -14,7 +14,7 @@ table thead tr{background: #0b5ed7; color: white}
 .modal .img-user {height: 94%; width: 93%;}
 .modal .btn-close {background-size: 46% !important;}
 .modal .dv-user-info {color: #4c4c4c; line-height: 17px; margin-top: 20px}
-.modal .dv-user-info label {font-weight: bold}
+.modal .dv-user-info span#name {font-weight: bold}
 .modal .dv-user-info span {font-size: 12px}
 #tbl-user-info {width: 100%;}
 #tbl-user-info tr {border-bottom: 1px solid rgba(0, 0, 0, 0.1)}
