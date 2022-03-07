@@ -36,36 +36,24 @@
                 <div class="row">
                     <div class="col-5"><img class="img-user" src="{{asset('/images/female-prof.jpeg')}}"></img></div>
                     <div class="col-7 dv-user-info">
-                        <label>Annie Maddel</label><br />
-                        <span>Country - Nicaragua</span>
+                        <span id="name"></span><br />
+                        <span>Country - <span id="country">Nicaragua</span></span>
                     </div>
                 </div>
                 <br />
                 <table id="tbl-user-info">
                     <tbody>
                         <tr>
-                            <td>Email</td>
-                            <td>annie@gmail.com</td>
-                        </tr>
-                        <tr>
                             <td>Date of Joining</td>
-                            <td>09/03/2010</td>
+                            <td><span id="registered-date"></span></td>
                         </tr>
                         <tr>
                             <td>Last Active</td>
-                            <td>9 hours ago</td>
+                            <td><span id="last-active"></span></td>
                         </tr>
                         <tr>
                             <td>Phone number</td>
-                            <td>*****</td>
-                        </tr>
-                        <tr>
-                            <td>Password</td>
-                            <td>******</td>
-                        </tr>
-                        <tr>
-                            <td>Registered</td>
-                            <td>10/02/2005</td>
+                            <td><span id="phone-no"></span></td>
                         </tr>
                     </tbody>
 
