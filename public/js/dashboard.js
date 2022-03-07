@@ -34,12 +34,17 @@ function RenderActivityChart(){
             }
         },
         tooltip: {
-            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
-            footerFormat: '</table>',
             shared: true,
-            useHTML: true
+            useHTML: true,
+            formatter: function() {
+                return `
+                <table>
+                <tr>
+                    <td><span style="font-size: 11px">${this.x}: </span><b>${this.y}</b></td>
+                </tr>
+                </table>
+                `;
+            }
         },
         plotOptions: {
             column: {
@@ -53,7 +58,6 @@ function RenderActivityChart(){
         },
         series: [{
             showInLegend: false,
-            name: 'Tokyo',
             data: [130, 45, 60]
     
         }]

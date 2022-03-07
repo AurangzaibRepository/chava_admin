@@ -1,8 +1,7 @@
 @extends('/layouts/main')
 <!-- Styles-->
 @push('styles')
-<link rel="stylesheet" href="{{asset('css/dashboard.css')}}">
-</link>
+<link rel="stylesheet" href="{{asset('css/dashboard.css')}}"></link>
 @endpush
 
 @section('contents')
