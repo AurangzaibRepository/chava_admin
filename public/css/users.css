@@ -1,7 +1,7 @@
 .ul-left-menu a.users {background: #f2f2f2; border-left: 3px solid #0b5ed7}
 .ul-left-menu a.users span, .ul-left-menu a.users svg {color: #0b5ed7}
 .tbl-users th, .tbl-users td {font-size: 14px; font-weight: normal;}
-.tbl-users td:last-child {align-items: center; display: flex; height: 4vh; justify-content: space-around;}
+.tbl-users td:last-child {align-items: center; display: flex; height: 4vh; justify-content: space-evenly;}
 table thead tr{background: #0b5ed7; color: white}
 #table-users_info {padding-top: 4px; font-size: 13px;}
 #table-users_paginate {font-size: 13px}
