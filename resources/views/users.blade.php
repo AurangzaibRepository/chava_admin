@@ -8,6 +8,10 @@
 @section('contents')
 {{Form::label('lbl-page-header', 'Manage Users', ['id' => 'lbl-page-header'])}}
 
+@if (session()->has('success'))
+<div class="alert alert-success">{{session()->get('success')}}</div>
+@endif
+
 <div class="dv-base">
     <div class="page-layout">
         <table id="table-users" class="tbl-users table table-striped table-bordered" style="width: 100%">
