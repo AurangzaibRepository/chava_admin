@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use illuminate\Database\Eloquent\MOdel;
+use illuminate\Database\Eloquent\Model;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 
@@ -29,5 +30,9 @@ class Dashboard extends Model
 
         $response = [0, $activeUserCount, $inactiveUserCount];
         return response()->json($response);
+    }
+
+    public function getActiveUsers(): Collection
+    {
     }
 }
