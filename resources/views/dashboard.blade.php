@@ -1,7 +1,8 @@
 @extends('/layouts/main')
 <!-- Styles-->
 @push('styles')
-<link rel="stylesheet" href="{{asset('css/dashboard.css')}}"></link>
+<link rel="stylesheet" href="{{asset('css/dashboard.css')}}">
+</link>
 @endpush
 
 @section('contents')
@@ -88,42 +89,17 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($activeUserList as $user)
                     <tr>
                         <td>
                             <div>
-                                <img src="{{asset('images/female-prof.jpeg')}}"></img>
-                                <span class="username">Lindsey Stroud</span>
+                                <img src="{{asset('images/leaf-icon.png')}}"></img>
+                                <span class="username">{{$user[0]}}</span>
                             </div>
                         </td>
-                        <td>6 minutes ago</td>
+                        <td>{{$user[1]}}</td>
                     </tr>
-                    <tr>
-                        <td>
-                            <div>
-                                <img src="{{asset('images/female-prof.jpeg')}}"></img>
-                                <span class="username">Lindsey Stroud</span>
-                            </div>
-                        </td>
-                        <td>4 minutes ago</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div>
-                                <img src="{{asset('images/female-prof.jpeg')}}"></img>
-                                <span class="username">Lindsey Stroud</span>
-                            </div>
-                        </td>
-                        <td>4 days ago</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div>
-                                <img src="{{asset('images/female-prof.jpeg')}}"></img>
-                                <span class="username">Lindsey Stroud</span>
-                            </div>
-                        </td>
-                        <td>2 days ago</td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
             <br />
