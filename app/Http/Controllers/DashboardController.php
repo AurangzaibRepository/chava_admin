@@ -11,7 +11,7 @@ class DashboardController extends Controller
 {
     public function __construct(
         private Dashboard $dashboard
-    ){
+    ) {
     }
 
     // Default function index
@@ -19,12 +19,16 @@ class DashboardController extends Controller
     {
         $pageTitle = 'Dashboard';
 
-        return view('/dashboard', ['pageTitle' => $pageTitle]);
+        $activeUserList = $this->dashboard->getActiveUsers();
+
+        return view('/dashboard', [
+            'pageTitle' => $pageTitle,
+            'activeUserList' => $activeUserList
+        ]);
     }
 
     public function activityData(): JsonResponse
     {
-        return $this->dashboard->getActivityData();   
+        return $this->dashboard->getActivityData();
     }
 }
-
