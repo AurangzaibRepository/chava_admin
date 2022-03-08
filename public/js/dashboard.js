@@ -9,13 +9,12 @@ function getActivityData(){
 
     $.post('/dashboard/get-activity-data', 
     function(response){
-        renderActivityChart(response.data);
+        renderActivityChart(response);
     }, 'JSON');
 }
 
 // Function to load activitu chart
 function renderActivityChart(data){
-
     Highcharts.chart('dv-activity', {
         chart: {
             type: 'column',
@@ -33,7 +32,6 @@ function renderActivityChart(data){
                 'New Visitors',
                 'Active Users',
                 'Inactive Users',
-
             ],
             crosshair: true
         },
@@ -68,7 +66,7 @@ function renderActivityChart(data){
         },
         series: [{
             showInLegend: false,
-            data: [130, 45, 60]
+            data: data
     
         }]
     });
