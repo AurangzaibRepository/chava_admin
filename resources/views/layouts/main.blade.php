@@ -2,6 +2,9 @@
 <html>
 
 <head>
+    <meta http-equiv='cache-control' content='no-cache'/>
+    <meta http-equiv='expires' content='0' />
+    <meta http-equiv='pragma' content='no-cache' />
     <meta name="csrf-token" content="{{csrf_token()}}" />
     <title>{{'Lily - '.$pageTitle}}</title>
     <link rel="stylesheet" href={{asset('css/app.css')}}>
