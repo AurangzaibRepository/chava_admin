@@ -34,5 +34,18 @@ class Dashboard extends Model
 
     public function getActiveUsers(): Collection
     {
+        $data = [];
+
+        $userList = User::where('status', 'Active')
+                    ->where('role', '!=', 'Admin')
+                    ->orderBy('id', 'desc')
+                    ->limit(4)
+                    ->get();
+
+        foreach ($userList as $user) {
+            $data[] = [$user->user_name, $user->last_active];
+        }
+        
+        return new Collection($data);
     }
 }
