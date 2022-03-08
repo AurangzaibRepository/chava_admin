@@ -27,10 +27,7 @@ class Dashboard extends Model
                              ->orderBy('status')
                              ->get();*/
 
-        $response['active_users'] = $activeUserCount;
-        $response['inactive_users'] = $inactiveUserCount;
-        $response['new_users'] = 0;
-
+        $response = [0, $activeUserCount, $inactiveUserCount];
         return response()->json($response);
     }
 }
