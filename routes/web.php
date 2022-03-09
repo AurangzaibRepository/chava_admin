@@ -18,6 +18,7 @@ use App\Http\Controllers\TopicsController;
 |
 */
 
+// Authentication
 Route::get('/', [AuthController::class, 'login'])->name('login');
 Route::post('login', [AuthController::class, 'loginUser'])->name('loginUser');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
@@ -25,12 +26,21 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 //Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
+    // Home
     Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+    // Dashboard
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::post('dashboard/get-activity-data', [DashboardController::class, 'activityData'])->name('activityData');
+
+    // Users
     Route::get('users', [UsersController::class, 'index'])->name('users');
-    Route::post('users-listing', [UsersController::class, 'listing'])->name('usersListing');
     Route::get('users/change-status/{id}/{status}', [UsersController::class, 'changeStatus'])->name('changeStatus');
+    Route::post('users-listing', [UsersController::class, 'listing'])->name('usersListing');
+
+    // Community
     Route::get('community', [CommunityController::class, 'index'])->name('community');
+
+    // Topic
     Route::get('topics', [TopicsController::class, 'index'])->name('topics');
 });
