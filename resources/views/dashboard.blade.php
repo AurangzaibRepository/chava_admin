@@ -18,20 +18,21 @@
         <div class="dv-new-users dv-box">
             <label class="dv-box-header">New Users</label>
             <div>
+                @foreach ($newUserList as $user)
                 <div class="dv-user">
                     <div class="user-card">
                         <img src="{{asset('images/leaf-icon.png')}}"></img>
                         <div class="user-info">
-                            <span class="username">Jenny Pen</span><br />
-                            <span class="phone">+931323343433</span>
+                            <span class="username">{{$user->user_name}}</span><br />
+                            <span class="phone">{{$user->phone_no}}</span>
                         </div>
                     </div>
                     <div class="join-info">
                         <span></span>
-                        <span>joined <br /> 01/14/2021</span>
+                        <span>joined <br /> {{$user->createdAt}}</span>
                     </div>
                 </div>
-
+                @endforeach
             </div>
         </div>
     </div>
