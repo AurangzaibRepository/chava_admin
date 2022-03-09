@@ -45,7 +45,7 @@ class Dashboard extends Model
                     ->get();
 
         foreach ($userList as $user) {
-           $lastActive = $this->calculateLastActivity($user->last_active);
+           $lastActive = calculateLastActivity($user->last_active);
 
             $data[] = [$user->user_name, $lastActive];
         }
@@ -54,7 +54,7 @@ class Dashboard extends Model
     }
 
 
-    private function calculateLastActivity(string $lastActiveDate): string
+    /*private function calculateLastActivity(string $lastActiveDate): string
     {
         $currentDate = Carbon::now();
 
@@ -82,6 +82,5 @@ class Dashboard extends Model
         if ($dateDiff[4] > 0){
             return "{$dateDiff[4]} minutes ago";
         }
-
-    }
+    }*/
 }
