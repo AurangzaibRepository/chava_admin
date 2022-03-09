@@ -14,7 +14,7 @@
 .join-info span {display: inline-block;}
 .dv-user {display: flex; justify-content: space-between;}
 
-.dv-active-users {background-color: #fff; height:370px}
+.dv-active-users {background-color: #fff; height:350px}
 .tbl-active-users, .tbl-whatsapp-sessions {margin-top: 17px; width: 100%}
 .tbl-active-users tr:first-child, .tbl-whatsapp-sessions tr:first-child {border-bottom: 1px solid #c0c0c0;}
 .tbl-active-users tr:not(:last-child), .tbl-whatsapp-sessions tr:not(:last-child) {border-bottom: 1px solid #c0c0c0; }
