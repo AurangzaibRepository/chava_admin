@@ -20,10 +20,9 @@
             <div>
                 <div class="dv-user">
                     <div class="user-card">
-                        <img src="{{asset('images/female-prof.jpeg')}}"></img>
+                        <img src="{{asset('images/leaf-icon.png')}}"></img>
                         <div class="user-info">
                             <span class="username">Jenny Pen</span><br />
-                            <span class="email">jenny.p@gmail.com</span> <br />
                             <span class="phone">+931323343433</span>
                         </div>
                     </div>
@@ -32,48 +31,7 @@
                         <span>joined <br /> 01/14/2021</span>
                     </div>
                 </div>
-                <div class="dv-user">
-                    <div class="user-card">
-                        <img src="{{asset('images/female-prof.jpeg')}}"></img>
-                        <div class="user-info">
-                            <span class="username">Ani John</span><br />
-                            <span class="email">jenny.p@gmail.com</span> <br />
-                            <span class="phone">+931323343433</span>
-                        </div>
-                    </div>
-                    <div class="join-info">
-                        <span></span>
-                        <span>joined <br /> 01/14/2021</span>
-                    </div>
-                </div>
-                <div class="dv-user">
-                    <div class="user-card">
-                        <img src="{{asset('images/female-prof.jpeg')}}"></img>
-                        <div class="user-info">
-                            <span class="username">Ani John</span><br />
-                            <span class="email">ani.j@gmail.com</span> <br />
-                            <span class="phone">+931323343433</span>
-                        </div>
-                    </div>
-                    <div class="join-info">
-                        <span></span>
-                        <span>joined <br /> 01/14/2021</span>
-                    </div>
-                </div>
-                <div class="dv-user">
-                    <div class="user-card">
-                        <img src="{{asset('images/female-prof.jpeg')}}"></img>
-                        <div class="user-info">
-                            <span class="username">Jenny Pen</span><br />
-                            <span class="email">jenny.p@gmail.com</span> <br />
-                            <span class="phone">+931323343433</span>
-                        </div>
-                    </div>
-                    <div class="join-info">
-                        <span></span>
-                        <span>joined <br /> 01/14/2021</span>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
