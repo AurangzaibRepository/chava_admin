@@ -16,7 +16,7 @@ class UsersController extends Controller
     }
 
     // Default function index
-    public function index(): view
+    public function index(string $status = null): view
     {
         $pageTitle = 'Manage Users';
         return view('users', ['pageTitle' => $pageTitle]);

@@ -34,7 +34,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('dashboard/get-activity-data', [DashboardController::class, 'activityData'])->name('activityData');
 
     // Users
-    Route::get('users', [UsersController::class, 'index'])->name('users');
+    Route::get('users/{status?}', [UsersController::class, 'index'])->name('users');
     Route::get('users/change-status/{id}/{status}', [UsersController::class, 'changeStatus'])->name('changeStatus');
     Route::post('users-listing', [UsersController::class, 'listing'])->name('usersListing');
 
