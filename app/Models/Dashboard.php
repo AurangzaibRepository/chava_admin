@@ -23,6 +23,11 @@ class Dashboard extends Model
         $inactiveUserCount = User::where('status', 'Inactive')
                                 ->count();
 
+        $newUserCount = DB::table('users')
+                                ->where('role', '!=', 'Admin')
+                                ->whereRaw('DateDiff(now(), createdAt) <= 30')
+                                ->count();
+
         /*$userStatusCount = DB::table('users')
                              ->selectRaw('status, count(id) count')
                              ->where('status', '!=', 'Admin')
@@ -30,7 +35,7 @@ class Dashboard extends Model
                              ->orderBy('status')
                              ->get();*/
 
-        $response = [0, $activeUserCount, $inactiveUserCount];
+        $response = [$newUserCount, $activeUserCount, $inactiveUserCount];
         return response()->json($response);
     }
 
