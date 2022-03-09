@@ -103,7 +103,10 @@
                 </tbody>
             </table>
             <br />
-            <div class="row dv-view-all"> <a>view all &nbsp;></a></div>
+            <div class="row dv-view-all">
+                <a class="lnk-view-all" href="{{route('users', ['status' => 'active'])}}" target="_blank">view all
+                    &nbsp;></a>
+            </div>
         </div>
 
         <div class="dv-whatsapp-sessions dv-box">
