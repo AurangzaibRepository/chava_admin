@@ -34,6 +34,11 @@
                 </div>
                 @endforeach
             </div>
+            <br/>
+            <div class="row dv-view-all">
+                <a class="lnk-view-all" href="{{route('users', ['status' => 'new'])}}">view all
+                    &nbsp;></a>
+            </div>
         </div>
     </div>
     <div class="col-md-7">
