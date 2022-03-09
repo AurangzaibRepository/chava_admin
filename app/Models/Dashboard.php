@@ -62,9 +62,9 @@ class Dashboard extends Model
     {
         $data = [];
 
-        $userList = DB::table('users')
-                        ->where('role', '!=', 'Admin')
+        $userList = User::where('role', '!=', 'Admin')
                         ->whereRaw('DateDiff(now(), createdAt) <= 30')
+                        ->orderBy('id', 'desc')
                         ->limit(4)
                         ->get();
 
