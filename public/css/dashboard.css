@@ -2,7 +2,7 @@
 .ul-left-menu a.dashboard span, .ul-left-menu a.dashboard svg {color: #0b5ed7}
 .dv-base {margin-top: 18px}
 #dv-activity {height: 269px}
-.dv-new-users {height: 415px; margin-top: 20px}
+.dv-new-users {height: 400px; margin-top: 20px}
 .dv-box-header {color: #333333; font-size: 14px}
 .dv-user, .dv-whatsapp-sessions {margin-top: 17px}
 .user-card {display: flex; align-items: center;}
@@ -26,7 +26,7 @@
 .tbl-active-users td, .tbl-whatsapp-sessions td {padding: 12px 0px}
 .tbl-active-users td img, .tbl-whatsapp-sessions td img {width: 10%}
 .tbl-active-users .username, .tbl-whatsapp-sessions .username {font-size: 12px; margin-left: 5px;}
-.dv-active-users .dv-view-all {color: #0b5ed7; text-align: right;}
+.dv-active-users .dv-view-all, .dv-new-users .dv-view-all {color: #0b5ed7; text-align: right;}
 
 .dv-box {background: #fff;padding: 25px}
 .lnk-view-all {text-decoration: none;}
