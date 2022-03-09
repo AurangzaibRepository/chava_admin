@@ -14,6 +14,11 @@ class User extends Authenticatable
     public $timestamps = false;
     protected $dates = ['createdAt', 'updatedAt'];
 
+    public function getCreatedAtAttribute($value): string
+    {
+        return Carbon::parse($value)->format('d/m/Y');
+    }
+
     public function getListing(): JsonResponse
     {
         $response= ['data' => []];
