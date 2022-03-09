@@ -20,10 +20,12 @@ class DashboardController extends Controller
         $pageTitle = 'Dashboard';
 
         $activeUserList = $this->dashboard->getActiveUsers();
+        $newUserList = $this->dashboard->getNewUsers();
    
         return view('/dashboard', [
             'pageTitle' => $pageTitle,
-            'activeUserList' => $activeUserList
+            'activeUserList' => $activeUserList,
+            'newUserList' => $newUserList
         ]);
     }
 

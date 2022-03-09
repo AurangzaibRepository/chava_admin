@@ -58,6 +58,19 @@ class Dashboard extends Model
         return new Collection($data);
     }
 
+    public function getNewUsers(): Collection
+    {
+        $data = [];
+
+        $userList = DB::table('users')
+                        ->where('role', '!=', 'Admin')
+                        ->whereRaw('DateDiff(now(), createdAt) <= 30')
+                        ->limit(4)
+                        ->get();
+
+        return $userList;
+    }
+
 
     /*private function calculateLastActivity(string $lastActiveDate): string
     {
