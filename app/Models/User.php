@@ -75,7 +75,14 @@ class User extends Authenticatable
         }
 
         if ($request->status != ''){
-            $userListing = $userListing->where('status', $request->status);
+            if ($request->status != 'Current') {
+                $userListing = $userListing->where('status', $request->status);
+            }
+
+            if ($request->status == 'Current'){
+                $userListing = $userListing->where('logged_in', 1)
+                                           ->orderBy('login_time', 'desc');
+            }
         }
 
         if ($request->joining_date != ''){
