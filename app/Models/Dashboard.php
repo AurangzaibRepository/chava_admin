@@ -39,7 +39,7 @@ class Dashboard extends Model
         return response()->json($response);
     }
 
-    public function getActiveUsers(): Collection
+    public function getCurrentUsers(): Collection
     {
         $data = [];
 

@@ -53,7 +53,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($activeUserList as $user)
+                    @foreach ($currentUserList as $user)
                     <tr>
                         <td>
                             <div>
