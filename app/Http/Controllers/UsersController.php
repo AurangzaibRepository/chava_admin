@@ -16,14 +16,15 @@ class UsersController extends Controller
     }
 
     // Default function index
-    public function index(string $status = null): view
+    public function index(string $status = ''): view
     {
         $pageTitle = 'Manage Users';
         $userStatus = config('app.user_status');
 
         return view('users', [
             'pageTitle' => $pageTitle,
-            'userStatus' => $userStatus
+            'userStatus' => $userStatus,
+            'status' => ucfirst($status)
         ]);
     }
 

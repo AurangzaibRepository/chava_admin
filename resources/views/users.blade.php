@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    {{Form::select('status', $userStatus, null, ['class' => 'form-select'])}}
+                    {{Form::select('status', $userStatus, $status, ['class' => 'form-select'])}}
                 </div>
                 <div class="col-md-4">
                     {{Form::text('joining_date', '', ['class' => 'form-control', 'placeholder' => 'Joining Date',
