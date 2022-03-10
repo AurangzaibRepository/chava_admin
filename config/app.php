@@ -234,6 +234,7 @@ return [
     'user_status' => [
         '' => '-- Status --',
         'Active' => 'Active',
-        'Inactive' => 'Inactive'
+        'Inactive' => 'Inactive',
+        'Current' => 'Current'
     ],
 ];
