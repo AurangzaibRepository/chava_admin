@@ -14,6 +14,33 @@
 
 <div class="dv-base">
     <div class="page-layout">
+
+        {{-- Filter --}}
+        <div class="dv-filter">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        {{Form::text('username', '', ['class' => 'form-control', 'placeholder' => 'Username'])}}
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    {{Form::select('status', [], null, ['class' => 'form-select'])}}
+                </div>
+                <div class="col-md-4">
+                    {{Form::text('joining_date', '', ['class' => 'form-control', 'placeholder' => 'Joining Date'])}}
+                </div>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        <label id="lbl-new"><input type="checkbox" id="new"> New Visitor</label>
+                    </div>
+                </div>
+                <div class="col-md-8 dv-buttons">
+                    {{Form::submit('Search', ['class' => 'btn btn-primary', 'id' => 'search'])}}
+                    {{Form::submit('Reset', ['class' => 'btn btn-secondary'])}}
+                </div>
+            </div>
+        </div>
+
         <table id="table-users" class="tbl-users table table-striped table-bordered" style="width: 100%">
             <thead>
                 <tr>
