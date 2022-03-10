@@ -21,6 +21,8 @@ $(document).ready(function(){
 
         e.preventDefault();
         $('#form-filter')[0].reset();
+        $('select[name=status]').prop('selectedIndex',0);
+        $('#new').prop('checked', false);
         PopulateUsers();
     });
 

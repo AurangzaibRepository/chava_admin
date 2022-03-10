@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="checkbox">
-                        <label id="lbl-new"><input type="checkbox" id="new"> New Visitor</label>
+                        <label id="lbl-new"><input type="checkbox" id="new" {{($new == 'checked' ? 'checked' : '')}}> New Visitor</label>
                     </div>
                 </div>
                 <div class="col-md-8 dv-buttons">
