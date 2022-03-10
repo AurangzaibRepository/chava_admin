@@ -16,6 +16,8 @@ $(document).ready(function(){
         $('#modal-user #last-active').text(lastActive);
         $('#modal-user #phone-no').html(phoneNumber);
     });
+
+    $('#joining_date').daterangepicker();
 });
 
 // Function to populate users
