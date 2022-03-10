@@ -28,9 +28,9 @@ class UsersController extends Controller
     }
 
     // Function to get listing
-    public function listing(): JsonResponse
+    public function listing(Request $request): JsonResponse
     {
-        return $this->user->getListing();
+        return $this->user->getListing($request);
     }
 
     public function changeStatus(int $id, string $status): RedirectResponse

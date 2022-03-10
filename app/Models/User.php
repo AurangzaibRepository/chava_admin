@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Collection;
+use Illuminate\Http\Request;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Http\JsonResponse;
 use Carbon\Carbon;
@@ -19,13 +21,13 @@ class User extends Authenticatable
         return Carbon::parse($value)->format('d/m/Y');
     }
 
-    public function getListing(): JsonResponse
+    public function getListing(Request $request): JsonResponse
     {
         $response= ['data' => []];
         $date = date('Y-m-d H:i:s');
         $words = ['hour', 'hours', 'minute', 'minutes','second', 'seconds'];
     
-        $userListing = $this->where('role', 'User')->orderBy('id', 'desc')->get();
+        $userListing = $this->applyFilters($request);
 
         foreach ($userListing as $user) {
             $lastActivity = Carbon::createFromFormat('Y-m-d H:i:s', $user->last_active);
@@ -62,5 +64,32 @@ class User extends Authenticatable
             ->update([
                 'status' => $status
             ]);
+    }
+
+    private function applyFilters(Request $request): Collection
+    {
+        $userListing = $this->where('role', 'User')->orderBy('id', 'desc');
+
+        if ($request->username !== '') {
+            $userListing = $userListing->where('user_name', 'LIKE', "%{$request->username}%");
+        }
+
+        if ($request->status != ''){
+            $userListing = $userListing->where('status', $request->status);
+        }
+
+        if ($request->joining_date != ''){
+            $joiningDate = explode(' - ', $request->joining_date);
+            $startDate = Carbon::createFromFormat('d/m/Y',$joiningDate[0])->format('Y-m-d');
+            $endDate = Carbon::createFromFormat('d/m/Y', $joiningDate[1])->format('Y-m-d');
+            
+            $userListing = $userListing->whereRaw("(createdAt between '{$startDate}' and '{$endDate}')");
+        }
+
+        if ($request->new == "true"){
+            $userListing = $userListing->whereRaw('datediff(now(), createdAt) <= 30');
+        }
+
+        return $userListing->get();
     }
 }
