@@ -7,7 +7,7 @@ function calculateLastActivity(string $lastActiveDate): string
     $currentDate = Carbon::now();
 
     $dateDiff = Carbon::parse($lastActiveDate)->diff($currentDate);
-    $dateDiff = $dateDiff->format('%y-%m-%d-%h-%m');
+    $dateDiff = $dateDiff->format('%y-%m-%d-%h-%i-%s');
     $dateDiff = Str::of($dateDiff)->split('/[\s-]+/');
 
     if ($dateDiff[0] > 0){
@@ -29,5 +29,9 @@ function calculateLastActivity(string $lastActiveDate): string
 
     if ($dateDiff[4] > 0){
         return "{$dateDiff[4]} minutes ago";
+    }
+
+    if ($dateDiff[5] > 0){
+        return "{$dateDiff[5]} seconds ago";
     }
 }
