@@ -21,6 +21,10 @@ table {margin: 0px !important}
 .paginate_button .page-link {padding: 0.2rem 0.75rem}
 .page-layout {padding: 15px 20px; background-color: white;}
 
+.daterangepicker .calendar-table th, .daterangepicker .calendar-table td {
+    border-radius: 0px !important;
+}
+
 .modal {top: 10%}
 .alert{
     font-size: 14px;
