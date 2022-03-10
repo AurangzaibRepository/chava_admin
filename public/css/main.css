@@ -27,3 +27,24 @@ table {margin: 0px !important}
     margin: 0px;
     padding: 8px 14px;
 }
+
+.btn {
+    font-size: 13px;
+    min-width: 64px;
+    padding: 2px 11px;
+}
+
+/*.btn-primary{
+    background-color: #7fbf7f;
+    border-color: #7fbf7f;
+}*/
+
+.btn-secondary {
+    background-color: #a6a6a6;
+    border-color: #a6a6a6;
+    margin-left: 4px;
+}
+
+.form-control {
+    padding: 6px 11px
+}
