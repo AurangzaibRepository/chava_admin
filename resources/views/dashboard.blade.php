@@ -68,7 +68,7 @@
             </table>
             <br />
             <div class="row dv-view-all">
-                <a class="lnk-view-all" href="{{route('users', ['status' => 'active'])}}">view all
+                <a class="lnk-view-all" href="{{route('users', ['status' => 'current'])}}">view all
                     &nbsp;></a>
             </div>
         </div>
