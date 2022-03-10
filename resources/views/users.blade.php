@@ -3,6 +3,7 @@
 @push('styles')
 <link rel="stylesheet" href="{{asset('css/users.css')}}">
 </link>
+<link rel="stylesheet" href="{{asset('css/daterangepicker.css')}}" />
 @endpush
 
 @section('contents')
@@ -27,7 +28,8 @@
                     {{Form::select('status', $userStatus, null, ['class' => 'form-select'])}}
                 </div>
                 <div class="col-md-4">
-                    {{Form::text('joining_date', '', ['class' => 'form-control', 'placeholder' => 'Joining Date'])}}
+                    {{Form::text('joining_date', '', ['class' => 'form-control', 'placeholder' => 'Joining Date',
+                    'id' => 'joining_date'])}}
                 </div>
                 <div class="col-md-4">
                     <div class="checkbox">
@@ -99,5 +101,8 @@
 
 <!-- Script -->
 @push('scripts')
+<script src="{{URL::asset('js/moment.js')}}"></script>
+<script src="{{URL::asset('js/daterangepicker.min.js')}}"></script>
+
 <script src="{{asset('js/users.js')}}"></script>
 @endpush
