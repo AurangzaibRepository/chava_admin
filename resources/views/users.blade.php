@@ -18,6 +18,7 @@
 
         {{-- Filter --}}
         <div class="dv-filter">
+            {{Form::open(['id' => 'form-filter'])}}
             <div class="row">
                 <div class="col-md-4">
                     <div class="mb-3">
@@ -38,9 +39,10 @@
                 </div>
                 <div class="col-md-8 dv-buttons">
                     {{Form::submit('Search', ['class' => 'btn btn-primary', 'id' => 'search'])}}
-                    {{Form::submit('Reset', ['class' => 'btn btn-secondary'])}}
+                    {{Form::submit('Reset', ['class' => 'btn btn-secondary', 'id' => 'btn-reset'])}}
                 </div>
             </div>
+            {{Form::close()}}
         </div>
 
         <table id="table-users" class="tbl-users table table-striped table-bordered" style="width: 100%">

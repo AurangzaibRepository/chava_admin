@@ -17,7 +17,20 @@ $(document).ready(function(){
         $('#modal-user #phone-no').html(phoneNumber);
     });
 
+    $('#btn-reset').on('click', function(e){
+
+        e.preventDefault();
+        $('#form-filter')[0].reset();
+        PopulateUsers();
+    });
+
+    $('#search').click(function(e){
+        e.preventDefault();
+        PopulateUsers();
+    });
+
     InitializeDatepicker();
+
 });
 
 // Function to populate users
@@ -27,10 +40,17 @@ function PopulateUsers()
         'searching': false,
         'lengthChange': false,
         'bSort': false,
+        'destroy': true,
         //'ajax': '/users-listing',
         'ajax': {
             type: 'POST',
-            url : '/users-listing'
+            url : '/users-listing',
+            data: {
+                username: $('input[name=username]').val(),
+                status: $('select[name=status]').val(),
+                joining_date: $('input[name=joining_date]').val(),
+                new: $('#new')[0].checked
+            }
         },
         columnDefs:[
             {'targets': [0,1,2,3,4], 'width': '15%' },
