@@ -231,5 +231,5 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
     ],
 
-    'user_status' => ['Active', 'Inactive'],
+    'user_status' => ['-- Status --', 'Active', 'Inactive'],
 ];
