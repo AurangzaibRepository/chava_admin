@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-md-4">
                     {{Form::text('joining_date', '', ['class' => 'form-control', 'placeholder' => 'Joining Date',
-                    'id' => 'joining_date'])}}
+                    'id' => 'joining_date', 'readonly' => 'readonly'])}}
                 </div>
                 <div class="col-md-4">
                     <div class="checkbox">

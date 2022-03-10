@@ -17,7 +17,7 @@ $(document).ready(function(){
         $('#modal-user #phone-no').html(phoneNumber);
     });
 
-    $('#joining_date').daterangepicker();
+    InitializeDatepicker();
 });
 
 // Function to populate users
@@ -70,3 +70,22 @@ function confirmStatusChange(userID, status)
         window.location.href = `/users/change-status/${userID}/${status}`;
     }
 }
+
+function InitializeDatepicker(){
+    $('#joining_date').daterangepicker({
+        format: 'DD/MM/YY'
+    });
+    $('#joining_date').val('');
+
+    $('#joining_date').on('cancel.daterangepicker', function(ev, picker){
+        $('#joining_date').val('');
+    });
+
+    $('#joining_date').on('apply.daterangepicker', function(ev, picker) {
+        $('#joining_date').val(picker.startDate.format('DD/MM/YYYY')+ ' - ' + picker.endDate.format('DD/MM/YYYY'));
+      });
+
+      $('#joining_date').on('hide.daterangepicker', function(ev, picker){
+          $('#joining_date').val(picker.startDate.format('DD/MM/YYYY')+ ' - '+ picker.endDate.format('DD/MM/YYYY'));
+      });
+} 
