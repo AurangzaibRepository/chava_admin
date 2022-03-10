@@ -68,7 +68,7 @@ class User extends Authenticatable
 
     private function applyFilters(Request $request): Collection
     {
-        $userListing = $this->where('role', 'User')->orderBy('id', 'desc');
+        $userListing = $this->where('role', 'User');
 
         if ($request->username !== '') {
             $userListing = $userListing->where('user_name', 'LIKE', "%{$request->username}%");
@@ -95,6 +95,10 @@ class User extends Authenticatable
 
         if ($request->new == "true"){
             $userListing = $userListing->whereRaw('datediff(now(), createdAt) <= 30');
+        }
+
+        if ($request->status != 'Current'){
+            $userListing = $userListing->orderBy('id', 'desc');
         }
 
         return $userListing->get();
