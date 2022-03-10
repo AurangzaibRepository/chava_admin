@@ -21,11 +21,13 @@ class DashboardController extends Controller
 
         $currentUserList = $this->dashboard->getCurrentUsers();
         $newUserList = $this->dashboard->getNewUsers();
-   
+        $whatsAppSessionList = $this->dashboard->getWhatsAppSessions();
+
         return view('/dashboard', [
             'pageTitle' => $pageTitle,
             'currentUserList' => $currentUserList,
-            'newUserList' => $newUserList
+            'newUserList' => $newUserList,
+            'whatsAppSessionList' => $whatsAppSessionList
         ]);
     }
 

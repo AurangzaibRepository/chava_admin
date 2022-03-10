@@ -50,7 +50,7 @@ class Dashboard extends Model
                     ->get();
 
         foreach ($userList as $user) {
-           $lastActive = calculateLastActivity($user->last_active);
+            $lastActive = calculateLastActivity($user->last_active);
 
             $data[] = [$user->user_name, $lastActive];
         }
@@ -65,6 +65,17 @@ class Dashboard extends Model
         $userList = User::where('role', '!=', 'Admin')
                         ->whereRaw('DateDiff(now(), createdAt) <= 30')
                         ->orderBy('id', 'desc')
+                        ->limit(4)
+                        ->get();
+
+        return $userList;
+    }
+
+    public function getWhatsAppSessions(): Collection
+    {
+        $userList = User::where('role', '!=', 'Admin')
+                        ->where('whatsapp_session', 1)
+                        ->orderBy('whatsapp_session_time', 'desc')
                         ->limit(4)
                         ->get();
 
