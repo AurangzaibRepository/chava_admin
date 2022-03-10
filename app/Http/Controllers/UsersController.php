@@ -19,7 +19,12 @@ class UsersController extends Controller
     public function index(string $status = null): view
     {
         $pageTitle = 'Manage Users';
-        return view('users', ['pageTitle' => $pageTitle]);
+        $userStatus = config('app.user_status');
+
+        return view('users', [
+            'pageTitle' => $pageTitle,
+            'userStatus' => $userStatus
+        ]);
     }
 
     // Function to get listing
