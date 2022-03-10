@@ -80,7 +80,6 @@
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>User Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -91,25 +90,6 @@
                                 <span class="username">Lindsey Stroud<span>
                             </div>
                         </td>
-                        <td>Active</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div>
-                                <img src="{{asset('images/male-prof.jpeg')}}"></img>
-                                <span class="username">George Fields<span>
-                            </div>
-                        </td>
-                        <td style="color: red">Inactive</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div>
-                                <img src="{{asset('images/male-prof.jpeg')}}"></img>
-                                <span class="username">John Cena<span>
-                            </div>
-                        </td>
-                        <td>Active</td>
                     </tr>
                 </tbody>
             </table>
