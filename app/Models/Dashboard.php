@@ -43,9 +43,9 @@ class Dashboard extends Model
     {
         $data = [];
 
-        $userList = User::where('status', 'Active')
-                    ->where('role', '!=', 'Admin')
-                    ->orderBy('id', 'desc')
+        $userList = User::where('role', '!=', 'Admin')
+                    ->where('logged_in', 1)
+                    ->orderBy('login_time', 'desc')
                     ->limit(4)
                     ->get();
 
