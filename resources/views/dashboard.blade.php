@@ -44,7 +44,7 @@
     <div class="col-md-7">
 
         <div class="dv-active-users dv-box">
-            <label class="dv-box-header">All Active Users</label>
+            <label class="dv-box-header">Current Users</label>
             <table class="tbl-active-users">
                 <thead>
                     <tr>
