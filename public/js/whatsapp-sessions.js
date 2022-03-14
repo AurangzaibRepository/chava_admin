@@ -14,7 +14,8 @@ function PopulateUsers()
             'emptyTable': 'No records found'
         },
         columnDefs: [
-            {targets:[0,1,2,3], width: '25%'},
+            {targets:[0,1,2], width: '30%'},
+            {targets: 3, width: '10%'}
         ],
         ajax: '/whatsapp-sessions/listing'
     });
