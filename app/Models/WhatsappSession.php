@@ -24,8 +24,16 @@ class WhatsappSession extends Model
                         ->where('role', '!=', 'Admin')
                         ->limit(10)
                         ->offset($request->start)
-                        ->orderBy('id', 'desc');
+                        ->orderBy('id', 'desc')
+                        ->get();
 
+        foreach ($userList as $user) {
+            $data['data'][] = [
+                $user->user_name,
+                $user->country,
+                $user->phone_no
+            ];
+        }
 
 
         return response()->json($data);
