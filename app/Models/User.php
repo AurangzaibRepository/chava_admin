@@ -14,11 +14,16 @@ use Carbon\Carbon;
 class User extends Authenticatable
 {
     public $timestamps = false;
-    protected $dates = ['createdAt', 'updatedAt'];
+    protected $dates = ['createdAt', 'updatedAt', 'whatsapp_session_time'];
 
     public function getCreatedAtAttribute($value): string
     {
         return Carbon::parse($value)->format('d/m/Y');
+    }
+
+    public function getWhatsappSessionTimeAttribute($value): string
+    {
+        return Carbon::parse($value)->format('d/m/Y H:i:s');
     }
 
     public function getListing(Request $request): JsonResponse
@@ -74,30 +79,30 @@ class User extends Authenticatable
             $userListing = $userListing->where('user_name', 'LIKE', "%{$request->username}%");
         }
 
-        if ($request->status != ''){
+        if ($request->status != '') {
             if ($request->status != 'Current') {
                 $userListing = $userListing->where('status', $request->status);
             }
 
-            if ($request->status == 'Current'){
+            if ($request->status == 'Current') {
                 $userListing = $userListing->where('logged_in', 1)
                                            ->orderBy('login_time', 'desc');
             }
         }
 
-        if ($request->joining_date != ''){
+        if ($request->joining_date != '') {
             $joiningDate = explode(' - ', $request->joining_date);
-            $startDate = Carbon::createFromFormat('d/m/Y',$joiningDate[0])->format('Y-m-d');
+            $startDate = Carbon::createFromFormat('d/m/Y', $joiningDate[0])->format('Y-m-d');
             $endDate = Carbon::createFromFormat('d/m/Y', $joiningDate[1])->format('Y-m-d');
             
             $userListing = $userListing->whereRaw("(createdAt between '{$startDate}' and '{$endDate}')");
         }
 
-        if ($request->new == "true"){
+        if ($request->new == "true") {
             $userListing = $userListing->whereRaw('datediff(now(), createdAt) <= 30');
         }
 
-        if ($request->status != 'Current'){
+        if ($request->status != 'Current') {
             $userListing = $userListing->orderBy('id', 'desc');
         }
 
