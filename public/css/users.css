@@ -35,17 +35,19 @@ table thead tr{background: #0b5ed7; color: white}
     padding: 15px;
 }
 
-#lbl-new{
-    align-items: center; 
-    display: inline-flex
+label.checkbox{
+    align-items: center;
+    font-size: 13px;
+    display: inline-flex;
 }
-
-#new{
+label.checkbox input[type=checkbox]{
     margin-right: 6px
 }
-#lbl-new {
-    font-size: 13px
+
+#lbl-new{
+    margin-right: 11px
 }
+
 .dv-buttons {
     text-align: right;
 }

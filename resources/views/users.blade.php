@@ -32,12 +32,17 @@
                     {{Form::text('joining_date', '', ['class' => 'form-control', 'placeholder' => 'Joining Date',
                     'id' => 'joining_date', 'readonly' => 'readonly'])}}
                 </div>
-                <div class="col-md-4">
-                    <div class="checkbox">
-                        <label id="lbl-new"><input type="checkbox" id="new" {{($new == 'checked' ? 'checked' : '')}}> New Visitor</label>
-                    </div>
+                <div class="col-md-8">
+                    <label id="lbl-new" class="checkbox"><input type="checkbox" id="new" {{($status=='New' ? 'checked'
+                            : '' )}}> New
+                        Visitor</label>
+
+                    <label id="" class="checkbox">
+                        <input type="checkbox" id="whastapp" {{$status=='Whatsapp' ? 'checked' : '' }} />
+                        WhatsApp Session
+                    </label>
                 </div>
-                <div class="col-md-8 dv-buttons">
+                <div class="col-md-4 dv-buttons">
                     {{Form::submit('Search', ['class' => 'btn btn-primary', 'id' => 'search'])}}
                     {{Form::submit('Reset', ['class' => 'btn btn-secondary', 'id' => 'btn-reset'])}}
                 </div>
