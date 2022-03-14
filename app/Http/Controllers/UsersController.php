@@ -20,17 +20,11 @@ class UsersController extends Controller
     {
         $pageTitle = 'Manage Users';
         $userStatus = config('app.user_status');
-        $new = '';
-
-        if ($status === 'new'){
-            $new = 'checked';
-        }
 
         return view('users', [
             'pageTitle' => $pageTitle,
             'userStatus' => $userStatus,
-            'status' => ucfirst($status),
-            'new' => $new
+            'status' => ucfirst($status)
         ]);
     }
 
