@@ -38,7 +38,7 @@
                         Visitor</label>
 
                     <label id="" class="checkbox">
-                        <input type="checkbox" id="whastapp" {{$status=='Whatsapp' ? 'checked' : '' }} />
+                        <input type="checkbox" id="whatsapp" {{$status=='Whatsapp' ? 'checked' : '' }} />
                         WhatsApp Session
                     </label>
                 </div>
