@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\WhatsappSessionsController;
 use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\TopicsController;
 
@@ -37,6 +38,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('users/{status?}', [UsersController::class, 'index'])->name('users');
     Route::get('users/change-status/{id}/{status}', [UsersController::class, 'changeStatus'])->name('changeStatus');
     Route::post('users-listing', [UsersController::class, 'listing'])->name('usersListing');
+
+    // Whatsapp
+    Route::get('whatsapp-sessions', [WhatsappSessionsController::class, 'index'])->name('whatsappSessions');
 
     // Community
     Route::get('community', [CommunityController::class, 'index'])->name('community');
