@@ -17,9 +17,21 @@ body {height: 100%; margin: 0px}
 .dv-contents {background: #f2f2f2; padding: 30px 20px; width: 81%}
 .dv-base {margin-top: 12px}
 table {margin: 0px !important}
+table.dataTable {width: 100% !important}
 .page-item.active .page-link {background: #0b53d7}
 .paginate_button .page-link {padding: 0.2rem 0.75rem}
 .page-layout {padding: 15px 20px; background-color: white;}
+
+table thead tr{background: #0b5ed7; color: white}
+table th, table td {
+    font-size: 14px; 
+    font-weight: normal;
+}
+.dataTables_info {
+    font-size: 13px;
+    padding-top: 4px
+}
+.pagination {margin: 0px}
 
 .daterangepicker .calendar-table th, .daterangepicker .calendar-table td {
     border-radius: 0px !important;
