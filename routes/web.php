@@ -41,6 +41,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Whatsapp
     Route::get('whatsapp-sessions', [WhatsappSessionsController::class, 'index'])->name('whatsappSessions');
+    Route::get('whatsapp-sessions/listing', [WhatsappSessionsController::class, 'listing'])->name('whatsappSessionsListing');
 
     // Community
     Route::get('community', [CommunityController::class, 'index'])->name('community');
