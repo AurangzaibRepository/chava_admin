@@ -14,6 +14,7 @@ function PopulateUsers()
         },
         columnDefs: [
             {targets:[0,1,2,3], width: '25%'},
-        ]
+        ],
+        ajax: '/whatsapp-sessions/listing'
     });
 }
