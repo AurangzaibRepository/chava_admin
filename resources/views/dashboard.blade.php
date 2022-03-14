@@ -34,7 +34,7 @@
                 </div>
                 @endforeach
             </div>
-            <br/>
+            <br />
             <div class="row dv-view-all">
                 <a class="lnk-view-all" href="{{route('users', ['status' => 'new'])}}">view all
                     &nbsp;></a>
@@ -80,19 +80,27 @@
                 <thead>
                     <tr>
                         <th>Name</th>
+                        <th>Session Time</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($whatsAppSessionList as $session)
                     <tr>
                         <td>
                             <div>
-                                <img src="{{asset('images/female-prof.jpeg')}}"></img>
-                                <span class="username">Lindsey Stroud<span>
+                                <img src="{{asset('images/leaf-icon.png')}}"></img>
+                                <span class="username">{{$session->user_name}}<span>
                             </div>
                         </td>
+                        <td>{{$session->whatsapp_session_time}}</td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
+            <br />
+            <div class="row dv-view-all">
+                <a class="lnk-view-all" href="{{route('users', ['status' => 'whatsapp'])}}">view all&nbsp;></a>
+            </div>
         </div>
     </div>
 </div>
