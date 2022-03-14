@@ -98,13 +98,16 @@ class User extends Authenticatable
             $userListing = $userListing->whereRaw("(createdAt between '{$startDate}' and '{$endDate}')");
         }
 
-        if ($request->new == "true") {
+        if ($request->new == 'true') {
             $userListing = $userListing->whereRaw('datediff(now(), createdAt) <= 30');
         }
 
-        if ($request->status != 'Current') {
-            $userListing = $userListing->orderBy('id', 'desc');
+        if ($request->whatsapp == 'true') {
+            $userListing = $userListing->where('whatsapp_session', 1)
+                                        ->orderBy('whatsapp_session_time', 'desc');
         }
+
+        $userListing = $userListing->orderBy('id', 'desc');
 
         return $userListing->get();
     }

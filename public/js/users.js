@@ -51,7 +51,8 @@ function PopulateUsers()
                 username: $('input[name=username]').val(),
                 status: $('select[name=status]').val(),
                 joining_date: $('input[name=joining_date]').val(),
-                new: $('#new')[0].checked
+                new: $('#new')[0].checked,
+                whatsapp: $('#whatsapp')[0].checked
             }
         },
         columnDefs:[
