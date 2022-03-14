@@ -9,6 +9,7 @@ function PopulateUsers()
         'bLengthChange': false,
         'bSort': false,
         'searching': false,
+        'serverSide': true,
         'language': {
             'emptyTable': 'No records found'
         },
