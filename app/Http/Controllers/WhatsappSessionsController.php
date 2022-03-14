@@ -23,7 +23,10 @@ class WhatsappSessionsController extends Controller
         ]);
     }
 
-    public function listing(): JsonResponse
+    public function listing(Request $request): JsonResponse
     {
+        return $this
+                ->whatsappsession
+                ->getListing($request);
     }
 }
