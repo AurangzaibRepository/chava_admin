@@ -6,7 +6,7 @@
         <a href="{{route('users')}}" class="users"><i class="fa fa-users"></i> <span>Manage Users</span></a>
     </li>
     <li>
-        <a href="{{route('community')}}" class="whatsapp-sessions"><i class="far fa-file-alt"></i> <span>Whatsapp
+        <a href="{{route('whatsappSessions')}}" class="whatsapp-sessions"><i class="far fa-file-alt"></i> <span>Whatsapp
                 Sessions</span></a>
     </li>
     <li>
@@ -19,6 +19,6 @@
         <a class="ads"><i class="far fa-file-alt"></i><span> Manage Calendar</span></a>
     </li>
     <li>
-        <a href="{{route('logout')}}">&nbsp;<i class="fas fa-sign-out-alt"></i><span>  Logout</span></a>
+        <a href="{{route('logout')}}">&nbsp;<i class="fas fa-sign-out-alt"></i><span> Logout</span></a>
     </li>
 </ul>
