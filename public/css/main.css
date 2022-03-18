@@ -42,9 +42,11 @@ table th, table td {
 
 .modal {top: 10%}
 .alert{
-    font-size: 14px;
+    font-size: 13.6px !important;
+    font-weight: bold;
     margin: 0px;
-    padding: 8px 14px;
+    margin-bottom: 8px;
+    padding: 6px 14px !important;
 }
 
 .btn {
