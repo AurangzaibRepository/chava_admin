@@ -49,7 +49,7 @@
                 <div class="dv-question">
                     <div class="row question">
                         <div class="col-9">Around Menstruation - Why is my Period Late</div>
-                        <div class="col-3 spn-question">Question</div>
+                        <div class="col-3 spn-question">Answer</div>
                     </div>
 
                     <div class="user-info row">
