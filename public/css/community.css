@@ -25,7 +25,23 @@
     padding: 11px
 }
 .question {font-size: 11.8px;}
-.spn-question {color: #7aa3cc; text-align: right;}
+.spn-question {
+    color: #7aa3cc; 
+    text-align: right;
+}
+.pending {
+    color: #7aa3cc;
+    font-weight: bold;
+}
+.accepted {
+    color: #7fbf7f;
+    font-weight: bold;
+}
+.rejected{
+    color: red; 
+    font-weight: bold;
+}
+
 .col-btns {text-align: right;}
 .user-info {align-items: flex-end;  line-height: 18px; margin-top: 11px}
 .user-info a {color: white;

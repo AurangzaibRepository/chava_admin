@@ -50,7 +50,9 @@
                 @foreach ($data as $row)
                 <div class="dv-question">
                     <div class="row question">
-                        <div class="col-9">{{$row->question}}</div>
+                        <div class="col-9">{{$row->question}} - <span
+                                class="{{$row->status}}">{{ucfirst($row->status)}}</span>
+                        </div>
                         <div class="col-3 spn-question">Answer</div>
                     </div>
 
