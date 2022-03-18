@@ -79,7 +79,7 @@
 
         <br />
         <!-- Community Users -->
-        <div class="page-layout">
+        <div class="page-layout" id="dv-community">
 
             <label class="dv-box-header">Community Users</label>
             <table id="tbl-community-users">
