@@ -18,7 +18,12 @@
 #dv-dates > div {text-align: center; font-size: 11px;}
 #dv-dates > div span:first-child {color: #7aa3cc}
 #dv-questions {margin-top: 17px}
-.dv-question { border-radius: 2px; box-shadow: 0px 0px 2px 1px lightgray;  padding: 11px;}
+.dv-question { 
+    border-radius: 2px; 
+    box-shadow: 0px 0px 2px 1px lightgray;  
+    margin-bottom: 15px;
+    padding: 11px
+}
 .question {font-size: 11.8px;}
 .spn-question {color: #7aa3cc; text-align: right;}
 .col-btns {text-align: right;}
@@ -38,5 +43,10 @@
 .dv-user-info {font-size: 11px;}
 .dv-user-info div:nth-child(2) {align-items: center; display: inline-flex;}
 .img-user {margin-right: 6px; width: 7%}
-#dv-show-more {text-align: center; margin-top: 15px; width: 100%;}
-#dv-show-more {  color: #7aa3cc; font-size: 12px; font-weight: bold;}
+#dv-show-more {  
+    color: #7aa3cc; 
+    font-size: 12px; 
+    font-weight: bold;
+    text-align: center; 
+    width: 100%;
+}
