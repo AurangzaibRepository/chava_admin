@@ -1,6 +1,8 @@
 @extends('layouts.main')
 <!-- Style -->
 @push('styles')
+<link rel="stylesheet" href="{{asset('css/select2.min.css')}}">
+</link>
 <link rel="stylesheet" href="{{asset('css/community.css')}}">
 </link>
 @endpush
@@ -146,7 +148,7 @@
                 <div class="row">
                     <div class="col-12">
                         {{Form::label('categoryid', 'Category')}}
-                        {{Form::select('categoryid', $categories, null, ['class' => 'form-select'])}}
+                        {{Form::select('categoryid', $categories, null, ['class' => ''])}}
                     </div>
                     <div class="col-12">
                         {{Form::label('answer', 'Answer')}}
@@ -156,7 +158,7 @@
                 <div class="row">
                     <div class="col-12 text-end">
                         {{Form::button('Approve',['class' => 'btn btn-primary'])}}
-                        {{Form::button('Cancel', ['class' => 'btn btn-secondary'])}}
+                        {{Form::button('Cancel', ['class' => 'btn btn-secondary', 'data-bs-dismiss' => 'modal'])}}
                     </div>
                 </div>
             </div>
@@ -167,5 +169,6 @@
 @endsection
 
 @push('scripts')
+<script src="{{asset('js/select2.min.js')}}"></script>
 <script src="{{asset('js/community.js')}}"></script>
 @endpush
