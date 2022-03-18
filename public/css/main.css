@@ -41,6 +41,28 @@ table th, table td {
 }
 
 .modal {top: 10%}
+.modal-header {
+    padding: 0.8rem 1rem
+}
+.modal-header .btn-close {
+    font-size: 12px;
+    position: absolute;
+    right: 19px
+}
+.modal-header label{
+    color: #4c4c4c;
+    font-weight: 600;
+}
+.modal-body label{
+    font-size: 13.7px
+}
+.modal-body textarea{
+    height: 145px;
+    resize: none
+}
+.modal-body .col-12{
+    margin-bottom: 10px
+}
 .alert{
     font-size: 13.6px !important;
     font-weight: bold;

@@ -70,3 +70,6 @@
     text-align: center; 
     width: 100%;
 }
+.modal-body .btn {
+    min-width: 73px;
+}
