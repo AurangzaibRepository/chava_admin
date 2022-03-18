@@ -70,7 +70,7 @@
                         @if ($row->status === 'pending')
                         <div class="col-4 col-btns">
                             <a class="btn-approve">Approve</a>
-                            <a class="btn-reject">Reject</a>
+                            <a class="btn-reject" onClick="changeStatus({{$row->id}}, 'rejected')">Reject</a>
                         </div>
                         @endif
                     </div>
@@ -132,3 +132,7 @@
 </div>
 
 @endsection
+
+@push('scripts')
+<script src="{{asset('js/community.js')}}"></script>
+@endpush
