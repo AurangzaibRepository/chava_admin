@@ -17,7 +17,7 @@
                 <label class="dv-box-header">Community Feeds</label>
             </div>
 
-            <label id="lbl-date">23 December, Sunday</label>
+            <label id="lbl-date">{{$date}}</label>
 
             <!-- Dates section -->
             <div id="dv-dates" class="row">
