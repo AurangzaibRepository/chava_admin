@@ -1,7 +1,9 @@
 $(document).ready(function(){
 
-    
-})
+    $('select').select2({
+        dropdownParent: $('#modal-approval')
+    });
+});
 
 function changeStatus(feedID, status, answer = null)
 {
