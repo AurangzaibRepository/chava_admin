@@ -134,7 +134,7 @@
     </div>
 </div>
 
-{!-- Approval modal --}
+{{-- Approval modal --}}
 <div class="modal" id="modal-approval">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -146,7 +146,7 @@
                 <div class="row">
                     <div class="col-12">
                         {{Form::label('categoryid', 'Category')}}
-                        {{Form::select('categoryid', [], null, ['class' => 'form-select'])}}
+                        {{Form::select('categoryid', $categories, null, ['class' => 'form-select'])}}
                     </div>
                     <div class="col-12">
                         {{Form::label('answer', 'Answer')}}
