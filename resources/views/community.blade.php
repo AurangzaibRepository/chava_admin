@@ -68,10 +68,12 @@
                                 <span class="lbl-posted">{{$row->createdAt}} </span>
                             </div>
                         </div>
+                        @if ($row->status === 'pending')
                         <div class="col-4 col-btns">
                             <a class="btn-approve">Approve</a>
                             <a class="btn-reject">Reject</a>
                         </div>
+                        @endif
                     </div>
                 </div>
                 @endforeach
