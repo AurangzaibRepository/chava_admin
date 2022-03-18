@@ -27,5 +27,7 @@ class CommunityController extends Controller
     public function changeStatus(Request $request)
     {
         $this->communityFeed->updateStatus($request);
+
+        session()->flash('success', "Feed {$request->status} successfully");
     }
 }

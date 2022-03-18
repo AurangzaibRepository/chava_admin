@@ -11,6 +11,9 @@
 <div class="dv-base row">
     <div class="col-7">
 
+        @if (session()->has('success'))
+        <div class="alert alert-success">{{session()->get('success')}}</div>
+        @endif
         <!-- Community Feeds -->
         <div class="page-layout">
             <div id="dv-header-label">
