@@ -45,6 +45,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Community
     Route::get('community', [CommunityController::class, 'index'])->name('community');
+    Route::post('community/change-status', [CommunityController::class, 'changeStatus'])->name('changeCommunityStatus');
 
     // Topic
     Route::get('topics', [TopicsController::class, 'index'])->name('topics');
