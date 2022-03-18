@@ -46,11 +46,14 @@
 
             <!-- Questions -->
             <div id="dv-questions">
+
+                @foreach ($data as $row)
                 <div class="dv-question">
                     <div class="row question">
-                        <div class="col-9">Around Menstruation - Why is my Period Late</div>
+                        <div class="col-9">{{$row->question}}</div>
                         <div class="col-3 spn-question">Answer</div>
                     </div>
+
 
                     <div class="user-info row">
                         <div class="col-8 dv-user-info">
@@ -58,9 +61,9 @@
                                 <label class="lbl-posted">Posted</label>
                             </div>
                             <div>
-                                <img class="img-user" src="{{url('images/female-prof.jpeg')}}"></img>
-                                <span class="spn-username">Sandy</span>
-                                <span class="lbl-posted">December 23, 2018</span>
+                                <img class="img-user" src="{{url('images/leaf-icon.png')}}"></img>
+                                <span class="spn-username">{{$row->user_name}}</span>
+                                <span class="lbl-posted">{{$row->createdAt}} </span>
                             </div>
                         </div>
                         <div class="col-4 col-btns">
@@ -69,6 +72,7 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div> <!-- questions div -->
 
             <div id="dv-show-more">
