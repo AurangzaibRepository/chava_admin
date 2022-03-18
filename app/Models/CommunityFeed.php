@@ -5,10 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Collection;
+use Illuminate\Http\Request;
 
 class CommunityFeed extends Model
 {
     protected $table = 'community_feeds';
+    public $timestamps = false;
 
     public function getLatest(): Collection
     {
@@ -20,5 +22,15 @@ class CommunityFeed extends Model
                         ->get();
 
         return $feedList;
+    }
+
+    public function updateStatus(Request $request): void
+    {
+        $this
+            ->where('id', $request->feedID)
+            ->update([
+                'status' => $request->status,
+                'answer' => $request->answer
+            ]);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminte\Http\Request;
+use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\CommunityFeed;
 use Carbon\Carbon;
@@ -22,5 +22,10 @@ class CommunityController extends Controller
             'date' => Carbon::now()->format('d F, l'),
             'data' => $this->communityFeed->getLatest()
         ]);
+    }
+    
+    public function changeStatus(Request $request)
+    {
+        $this->communityFeed->updateStatus($request);
     }
 }
