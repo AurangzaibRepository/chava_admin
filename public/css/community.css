@@ -44,14 +44,17 @@
 
 .col-btns {text-align: right;}
 .user-info {align-items: flex-end;  line-height: 18px; margin-top: 11px}
-.user-info a {color: white;
-    text-decoration: none;
-    padding: 1px 3px;
-    font-size: 9px;
+.user-info a {
     border-radius: 3px;
-    min-width: 8vh;
+    color: white;
     display: inline-block;
-    text-align: center;}
+    font-size: 9px;
+    font-weight: bold;
+    min-width: 8vh;
+    padding: 1px 3px;
+    text-align: center;
+    text-decoration: none; 
+}
 .user-info a.btn-approve {background-color: #7fbf7f; margin-right: 4px;}
 .user-info a.btn-reject {background-color: red;}
 .lbl-posted {color: #a6a6a6;font-size: 11px}
