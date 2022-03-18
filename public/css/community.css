@@ -43,6 +43,7 @@
 }
 
 .col-btns {text-align: right;}
+.col-btns a{cursor: pointer;}
 .user-info {align-items: flex-end;  line-height: 18px; margin-top: 11px}
 .user-info a {
     border-radius: 3px;
