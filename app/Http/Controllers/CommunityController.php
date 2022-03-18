@@ -17,14 +17,10 @@ class CommunityController extends Controller
     // Default function
     public function index(): view
     {
-        $pageTitle = 'Community';
-        $date = Carbon::now()->format('d F, l');
-
-        
-
         return view('community', [
-            'pageTitle' => $pageTitle,
-            'date' => $date
+            'pageTitle' => 'Community',
+            'date' => Carbon::now()->format('d F, l'),
+            'data' => $this->communityFeed->getLatest()
         ]);
     }
 }
