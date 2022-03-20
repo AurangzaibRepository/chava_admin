@@ -21,11 +21,18 @@ class CommunityController extends Controller
     {
         $categoryList = $this->category->getListing()->pluck('category', 'id');
 
+        $data = $this->communityFeed->getLatest()->map(function ($feed) {
+            if ($feed->status === 'accepted') {
+                $feed->status = 'approved';
+            }
+            return $feed;
+        });
+
         return view('community', [
             'pageTitle' => 'Community',
             'date' => Carbon::now()->format('d F, l'),
             'categories' => $categoryList->prepend('-- Select --', ''),
-            'data' => $this->communityFeed->getLatest()
+            'data' => $data
         ]);
     }
     
