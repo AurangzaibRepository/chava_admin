@@ -42,15 +42,17 @@ table th, table td {
 
 .modal {top: 10%}
 .modal-header {
+    background-color: #0b5ed7;
     padding: 0.8rem 1rem
 }
 .modal-header .btn-close {
     font-size: 12px;
     position: absolute;
-    right: 19px
+    right: 19px;
+    display: none
 }
 .modal-header label{
-    color: #4c4c4c;
+    color: white;
     font-weight: 600;
 }
 .modal-body label{
@@ -88,7 +90,7 @@ table th, table td {
     margin-left: 4px;
 }
 
-.form-control {
+.form-control, .select2-container .select2-selection--single, .select2-results__option {
     font-size: 14px;
 }
 
