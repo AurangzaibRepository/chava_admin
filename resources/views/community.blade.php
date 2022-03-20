@@ -74,7 +74,8 @@
                         </div>
                         @if ($row->status === 'pending')
                         <div class="col-4 col-btns">
-                            <a class="btn-approve" data-bs-toggle="modal" data-bs-target="#modal-approval">Approve</a>
+                            <a class="btn-approve" data-bs-toggle="modal" data-bs-target="#modal-approval"
+                                data-id="{{$row->id}}">Approve</a>
                             <a class="btn-reject" onClick="changeStatus({{$row->id}}, 'rejected')">Reject</a>
                         </div>
                         @endif
@@ -156,7 +157,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 text-end">
+                    <div class="col-12 text-end btn-col">
                         {{Form::button('Approve',['class' => 'btn btn-primary'])}}
                         {{Form::button('Cancel', ['class' => 'btn btn-secondary', 'data-bs-dismiss' => 'modal'])}}
                     </div>

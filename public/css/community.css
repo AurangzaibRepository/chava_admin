@@ -76,3 +76,7 @@
 .modal-body .select2-container{
     width: 100% !important;
 }
+
+.modal-body .btn-col {
+    margin: 0px;
+}
