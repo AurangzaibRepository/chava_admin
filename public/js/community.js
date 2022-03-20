@@ -1,3 +1,6 @@
+var feedID;
+var isValid;
+
 $(document).ready(function(){
 
     $('select').select2({
@@ -5,11 +8,27 @@ $(document).ready(function(){
     });
 
     $('#modal-approval').on('show.bs.modal', function(e){
-        var feedID = $(e.relatedTarget).data('id');
-
-        alert(feedID);
+        $('.spn-error').css('display', 'none');
+        $('.modal-body select').val('').trigger('change');
+        $('.modal-body textarea').val('');
+        feedID = $(e.relatedTarget).data('id');
     });
 });
+
+function approveFeed()
+{
+    isValid = true;
+    $('.spn-error').css('display', 'none');
+
+    validateField('categoryid', 'spn-categoryid');
+    validateField('answer', 'spn-answer');
+
+    if (!isValid){
+        return false;
+    }
+
+    changeStatus(feedID, 'accepted', $('#answer').val());
+}
 
 function changeStatus(feedID, status, answer = null)
 {
@@ -21,4 +40,13 @@ function changeStatus(feedID, status, answer = null)
     function(response){
         window.location = '/community';
     });
+}
+
+function validateField(elementID, errorID)
+{
+    if ($(`#${elementID}`).val().trim() === '')
+    {
+        $(`#${errorID}`).css('display', 'block');
+        isValid = false;
+    }
 }
