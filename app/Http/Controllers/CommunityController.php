@@ -33,6 +33,8 @@ class CommunityController extends Controller
     {
         $this->communityFeed->updateStatus($request);
 
-        session()->flash('success', "Feed {$request->status} successfully");
+        $statusText = ($request->status === 'accepted' ? 'approved' : $request->status);
+
+        session()->flash('success', "Feed {$statusText} successfully");
     }
 }

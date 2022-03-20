@@ -35,7 +35,8 @@ function changeStatus(feedID, status, answer = null)
     $.post('/community/change-status', {
         feedID: feedID,
         status: status,
-        answer: answer
+        answer: answer,
+        category_id: $('#categoryid').val()
     }, 
     function(response){
         window.location = '/community';

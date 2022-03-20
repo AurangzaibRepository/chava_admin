@@ -30,7 +30,8 @@ class CommunityFeed extends Model
             ->where('id', $request->feedID)
             ->update([
                 'status' => $request->status,
-                'answer' => $request->answer
+                'answer' => $request->answer,
+                'category_id' => $request->category_id
             ]);
     }
 }
