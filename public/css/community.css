@@ -64,12 +64,16 @@
 .dv-user-info div:nth-child(2) {align-items: center; display: inline-flex;}
 .img-user {margin-right: 6px; width: 7%}
 #dv-show-more {  
-    color: #7aa3cc; 
-    font-size: 12px; 
-    font-weight: bold;
     text-align: center; 
     width: 100%;
 }
+#dv-show-more a{
+    color: #7aa3cc;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 .modal-body .btn {
     min-width: 73px;
 }
