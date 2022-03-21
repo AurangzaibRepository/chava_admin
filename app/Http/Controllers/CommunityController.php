@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 use Illuminate\View\View;
 use App\Models\CommunityFeed;
 use App\Models\Category;
@@ -17,7 +18,7 @@ class CommunityController extends Controller
     }
 
     // Default function
-    public function index(): view
+    public function index(): View
     {
         $categoryList = $this->category->getListing()->pluck('category', 'id');
 
@@ -43,5 +44,20 @@ class CommunityController extends Controller
         $statusText = ($request->status === 'accepted' ? 'approved' : $request->status);
 
         session()->flash('success', "Feed {$statusText} successfully");
+    }
+
+    public function listView(): View
+    {
+        $categoryList = $this->category->getListing()->pluck('category', 'id');
+
+        return view('community-list', [
+            'pageTitle' => 'Community Feeds',
+            'categories' => $categoryList->prepend('-- Select --', '')
+        ]);
+    }
+
+    public function listing(Request $request): JsonResponse
+    {
+        return $this->communityFeed->getListing($request);
     }
 }

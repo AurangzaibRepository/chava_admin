@@ -54,7 +54,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 text-end btn-col">
-                        {{Form::button('Approve',['class' => 'btn btn-primary', 'onClick' => 'approveFeed()'])}}
+                        {{Form::button('Approve',['class' => 'btn btn-primary', 'onClick' => 'approve()'])}}
                         {{Form::button('Cancel', ['class' => 'btn btn-secondary', 'data-bs-dismiss' => 'modal'])}}
                     </div>
                 </div>

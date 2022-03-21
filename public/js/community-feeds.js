@@ -1,7 +1,7 @@
 var table;
 var i = 1;
-var categoryid = 0;
-var answer;
+var feedID;
+var isValid;
 
 $(function(){
 
@@ -12,7 +12,11 @@ $(function(){
    });
 
    $('#modal-approval').on('show.bs.modal', function(e){
-        let feedID = $(e.relatedTarget).find('id');
+
+        $('.spn-error').css('display', 'none');
+        $('.modal-body select').val('').trigger('change');
+        $('.modal-body textarea').val('');
+        feedID = $(e.relatedTarget).data('id');
    });
 });
 
@@ -65,7 +69,17 @@ function populateFeeds()
 }
 
 function approve(){
-    
+
+    isValid = true;
+    $('.spn-error').css('display', 'none');
+
+    validateField('categoryid', 'spn-categoryid');
+    validateField('answer', 'spn-answer');
+
+    if (isValid)
+    {
+        changeStatus(feedID, 'accepted');
+    }
 }
 
 function changeStatus(feedID, status)
@@ -74,11 +88,21 @@ function changeStatus(feedID, status)
         'type': 'POST',
         'data': {
             feedID: feedID,
-            status: status
+            status: status,
+            category_id: $('#categoryid').val(),
+            answer: $('#answer').val()
         },  
         'url': '/community/change-status',
         success: function(response){
             window.location = '/community/list'
         }
     });
+}
+
+function validateField(elementID, errorID)
+{
+    if ($(`#${elementID}`).val().trim() == ''){
+        $(`#${errorID}`).css('display', 'block');
+        isValid = false;
+    }
 }
