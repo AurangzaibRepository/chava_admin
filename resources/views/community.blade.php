@@ -85,7 +85,7 @@
             </div> <!-- questions div -->
 
             <div id="dv-show-more">
-                {{link_to_route('communityList', 'show more', null)}}
+                {{link_to_route('communityListView', 'show more', null)}}
             </div>
 
         </div> <!-- dv layout -->
