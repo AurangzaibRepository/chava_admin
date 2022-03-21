@@ -1,11 +1,15 @@
 @extends('layouts.main')
-@push('scripts')
+@push('styles')
 <link rel="stylesheet" href="{{asset('/css/community-feeds.css')}}">
 </link>
 @endpush
 
 @section('contents')
 {{Form::label('lbl-page-header', 'Community Feeds', ['id' => 'lbl-page-header'])}}
+
+@if (session()->has('success'))
+<div class="alert alert-success">{{session()->get('success')}}</div>
+@endif
 
 <div class="dv-base">
     <div class="page-layout">

@@ -59,6 +59,7 @@ class CommunityFeed extends Model
                     ->get();
 
         $response['data'] = $data->map(function ($feed) {
+            $feed->statusText = $feed->status;
             $feed->status = Str::replace('accepted', 'approved', $feed->status);
             $feed->status = "<span class='{$feed->status}'>".Str::ucfirst($feed->status)."</span>";
             return $feed;

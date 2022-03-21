@@ -35,12 +35,18 @@ function populateFeeds()
             },
             {'targets': 4, 'data': 'status'},
             {'targets': [2,3,4], 'width': '15%'},
-            {'targets': 5, 'width': '10%', 'data': 'id', 
-                'render': function(data){
-                    return `
-                    <a><i class="fa fa-check icon-primary"></i></a>
-                    <a href="javascript:;" onClick="changeStatus(${data}, 'rejected')"><i class="fa fa-times icon-secondary"></i></a>
-                    `
+            {'targets': 5, 'width': '10%', 
+                'render': function(data, type, row){
+
+                    statusString = '';
+                    if (row.statusText !== 'accepted'){
+                        statusString = '<a><i class="fa fa-check icon-primary"></i></a>';
+                    }
+
+                    if (row.statusText !== 'rejected'){
+                        statusString += `<a href="javascript:;" onClick="changeStatus(${row.id}, 'rejected')"><i class="fa fa-times icon-secondary"></i></a>`;
+                    }
+                    return statusString;
                 }}
         ],
         'ajax': {
