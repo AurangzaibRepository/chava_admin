@@ -27,15 +27,15 @@ function approveFeed()
         return false;
     }
 
-    changeStatus(feedID, 'accepted', $('#answer').val());
+    changeStatus(feedID, 'accepted');
 }
 
-function changeStatus(feedID, status, answer = null)
+function changeStatus(feedID, status)
 {
     $.post('/community/change-status', {
         feedID: feedID,
         status: status,
-        answer: answer,
+        answer: $('#answer').val(),
         category_id: $('#categoryid').val()
     }, 
     function(response){
