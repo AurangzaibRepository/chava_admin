@@ -1,5 +1,7 @@
 var table;
 var i = 1;
+var categoryid = 0;
+var answer;
 
 $(function(){
 
@@ -33,17 +35,32 @@ function populateFeeds()
             },
             {'targets': 4, 'data': 'status'},
             {'targets': [2,3,4], 'width': '15%'},
-            {'targets': 5, 'width': '10%',
+            {'targets': 5, 'width': '10%', 'data': 'id', 
                 'render': function(data){
                     return `
                     <a><i class="fa fa-check icon-primary"></i></a>
-                    <a href=""><i class="fa fa-times icon-secondary"></i></a>
+                    <a href="javascript:;" onClick="changeStatus(${data}, 'rejected')"><i class="fa fa-times icon-secondary"></i></a>
                     `
                 }}
         ],
         'ajax': {
             type: 'POST',
             url: '/community/listing'
+        }
+    });
+}
+
+function changeStatus(feedID, status)
+{
+    $.ajax({
+        'type': 'POST',
+        'data': {
+            feedID: feedID,
+            status: status
+        },  
+        'url': '/community/change-status',
+        success: function(response){
+            window.location = '/community/list'
         }
     });
 }
