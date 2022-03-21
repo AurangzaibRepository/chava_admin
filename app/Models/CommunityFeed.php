@@ -3,9 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Collection;
-use Illuminate\Http\Request;
 
 class CommunityFeed extends Model
 {
@@ -33,5 +34,23 @@ class CommunityFeed extends Model
                 'answer' => $request->answer,
                 'category_id' => $request->category_id
             ]);
+    }
+
+    public function getListing(Request $request): JsonResponse
+    {
+        $response = [
+            'data' => []
+        ];
+
+        $response['recordsFiltered'] = $this->getCount();
+        $response['recordsTotal'] = $response['recordsFiltered'];
+
+        return response()->json($response);
+    }
+
+    private function getCount(): int
+    {
+        return DB::table('community_feeds')
+                ->count();
     }
 }
