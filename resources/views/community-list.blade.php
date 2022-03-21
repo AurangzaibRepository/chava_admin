@@ -13,6 +13,7 @@
                     <th>User</th>
                     <th>Posted Date</th>
                     <th>Status</th>
+                    <th></th>
                 </tr>
             </thead>
         </table>
