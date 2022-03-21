@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class CommunityFeed extends Model
 {
@@ -44,6 +46,23 @@ class CommunityFeed extends Model
 
         $response['recordsFiltered'] = $this->getCount();
         $response['recordsTotal'] = $response['recordsFiltered'];
+
+        $data = DB::table('community_feeds')
+                    ->join('users', 'users.id', 'community_feeds.user_id')
+                    ->select(
+                        'community_feeds.*',
+                        'users.user_name'
+                    )
+                    ->limit(10)
+                    ->offset($request->start)
+                    ->orderBy('community_feeds.id', 'desc')
+                    ->get();
+
+        $response['data'] = $data->map(function ($feed) {
+            $feed->status = Str::replace('accepted', 'approved', $feed->status);
+            $feed->status = "<span class='{$feed->status}'>".Str::ucfirst($feed->status)."</span>";
+            return $feed;
+        });
 
         return response()->json($response);
     }
