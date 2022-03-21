@@ -1,5 +1,7 @@
 @extends('layouts.main')
 @push('styles')
+<link rel="stylesheet" href="{{asset('css/select2.min.css')}}">
+</link>
 <link rel="stylesheet" href="{{asset('/css/community-feeds.css')}}">
 </link>
 @endpush
@@ -65,5 +67,6 @@
 @endsection
 
 @push('scripts')
+<script src="{{asset('/js/select2.min.js')}}"></script>
 <script src="{{asset('/js/community-feeds.js')}}"></script>
 @endpush

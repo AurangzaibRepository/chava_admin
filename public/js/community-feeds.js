@@ -6,6 +6,14 @@ var answer;
 $(function(){
 
    populateFeeds();
+
+   $('select').select2({
+       dropdownParent: $('#modal-approval')
+   });
+
+   $('#modal-approval').on('show.bs.modal', function(e){
+        let feedID = $(e.relatedTarget).find('id');
+   });
 });
 
 // Bind datatable page click
@@ -40,7 +48,7 @@ function populateFeeds()
 
                     statusString = '';
                     if (row.statusText !== 'accepted'){
-                        statusString = '<a data-bs-toggle="modal" data-bs-target="#modal-approval"><i class="fa fa-check icon-primary"></i></a>';
+                        statusString = `<a data-bs-toggle="modal" data-bs-target="#modal-approval" data-id="${row.id}"><i class="fa fa-check icon-primary"></i></a>`;
                     }
 
                     if (row.statusText !== 'rejected'){
@@ -54,6 +62,10 @@ function populateFeeds()
             url: '/community/listing'
         }
     });
+}
+
+function approve(){
+    
 }
 
 function changeStatus(feedID, status)
