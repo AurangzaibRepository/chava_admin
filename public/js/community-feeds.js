@@ -25,7 +25,12 @@ function populateFeeds()
                 }},
             {'targets': 1, 'data': 'question'},
             {'targets': 2, 'data': 'user_name'},
-            {'targets': 3, 'data': 'createdAt'},
+            {'targets': 3, 'data': 'createdAt', 
+                'render': function(data){
+                    let date = new Date(data);
+                    return date.toLocaleDateString('en-GB');
+                }
+            },
             {'targets': 4, 'data': 'status'},
             {'targets': [2,3,4], 'width': '15%'},
             {'targets': 5, 'width': '10%'}
