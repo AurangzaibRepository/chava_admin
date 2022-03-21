@@ -30,6 +30,38 @@
     </div>
 </div>
 
+{{-- Approval modal --}}
+<div class="modal" id="modal-approval">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <label>Feed Approval</label>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        {{Form::label('categoryid', 'Category')}}
+                        {{Form::select('categoryid', $categories, null, ['id' => 'categoryid'])}}
+                        <span class="spn-error" id="spn-categoryid">Category required</span>
+                    </div>
+                    <div class="col-12">
+                        {{Form::label('answer', 'Answer')}}
+                        {{Form::textarea('answer', null, ['class' => 'form-control', 'id' => 'answer'])}}
+                        <span class="spn-error" id="spn-answer">Answer required</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-end btn-col">
+                        {{Form::button('Approve',['class' => 'btn btn-primary', 'onClick' => 'approveFeed()'])}}
+                        {{Form::button('Cancel', ['class' => 'btn btn-secondary', 'data-bs-dismiss' => 'modal'])}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 @endsection
 
 @push('scripts')

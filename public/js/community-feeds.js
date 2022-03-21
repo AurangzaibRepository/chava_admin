@@ -40,7 +40,7 @@ function populateFeeds()
 
                     statusString = '';
                     if (row.statusText !== 'accepted'){
-                        statusString = '<a><i class="fa fa-check icon-primary"></i></a>';
+                        statusString = '<a data-bs-toggle="modal" data-bs-target="#modal-approval"><i class="fa fa-check icon-primary"></i></a>';
                     }
 
                     if (row.statusText !== 'rejected'){
