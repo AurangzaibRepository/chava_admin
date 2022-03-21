@@ -33,7 +33,10 @@ function populateFeeds()
             },
             {'targets': 4, 'data': 'status'},
             {'targets': [2,3,4], 'width': '15%'},
-            {'targets': 5, 'width': '10%'}
+            {'targets': 5, 'width': '10%',
+                'render': function(data){
+                    return null
+                }}
         ],
         'ajax': {
             type: 'POST',
