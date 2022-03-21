@@ -1,0 +1,14 @@
+#table-feeds tr td:last-child{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pending {
+    color: #7aa3cc;
+}
+.approved {
+    color: #7fbf7f;
+}
+.rejected{
+    color: red; 
+}

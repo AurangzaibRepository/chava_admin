@@ -1,4 +1,9 @@
 @extends('layouts.main')
+@push('scripts')
+<link rel="stylesheet" href="{{asset('/css/community-feeds.css')}}">
+</link>
+@endpush
+
 @section('contents')
 {{Form::label('lbl-page-header', 'Community Feeds', ['id' => 'lbl-page-header'])}}
 

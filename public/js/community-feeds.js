@@ -35,7 +35,10 @@ function populateFeeds()
             {'targets': [2,3,4], 'width': '15%'},
             {'targets': 5, 'width': '10%',
                 'render': function(data){
-                    return null
+                    return `
+                    <a><i class="fa fa-check icon-primary"></i></a>
+                    <a href=""><i class="fa fa-times icon-secondary"></i></a>
+                    `
                 }}
         ],
         'ajax': {

@@ -103,3 +103,10 @@ table th, table td {
     display: none;
     font-size: 12.5px;
 }
+
+.icon-primary {
+    color: #7fbf7f
+}
+.icon-secondary {
+    color: red
+}
