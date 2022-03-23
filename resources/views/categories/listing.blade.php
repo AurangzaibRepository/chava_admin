@@ -2,8 +2,7 @@
 
 <!-- Style -->
 @push('styles')
-<link rel="stylesheet" href="{{asset('css/topics-listing.css')}}">
-</link>
+<link rel="stylesheet" href="{{asset('css/topics-listing.css')}}" />
 <link rel="stylesheet" type="text/css" href="{{asset('css/slick.min.css')}}" />
 @endpush
 
@@ -40,15 +39,16 @@
 <div class="page-layout dv-topics" id="dv-inactive-topics">
     <section class="logo-topics slider" data-arrows="true">
 
-        <div class="slide"><a class="lnk-topic">
+        @foreach ($inactiveCategories as $category)
+        <div class="slide">
+            <a class="lnk-topic">
                 <div>
                     <img src="{{url('images/leaf-icon.png')}}"></img>
                 </div>
-                <span>Mentruation</span>
-
-
+                <span>{{$category->category}}</span>
             </a>
         </div>
+        @endforeach
     </section>
 </div>
 
