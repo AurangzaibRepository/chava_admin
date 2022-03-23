@@ -6,7 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\WhatsappSessionsController;
 use App\Http\Controllers\CommunityController;
-use App\Http\Controllers\TopicsController;
+use App\Http\Controllers\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,5 +50,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('community/listing', [CommunityController::class, 'listing'])->name('communityListing');
 
     // Topic
-    Route::get('topics', [TopicsController::class, 'index'])->name('topics');
+    Route::get('topics', [CategoriesController::class, 'index'])->name('topics');
 });
