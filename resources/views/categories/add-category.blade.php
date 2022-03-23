@@ -11,10 +11,14 @@
                             {{Form::label('category', 'Category')}}
                             {{Form::text('category', null, ['class' => 'form-control', 'id' => 'category'])}}
                         </div>
-                        <div class="mb-3">
+                        <div>
                             {{Form::label('status', 'Status')}}
                             {{Form::select('status', $statusArray, '', ['class' => 'form-select'])}}
                         </div>
+                    </div>
+                    <div class="col-12 dv-checkbox">
+                        {{Form::checkbox('publish', '', false, ['id' => 'publish'])}}
+                        {{Form::label('publish', 'Publish')}}
                     </div>
                 </div>
             </div>
