@@ -16,7 +16,7 @@ class CategoriesController extends Controller
     // Default function index
     public function index(): view
     {
-        return view('topics/listing', [
+        return view('categories/listing', [
             'pageTitle' => 'Topic',
             'activeCategories' => $this->category->getAll('Active'),
             'inactiveCategories' => $this->category->getAll('Inactive')
