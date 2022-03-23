@@ -18,12 +18,16 @@ class Category extends Model
         return $data;
     }
 
-    public function getAll(string $status = null, int $published = null): Collection
+    public function getAll(string $status = null, bool $draft = false): Collection
     {
         $data = $this->orderBy('id');
 
         if ($status !== null) {
             $data = $data->where('status', $status);
+        }
+
+        if ($draft) {
+            $data = $data->where('published', 0);
         }
 
         return $data->get();

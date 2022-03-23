@@ -19,7 +19,8 @@ class CategoriesController extends Controller
         return view('categories/listing', [
             'pageTitle' => 'Topic',
             'activeCategories' => $this->category->getAll('Active'),
-            'inactiveCategories' => $this->category->getAll('Inactive')
+            'inactiveCategories' => $this->category->getAll('Inactive'),
+            'draftCategories' => $this->category->getAll(null, true)
         ]);
     }
 }
