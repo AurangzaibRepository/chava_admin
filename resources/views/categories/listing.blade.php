@@ -9,7 +9,10 @@
 @section('contents')
 <div>
     {{Form::label('lbl-page-header', 'Topics', ['id' => 'lbl-page-header'])}}
-    <a id="btn-add-topic"><i class="fa fa-plus"></i> Add new topic</a>
+    <a id="btn-add-topic" data-bs-toggle="modal" data-bs-target="#modal-category">
+        <i class="fa fa-plus"></i>
+        Add new topic
+    </a>
 </div>
 
 <br />
@@ -72,6 +75,7 @@
     </section>
 </div>
 
+@include('categories.add-category');
 
 @endsection
 
