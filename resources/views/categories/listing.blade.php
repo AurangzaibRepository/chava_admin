@@ -82,5 +82,5 @@
 <!-- Scripts -->
 @push('scripts')
 <script src="{{asset('js/slick.min.js')}}"></script>
-<script src="{{asset('js/topics-listing.js')}}"></script>
+<script src="{{asset('js/categories-listing.js')}}"></script>
 @endpush
