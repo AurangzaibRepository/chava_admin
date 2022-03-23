@@ -10,10 +10,12 @@
                         <div class="mb-3">
                             {{Form::label('category', 'Category')}}
                             {{Form::text('category', null, ['class' => 'form-control', 'id' => 'category'])}}
+                            <span class="spn-error" id="spn-category">Category required</span>
                         </div>
                         <div>
                             {{Form::label('status', 'Status')}}
                             {{Form::select('status', $statusArray, '', ['class' => 'form-select'])}}
+                            <span class="spn-error" id="spn-status">Status required</span>
                         </div>
                     </div>
                     <div class="col-12 dv-checkbox">
