@@ -1,8 +1,14 @@
 .ul-left-menu a.topics {background: #f2f2f2; border-left: 3px solid #0b5ed7}
 .ul-left-menu a.topics span, .ul-left-menu a.topics svg {color: #0b5ed7}
 #btn-add-topic {
-    background: #0b5ed7;  border-radius: 3px;   color: white; font-size: 12px;
-    margin-left: 12px;    padding: 8px 12px; }
+    background: #0b5ed7;  
+    border-radius: 3px;   
+    color: white; 
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 12px;    
+    padding: 8px 12px
+}
 #btn-add-topic svg {margin-right: 4px;}
 .dv-topics {margin-top: 10px}
 .lbl-topic {
