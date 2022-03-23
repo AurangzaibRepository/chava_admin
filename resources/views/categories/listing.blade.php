@@ -2,7 +2,7 @@
 
 <!-- Style -->
 @push('styles')
-<link rel="stylesheet" href="{{asset('css/topics-listing.css')}}" />
+<link rel="stylesheet" href="{{asset('css/categories-listing.css')}}" />
 <link rel="stylesheet" type="text/css" href="{{asset('css/slick.min.css')}}" />
 @endpush
 
