@@ -4,9 +4,16 @@
     background: #0b5ed7;  border-radius: 3px;   color: white; font-size: 12px;
     margin-left: 12px;    padding: 8px 12px; }
 #btn-add-topic svg {margin-right: 4px;}
-.dv-topics {margin-top: 16px}
-.lbl-topic { font-size: 13px; }
-.lnk-topic {text-decoration: none; cursor: pointer; text-align: center;}
+.dv-topics {margin-top: 10px}
+.lbl-topic {
+  font-size: 12.5px;
+  font-weight: bold;
+ }
+.lnk-topic {
+  cursor: pointer; 
+  text-align: center; 
+  text-decoration: none
+}
 .lnk-topic div {display: flex; justify-content: center;}
 .lnk-topic span {width: 100%; display: inline-block;}
 .lnk-topic img {width: 50% !important; margin-bottom: 2px; display: inline-block;}
