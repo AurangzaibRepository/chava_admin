@@ -58,38 +58,17 @@
 
 <div class="page-layout dv-topics" id="dv-drafts-topics">
     <section class="logo-topics slider" data-arrows="true">
-        <div class="slide"><a class="lnk-topic">
-                <div>
-                    <img src="{{url('images/leaf-icon.png')}}"></img>
-                </div>
-                <span>Mentruation</span>
 
-
-            </a></div>
-        <div class="slide"><a class="lnk-topic">
+        @foreach ($draftCategories as $category)
+        <div class="slide">
+            <a class="lnk-topic">
                 <div>
                     <img src="{{url('images/leaf-icon.png')}}"></img>
                 </div>
-                <span>Anatomy</span>
-            </a></div>
-        <div class="slide"><a class="lnk-topic">
-                <div>
-                    <img src="{{url('images/leaf-icon.png')}}"></img>
-                </div>
-                <span>Anatomy</span>
-            </a></div>
-        <div class="slide"><a class="lnk-topic">
-                <div>
-                    <img src="{{url('images/leaf-icon.png')}}"></img>
-                </div>
-                <span>Anatomy</span>
-            </a></div>
-        <div class="slide"><a class="lnk-topic">
-                <div>
-                    <img src="{{url('images/leaf-icon.png')}}"></img>
-                </div>
-                <span>Anatomy</span>
-            </a></div>
+                <span>{{$category->category}}</span>
+            </a>
+        </div>
+        @endforeach
     </section>
 </div>
 
