@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-
+                <label>Add Category</label>
             </div>
             <div class="modal-body">
 
