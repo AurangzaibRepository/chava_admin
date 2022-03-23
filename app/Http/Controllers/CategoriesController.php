@@ -10,8 +10,8 @@ class CategoriesController extends Controller
     // Default function index
     public function index(): view
     {
-        $pageTitle = 'Topic';
-
-        return view('topics/listing', ['pageTitle' => $pageTitle]);
+        return view('topics/listing', [
+            'pageTitle' => 'Topic'
+        ]);
     }
 }
