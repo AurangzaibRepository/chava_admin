@@ -65,9 +65,13 @@ table th, table td {
 .modal-body .col-12{
     margin-bottom: 10px
 }
+.modal-body .dv-checkbox{
+    align-items: center;
+    display: inline-flex
+}
 .modal-body .dv-checkbox label{
     font-size: 13px;
-    margin-left: 4px;
+    margin-left: 6px;
 }
 .alert{
     font-size: 13.6px !important;
