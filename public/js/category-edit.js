@@ -11,6 +11,7 @@ function populateSubCategories() {
         'bSort': false,
         'language': {
             'emptyTable': 'No data found'
-        }
+        },
+        'ajax': '/topics/sub-categories/'+$('[name=id]').val()
     });
 }
