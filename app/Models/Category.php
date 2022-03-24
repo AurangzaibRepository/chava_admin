@@ -49,4 +49,13 @@ class Category extends Model
     {
         return $this->find($id);
     }
+
+    public function updateRecord(Request $request): void
+    {
+        request()->request->remove('_token');
+
+        $this
+            ->where('id', $request->id)
+            ->update($request->all());
+    }
 }

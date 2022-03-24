@@ -51,8 +51,8 @@ class CategoriesController extends Controller
 
     public function update(Request $request): RedirectResponse
     {
-        echo '<pre>';
-        print_r($request->all());
-        exit;
+        $this->category->updateRecord($request);
+
+        return redirect()->route('editCategory', [$request->id]);
     }
 }
