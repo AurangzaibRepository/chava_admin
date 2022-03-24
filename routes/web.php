@@ -51,4 +51,5 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Topic
     Route::get('topics', [CategoriesController::class, 'index'])->name('topics');
+    Route::post('topics/add', [CategoriesController::class, 'add'])->name('addCategory');
 });

@@ -42,14 +42,15 @@ function addCategory() {
     if (!isValid) {
         return;
     }
-    
+
     $.ajax({
         'type': 'POST',
         'data': {
             category: $('#category').val(),
             status: $('#status').val(),
             published: ($('#publish').is(':checked') ? 1 : 0)
-        }
+        },
+        'url': 'topics/add'
     });
 }
 
