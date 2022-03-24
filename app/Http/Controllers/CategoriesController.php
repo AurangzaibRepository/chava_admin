@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use App\Models\Category;
 use Illuminate\Support\Arr;
@@ -27,5 +28,11 @@ class CategoriesController extends Controller
             'draftCategories' => $this->category->getAll(null, true),
             'statusArray' => $statusArray
         ]);
+    }
+
+    public function add(Request $request): RedirectResponse
+    {
+        $this->category->saveRecord($request);
+        session()->flash('success', 'Category added successfully');
     }
 }
