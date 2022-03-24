@@ -51,3 +51,7 @@
     </table>
 </div>
 @endsection
+
+@push('scripts')
+<script src="{{url('js/category-edit.js')}}"></script>
+@endpush
