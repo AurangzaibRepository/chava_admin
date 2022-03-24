@@ -2,6 +2,10 @@ var isValid;
 
 $(function() {
     initializeSlick();
+
+    $('#modal-category').on('shown.bs.modal', (e) => {
+        $('.spn-error').css('display', 'none');
+    });
 });
 
 function initializeSlick() {
@@ -28,7 +32,7 @@ function initializeSlick() {
 }
 
 function addCategory() {
-    
+
     isValid = true;
     $('.spn-error').css('display', 'none');
 
