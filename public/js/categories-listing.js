@@ -1,10 +1,10 @@
-$(function() {
+var isValid;
 
+$(function() {
     initializeSlick();
 });
 
-function initializeSlick()
-{
+function initializeSlick() {
     $('.logo-topics').slick({
         slidesToShow: 4,
         slidesToScroll: 1,
@@ -25,4 +25,22 @@ function initializeSlick()
             }
         }]
     });
+}
+
+function addCategory() {
+    
+    isValid = true;
+    $('.spn-error').css('display', 'none');
+
+    validateField('category', 'spn-category');
+    validateField('status', 'spn-status');
+}
+
+function validateField(elementID, errorID) {
+
+    if ($(`#${elementID}`).val().trim() === '') {
+        
+        isValid = false;
+        $(`#${errorID}`).css('display', 'block');
+    }
 }

@@ -23,7 +23,7 @@
                         {{Form::label('publish', 'Publish')}}
                     </div>
                     <div class="col-12 text-end">
-                        {{Form::button('Save', ['class' => 'btn btn-primary'])}}
+                        {{Form::button('Save', ['class' => 'btn btn-primary', 'onClick' => 'addCategory()'])}}
                         {{Form::button('Cancel', ['class' => 'btn btn-secondary', 'data-bs-dismiss' => 'modal'])}}
                     </div>
                 </div>
