@@ -4,10 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
+use Illuminate\Http\Request;
 
 class Category extends Model
 {
     protected $table = 'categories';
+    protected $fillable = [
+        'category',
+        'status',
+        'publish'
+    ];
 
     public function getListing(): Collection
     {
@@ -31,5 +37,10 @@ class Category extends Model
         }
 
         return $data->get();
+    }
+
+    public function saveRecord(Request $request): void
+    {
+        $this->create($request->all());
     }
 }
