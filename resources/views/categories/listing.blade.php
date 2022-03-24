@@ -14,8 +14,12 @@
         Add new topic
     </a>
 </div>
-
 <br />
+
+@if (session()->has('success'))
+<div class="alert alert-success">{{session()->get('success')}}</div>
+@endif
+
 <!-- Active topics -->
 <label class="lbl-topic">Active Topics:</label>
 
