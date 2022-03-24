@@ -30,7 +30,7 @@ class CategoriesController extends Controller
         ]);
     }
 
-    public function add(Request $request): RedirectResponse
+    public function add(Request $request): void
     {
         $this->category->saveRecord($request);
         session()->flash('success', 'Category added successfully');
