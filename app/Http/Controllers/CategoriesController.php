@@ -52,6 +52,7 @@ class CategoriesController extends Controller
     public function update(Request $request): RedirectResponse
     {
         $this->category->updateRecord($request);
+        session()->flash('success', 'Category updated successfully');
 
         return redirect()->route('editCategory', [$request->id]);
     }
