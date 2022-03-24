@@ -44,4 +44,11 @@ class Category extends Model
     {
         $this->create($request->all());
     }
+
+    public function get(int $id): Collection
+    {
+        return $this
+                ->where('id', $id)
+                ->get();
+    }
 }
