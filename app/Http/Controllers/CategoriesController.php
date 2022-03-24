@@ -48,4 +48,11 @@ class CategoriesController extends Controller
                     'statusArray' => $statusArray
                 ]);
     }
+
+    public function update(Request $request): RedirectResponse
+    {
+        echo '<pre>';
+        print_r($request->all());
+        exit;
+    }
 }

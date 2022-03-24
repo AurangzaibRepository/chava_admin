@@ -9,7 +9,7 @@
 
 <div class="page-layout">
     <div id="dv-category">
-        {{Form::open()}}
+        {{Form::open(['route' => 'updateCategory'])}}
         <div class="row">
             <div class="col-4">
                 <div class="mb-3">
@@ -24,8 +24,8 @@
                 </div>
             </div>
             <div class="col-4 dv-checkbox">
-                {{Form::checkbox('publish', '', $data->published)}}
-                {{Form::label('publish', 'Publish')}}
+                {{Form::checkbox('published', 1, $data->published)}}
+                {{Form::label('published', 'Publish')}}
             </div>
             <div class="col-12 text-end">
                 {{Form::submit('Save', ['class' => 'btn btn-primary'])}}
