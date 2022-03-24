@@ -40,7 +40,8 @@ class CategoriesController extends Controller
     {
         return view('categories/edit')
                 ->with([
-                    'pageTitle' => 'Edit Topic'
+                    'pageTitle' => 'Edit Topic',
+                    'data' => $this->category->get($id)
                 ]);
     }
 }
