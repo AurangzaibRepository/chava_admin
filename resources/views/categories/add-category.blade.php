@@ -22,9 +22,12 @@
                         {{Form::checkbox('publish', '', false, ['id' => 'publish'])}}
                         {{Form::label('publish', 'Publish')}}
                     </div>
-                    <div class="col-12 text-end">
-                        {{Form::button('Save', ['class' => 'btn btn-primary', 'onClick' => 'addCategory()'])}}
-                        {{Form::button('Cancel', ['class' => 'btn btn-secondary', 'data-bs-dismiss' => 'modal'])}}
+                    <div class="col-12 col-btns">
+                        <span id="error-response">Some error occured while processing request</span>
+                        <div>
+                            {{Form::button('Save', ['class' => 'btn btn-primary', 'onClick' => 'addCategory()'])}}
+                            {{Form::button('Cancel', ['class' => 'btn btn-secondary', 'data-bs-dismiss' => 'modal'])}}
+                        </div>
                     </div>
                 </div>
             </div>

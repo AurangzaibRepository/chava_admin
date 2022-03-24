@@ -25,6 +25,15 @@
 .lnk-topic img {width: 50% !important; margin-bottom: 2px; display: inline-block;}
 #dv-inactive-topics {background: rgba(255,255, 255, 0.5)}
 #dv-drafts-topics {background: rgba(255,255, 255, 0.3);}
+.col-btns {
+  display: inline-flex;
+  justify-content: space-between;
+}
+#error-response {
+  color: red;
+  font-size: 12.5px;
+  visibility: hidden;
+}
 
 
 /* Slider */

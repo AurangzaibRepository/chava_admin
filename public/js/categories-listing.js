@@ -50,7 +50,13 @@ function addCategory() {
             status: $('#status').val(),
             published: ($('#publish').is(':checked') ? 1 : 0)
         },
-        'url': 'topics/add'
+        'url': 'topics/add',
+        success: function() {
+            window.location = '/topics';
+        },
+        error: function(xhr, status, error) {
+            $('#error-response').css('visibility', 'visible');
+        }
     });
 }
 
