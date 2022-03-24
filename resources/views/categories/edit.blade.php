@@ -39,5 +39,15 @@
         </div>
         {{Form::close()}}
     </div>
+
+    <table id="tbl-subcategories" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Subcategory</th>
+                <th></th>
+            </tr>
+        </thead>
+    </table>
 </div>
 @endsection
