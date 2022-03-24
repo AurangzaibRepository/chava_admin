@@ -13,6 +13,7 @@
         <div class="row">
             <div class="col-4">
                 <div class="mb-3">
+                    {{Form::hidden('categoryid', $data->id)}}
                     {{Form::label('category', 'Category')}}
                     {{Form::text('category', $data->category, ['class' => 'form-control'])}}
                 </div>
