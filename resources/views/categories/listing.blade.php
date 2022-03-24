@@ -48,7 +48,7 @@
 
         @foreach ($inactiveCategories as $category)
         <div class="slide">
-            <a class="lnk-topic">
+            <a class="lnk-topic" href="{{route('editCategory', [$category->id])}}">
                 <div>
                     <img src="{{url('images/leaf-icon.png')}}"></img>
                 </div>
@@ -68,7 +68,7 @@
 
         @foreach ($draftCategories as $category)
         <div class="slide">
-            <a class="lnk-topic">
+            <a class="lnk-topic" href="{{route('editCategory', [$category->id])}}">
                 <div>
                     <img src="{{url('images/leaf-icon.png')}}"></img>
                 </div>
