@@ -38,10 +38,14 @@ class CategoriesController extends Controller
 
     public function edit($id): View
     {
+        $statusArray = config('app.user_status');
+        Arr::forget($statusArray, 'Current');
+
         return view('categories/edit')
                 ->with([
                     'pageTitle' => 'Edit Topic',
-                    'data' => $this->category->get($id)
+                    'data' => $this->category->get($id),
+                    'statusArray' => $statusArray
                 ]);
     }
 }
