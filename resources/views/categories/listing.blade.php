@@ -75,7 +75,7 @@
     </section>
 </div>
 
-@include('categories.add-category');
+@include('categories.add-category')
 
 @endsection
 
