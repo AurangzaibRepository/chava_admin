@@ -5,6 +5,9 @@ $(function() {
 
     $('#modal-category').on('shown.bs.modal', (e) => {
         $('.spn-error').css('display', 'none');
+        $('#error-response').css('visibility', 'hidden');
+        $('.modal-body #category, .modal-body #status').val('');
+        $('.modal-body #publish').prop('checked', false);
     });
 });
 
