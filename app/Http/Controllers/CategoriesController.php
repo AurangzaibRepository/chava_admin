@@ -16,7 +16,7 @@ class CategoriesController extends Controller
     }
 
     // Default function index
-    public function index(): view
+    public function index(): View
     {
         $statusArray = config('app.user_status');
         Arr::forget($statusArray, 'Current');
@@ -34,5 +34,13 @@ class CategoriesController extends Controller
     {
         $this->category->saveRecord($request);
         session()->flash('success', 'Category added successfully');
+    }
+
+    public function edit($id): View
+    {
+        return view('categories/edit')
+                ->with([
+                    'pageTitle' => 'Edit Topic'
+                ]);
     }
 }
