@@ -12,7 +12,7 @@ class Category extends Model
     protected $fillable = [
         'category',
         'status',
-        'publish'
+        'published'
     ];
     public $timestamps = false;
 
