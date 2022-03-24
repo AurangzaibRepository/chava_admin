@@ -4,3 +4,12 @@
     margin: 5px 0px 15px 0px;
     padding: 15px
 }
+
+.dv-checkbox{
+    align-items: center;
+    display: inline-flex
+}
+
+.dv-checkbox label{
+    margin-left: 6px;
+}
