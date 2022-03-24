@@ -24,9 +24,12 @@
                 </div>
             </div>
             <div class="col-4 dv-checkbox">
-
                 {{Form::checkbox('publish', '', false)}}
                 {{Form::label('publish', 'Publish')}}
+            </div>
+            <div class="col-12 text-end">
+                {{Form::submit('Save', ['class' => 'btn btn-primary'])}}
+                {{link_to('topics', 'Back', ['class' => 'btn btn-secondary'] )}}
             </div>
         </div>
         {{Form::close()}}
