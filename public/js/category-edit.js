@@ -12,6 +12,17 @@ function populateSubCategories() {
         'language': {
             'emptyTable': 'No data found'
         },
-        'ajax': '/topics/sub-categories/'+$('[name=id]').val()
+        'ajax': '/topics/sub-categories/' + $('[name=id]').val(),
+        'columnDefs': [{
+                'targets': 0,
+                'width': '8%',
+                'class': 'text-center'
+            },
+            {
+                'targets': 2,
+                'width': '10%',
+                'class': 'text-center'
+            }
+        ]
     });
 }
