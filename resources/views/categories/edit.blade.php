@@ -14,17 +14,17 @@
             <div class="col-4">
                 <div class="mb-3">
                     {{Form::label('category', 'Category')}}
-                    {{Form::text('category', '', ['class' => 'form-control'])}}
+                    {{Form::text('category', $data->category, ['class' => 'form-control'])}}
                 </div>
             </div>
             <div class="col-4">
                 <div class="mb-3">
                     {{Form::label('status', 'Status')}}
-                    {{Form::select('status', [], '', ['class' => 'form-select'])}}
+                    {{Form::select('status', $statusArray, $data->status, ['class' => 'form-select'])}}
                 </div>
             </div>
             <div class="col-4 dv-checkbox">
-                {{Form::checkbox('publish', '', false)}}
+                {{Form::checkbox('publish', '', $data->published)}}
                 {{Form::label('publish', 'Publish')}}
             </div>
             <div class="col-12 text-end">
