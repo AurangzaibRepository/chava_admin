@@ -54,6 +54,10 @@ class Category extends Model
     {
         request()->request->remove('_token');
 
+        if (!$request->exists('published')) {
+            request()->request->add(['published' => 0]);
+        }
+
         $this
             ->where('id', $request->id)
             ->update($request->all());
