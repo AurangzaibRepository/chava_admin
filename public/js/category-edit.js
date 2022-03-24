@@ -21,7 +21,12 @@ function populateSubCategories() {
             {
                 'targets': 2,
                 'width': '10%',
-                'class': 'text-center'
+                'class': 'text-center',
+                render: function(data){
+                    return `
+                    <a><i class="far fa-edit"></i></a>
+                    `;
+                }
             }
         ]
     });
