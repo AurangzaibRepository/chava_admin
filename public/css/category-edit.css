@@ -13,3 +13,7 @@
 .dv-checkbox label{
     margin-left: 6px;
 }
+
+table td:last-child svg {
+    color: #0b5ed7
+}
