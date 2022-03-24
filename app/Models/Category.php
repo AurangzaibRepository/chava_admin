@@ -14,6 +14,7 @@ class Category extends Model
         'status',
         'publish'
     ];
+    public $timestamps = false;
 
     public function getListing(): Collection
     {
