@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuninate\Http\JsonResponse;
+use Illuminate\Http\JsonResponse;
 use App\Models\SubCategory;
 
 class SubCategoriesController extends Controller
@@ -13,7 +13,8 @@ class SubCategoriesController extends Controller
     ) {
     }
     
-    public function listing($id): JsonResponse
+    public function listing($categoryID): JsonResponse
     {
+        return $this->subCategory->getListing($categoryID);
     }
 }
