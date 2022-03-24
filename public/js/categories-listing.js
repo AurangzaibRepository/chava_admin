@@ -1,4 +1,10 @@
 $(function() {
+
+    initializeSlick();
+});
+
+function initializeSlick()
+{
     $('.logo-topics').slick({
         slidesToShow: 4,
         slidesToScroll: 1,
@@ -19,4 +25,4 @@ $(function() {
             }
         }]
     });
-})
+}
