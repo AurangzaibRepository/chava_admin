@@ -9,6 +9,7 @@ use Illuminate\Http\JsonResponse;
 class SubCategory extends Model
 {
     protected $table = 'sub_categories';
+    protected $fillable = ['sub_category', 'category_id'];
 
     public function getListing($categoryID): JsonResponse
     {
