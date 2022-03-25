@@ -24,3 +24,7 @@ table td:last-child svg {
     margin-bottom: 22px;
     padding-bottom: 4px;
 }
+
+#modal-subcategory .col-buttons {
+    margin-top: 2px
+}
