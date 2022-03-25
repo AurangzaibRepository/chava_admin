@@ -5,7 +5,14 @@
                 <label>Add Subcategory</label>
             </div>
             <div class="modal-body">
-
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mb-3">
+                            {{Form::label('subcategory', 'Subcategory')}}
+                            {{Form::text('subcategory', null, ['class' => 'form-control'])}}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
