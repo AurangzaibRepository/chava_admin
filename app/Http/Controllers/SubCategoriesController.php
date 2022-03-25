@@ -21,5 +21,6 @@ class SubCategoriesController extends Controller
     public function add(Request $request): void
     {
         $this->subCategory->saveRecord($request);
+        session()->flash('success', 'Subcategory added successfully');
     }
 }
