@@ -44,6 +44,18 @@ function save() {
     $('.spn-error').css('display', 'none');
 
     validateFiled('subcategory', 'spn-subcategory');
+
+    if (!isValid) {
+        return;
+    }
+
+    $.post('/subcategories/add', {
+        category_id: $('[name=id]').val(),
+        sub_category: $('#subcategory').val()
+    }, 
+    function(response) {
+        window.location = '/topics/edit/' + $('[name=id]').val();
+    });
 }
 
 function validateFiled(elementID, errorID) {
