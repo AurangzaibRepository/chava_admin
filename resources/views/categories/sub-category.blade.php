@@ -7,6 +7,10 @@
 
 {{Form::label('lbl-page-header', $pageTitle , ['id' => 'lbl-page-header'])}}
 
+@if (session()->has('success'))
+<div class="alert alert-success">{{session()->get('success')}}</div>
+@endif
+
 <div class="page-layout">
     <div id="dv-subcategory">
         {{Form::open(['route' => 'updateSubCategory'])}}
