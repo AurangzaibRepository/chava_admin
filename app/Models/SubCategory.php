@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Collection;
 
 class SubCategory extends Model
 {
@@ -33,5 +34,10 @@ class SubCategory extends Model
     public function saveRecord(Request $request): void
     {
         $this->create($request->all());
+    }
+
+    public function get($subCategoryID): SubCategory
+    {
+        return $this->find($subCategoryID);
     }
 }
