@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 
 class SubCategory extends Model
@@ -24,5 +25,10 @@ class SubCategory extends Model
         }
 
         return response()->json($data);
+    }
+
+    public function saveRecord(Request $request): void
+    {
+        $this->create($request->all());
     }
 }

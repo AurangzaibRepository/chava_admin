@@ -17,4 +17,9 @@ class SubCategoriesController extends Controller
     {
         return $this->subCategory->getListing($categoryID);
     }
+
+    public function add(Request $request): void
+    {
+        $this->subCategory->saveRecord($request);
+    }
 }
