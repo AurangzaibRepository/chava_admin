@@ -19,7 +19,7 @@
                 <div class="mb-3">
                     {{Form::label('sub_category', 'Subcategory')}}
                     {{Form::text('sub_category', $data->sub_category, ['class' => 'form-control'])}}
-                    <span class="spn-error" id="error->subcategory">Subcategory required</span>
+                    <span class="spn-error" id="error-subcategory">Subcategory required</span>
                     {{Form::hidden('subcategory_id', $data->id)}}
                 </div>
             </div>
