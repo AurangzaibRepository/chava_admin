@@ -13,8 +13,9 @@
         <div class="row">
             <div class="col-4">
                 <div class="mb-3">
-                    {{Form::label('subcategory', 'Subcategory')}}
-                    {{Form::text('subcategory', null, ['class' => 'form-control'])}}
+                    {{Form::label('sub_category', 'Subcategory')}}
+                    {{Form::text('sub_category', $data->sub_category, ['class' => 'form-control'])}}
+                    {{Form::hidden('subcategory_id', $data->id)}}
                 </div>
             </div>
             <div class="col-8" id="col-buttons">

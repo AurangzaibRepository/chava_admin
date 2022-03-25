@@ -40,4 +40,11 @@ class SubCategory extends Model
     {
         return $this->find($subCategoryID);
     }
+
+    public function updateRecord(Request $request): void
+    {
+        $this
+            ->where('id', $request->subcategory_id)
+            ->update($request->only('sub_category'));
+    }
 }
