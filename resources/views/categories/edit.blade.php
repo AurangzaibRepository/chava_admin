@@ -45,7 +45,8 @@
         <label>Subcategories</label>
     </div>
     <div class="text-end">
-        {{Form::button('Add New', ['class' => 'btn btn-primary'])}}
+        {{Form::button('Add New', ['class' => 'btn btn-primary', 'data-bs-toggle' => 'modal', 'data-bs-target' =>
+        '#modal-subcategory'])}}
     </div>
 
     <table id="tbl-subcategories" class="table table-bordered table-striped">
@@ -58,6 +59,9 @@
         </thead>
     </table>
 </div>
+
+@include('categories.add-subcategory')
+
 @endsection
 
 @push('scripts')
