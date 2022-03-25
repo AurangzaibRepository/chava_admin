@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use App\Models\SubCategory;
 
@@ -34,5 +35,13 @@ class SubCategoriesController extends Controller
                        'pageTitle' => "Edit {$data->sub_category}",
                        'data' => $data
                     ]);
+    }
+
+    public function update(Request $request): RedirectResponse
+    {
+        $this->subCategory->updateRecord($request);
+        session()->flash('success', 'Subcategory updated successfully');
+
+        return redirect()->route('editSubCategory', $request->subcategory_id);
     }
 }
