@@ -42,4 +42,15 @@ function save() {
 
     isValid = true;
     $('.spn-error').css('display', 'none');
+
+    validateFiled('subcategory', 'spn-subcategory');
+}
+
+function validateFiled(elementID, errorID) {
+
+    if ($(`#${elementID}`).val().trim() === '') {
+
+        $(`#${errorID}`).css('display', 'block');
+        isValid = false;
+    }
 }
