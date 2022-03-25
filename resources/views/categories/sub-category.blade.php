@@ -17,6 +17,12 @@
                     {{Form::text('subcategory', null, ['class' => 'form-control'])}}
                 </div>
             </div>
+            <div class="col-8" id="col-buttons">
+                <div>
+                    {{Form::submit('Save', ['class' => 'btn btn-primary'])}}
+                    {{link_to_route('editCategory', 'Back', $data->category_id, ['class' => 'btn btn-secondary'])}}
+                </div>
+            </div>
         </div>
         {{Form::close()}}
     </div>
