@@ -19,12 +19,13 @@
                 <div class="mb-3">
                     {{Form::label('sub_category', 'Subcategory')}}
                     {{Form::text('sub_category', $data->sub_category, ['class' => 'form-control'])}}
+                    <span class="spn-error" id="error->subcategory">Subcategory required</span>
                     {{Form::hidden('subcategory_id', $data->id)}}
                 </div>
             </div>
             <div class="col-8" id="col-buttons">
                 <div>
-                    {{Form::submit('Save', ['class' => 'btn btn-primary'])}}
+                    {{Form::submit('Save', ['class' => 'btn btn-primary', 'onClick' => 'return validateForm()' ])}}
                     {{link_to_route('editCategory', 'Back', $data->category_id, ['class' => 'btn btn-secondary'])}}
                 </div>
             </div>
