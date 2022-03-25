@@ -4,3 +4,12 @@
     margin: 5px 0px 15px 0px;
     padding: 15px;
 }
+
+#col-buttons {
+    align-items: center;
+    display: inline-flex;
+}
+
+#col-buttons div {
+    margin-top: 8px;
+}
