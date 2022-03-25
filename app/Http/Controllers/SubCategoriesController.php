@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\View\View;
 use App\Models\SubCategory;
 
 class SubCategoriesController extends Controller
@@ -22,5 +23,16 @@ class SubCategoriesController extends Controller
     {
         $this->subCategory->saveRecord($request);
         session()->flash('success', 'Subcategory added successfully');
+    }
+
+    public function edit($subCategoryID): View
+    {
+        $data = $this->subCategory->get($subCategoryID);
+
+        return view('categories.sub-category')
+                    ->with([
+                       'pageTitle' => "Edit {$data->sub_category}",
+                       'data' => $data
+                    ]);
     }
 }
