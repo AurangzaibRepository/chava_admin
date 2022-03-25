@@ -9,7 +9,7 @@
 
 <div class="page-layout">
     <div id="dv-subcategory">
-        {{Form::open()}}
+        {{Form::open(['route' => 'updateSubCategory'])}}
         <div class="row">
             <div class="col-4">
                 <div class="mb-3">
