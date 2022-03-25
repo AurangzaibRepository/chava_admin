@@ -17,3 +17,10 @@
 table td:last-child svg {
     color: #0b5ed7
 }
+
+#dv-header-label {
+    border-bottom: 1px solid #c0c0c0;
+    font-weight: 600;
+    margin-bottom: 13px;
+    padding-bottom: 4px;
+}
