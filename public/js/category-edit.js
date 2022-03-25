@@ -30,7 +30,7 @@ function populateSubCategories() {
                 'class': 'text-center',
                 render: function(data){
                     return `
-                    <a><i class="far fa-edit"></i></a>
+                    <a href="/subcategories/edit/${data}"><i class="far fa-edit"></i></a>
                     `;
                 }
             }
