@@ -1,3 +1,5 @@
+.ul-left-menu a.topics {background: #f2f2f2; border-left: 3px solid #0b5ed7}
+.ul-left-menu a.topics span, .ul-left-menu a.topics svg {color: #0b5ed7}
 #dv-category {
     border-radius: 2px;
     box-shadow: 0px 0px 2px 1px lightgray;
