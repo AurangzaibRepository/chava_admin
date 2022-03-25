@@ -58,4 +58,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('topics/sub-categories/{categoryID}', [SubCategoriesController::class, 'listing'])->name('subCategoryListing');
     Route::post('/subcategories/add', [SubcategoriesController::class, 'add'])->name('addSubCategory');
     Route::get('subcategories/edit/{subCategoryID}', [SubCategoriesController::class, 'edit'])->name('editSubCategory');
+    Route::post('/subcategories/update', [SubCategoriesController::class, 'update'])->name('updateSubCategory');
 });
