@@ -10,7 +10,8 @@ class SubCategory extends Model
 {
     protected $table = 'sub_categories';
     protected $fillable = ['sub_category', 'category_id'];
-    public $timestamps = false;
+    const CREATED_AT = 'createdAt';
+    const UPDATED_AT = 'updatedAt';
 
     public function getListing($categoryID): JsonResponse
     {
