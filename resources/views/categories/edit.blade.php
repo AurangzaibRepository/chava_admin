@@ -40,6 +40,14 @@
         {{Form::close()}}
     </div>
 
+    <br />
+    <div id="dv-header-label">
+        <label>Subcategories</label>
+    </div>
+    <div class="text-end">
+        {{Form::button('Add New', ['class' => 'btn btn-primary'])}}
+    </div>
+
     <table id="tbl-subcategories" class="table table-bordered table-striped">
         <thead>
             <tr>
