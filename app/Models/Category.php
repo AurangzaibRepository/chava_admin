@@ -14,7 +14,8 @@ class Category extends Model
         'status',
         'published'
     ];
-    public $timestamps = false;
+    const CREATED_AT = 'createdAt';
+    const UPDATED_AT = 'updatedAt';
 
     public function getListing(): Collection
     {
