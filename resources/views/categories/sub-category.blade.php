@@ -34,3 +34,7 @@
 </div>
 
 @endsection
+
+@push('scripts')
+<script src="{{asset('js/subcategory-edit.js')}}"></script>
+@endpush
