@@ -1,6 +1,12 @@
+var isValid;
 $(function() {
     
     populateSubCategories();
+
+    $('#modal-subcategory').on('shown.bs.modal', (e) => {
+        $('#subcategory').val('');
+        $('.spn-error').css('display', 'none');
+    });
 });
 
 function populateSubCategories() {
@@ -30,4 +36,10 @@ function populateSubCategories() {
             }
         ]
     });
+}
+
+function save() {
+
+    isValid = true;
+    $('.spn-error').css('display', 'none');
 }
