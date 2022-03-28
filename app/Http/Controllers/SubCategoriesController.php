@@ -33,6 +33,7 @@ class SubCategoriesController extends Controller
         return view('categories.sub-category')
                     ->with([
                        'pageTitle' => "Edit {$data->sub_category}",
+                       'topicTypes' => config('app.topic_types'),
                        'data' => $data
                     ]);
     }
