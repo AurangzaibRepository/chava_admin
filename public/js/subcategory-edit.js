@@ -1,7 +1,31 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
-    
+    populateTopics();
 });
+
+function populateTopics() {
+
+    $('#tbl-topics').DataTable({
+
+        'searching': false,
+        'bLengthChange': false,
+        'bSort': false,
+        'language': {
+            'emptyTable': 'No data available'
+        },
+        'columnDefs': [
+            {
+                'targets': 0,
+                'width': '8%',
+                'class': 'text-center'
+            },
+            {
+                'targets': 2,
+                'width': '10%'
+            }
+        ]
+    });
+}
 
 function validateForm() {
 
