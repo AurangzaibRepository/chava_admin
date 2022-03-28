@@ -27,7 +27,8 @@ function populateTopics() {
                 'targets': 3,
                 'width': '10%'
             }
-        ]
+        ],
+        'ajax': '/topics/' + $('[name=subcategory_id]').val()
     });
 }
 
