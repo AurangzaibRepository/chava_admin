@@ -8,6 +8,7 @@ use App\Http\Controllers\WhatsappSessionsController;
 use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\SubCategoriesController;
+use App\Http\Controllers\TopicsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,4 +60,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/subcategories/add', [SubcategoriesController::class, 'add'])->name('addSubCategory');
     Route::get('subcategories/edit/{subCategoryID}', [SubCategoriesController::class, 'edit'])->name('editSubCategory');
     Route::post('/subcategories/update', [SubCategoriesController::class, 'update'])->name('updateSubCategory');
+    Route::get('topics/{subCategoryID}', [TopicsController::class, 'listing'])->name('topicsListing');
 });
