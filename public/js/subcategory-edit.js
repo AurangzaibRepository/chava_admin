@@ -39,6 +39,8 @@ function populateTopics() {
 }
 
 function updateVideo(obj) {
+
+    $('#iframe-video').css('display', 'block');
     document.getElementById('iframe-video').src = window.URL.createObjectURL(obj.files[0]);
 }
 
