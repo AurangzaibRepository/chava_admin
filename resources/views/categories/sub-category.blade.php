@@ -38,7 +38,7 @@
         <label>Topics</label>
     </div>
 
-    <table id="" class="table table-bordered table-striped">
+    <table id="tbl-topics" class="table table-bordered table-striped">
         <thead>
             <tr>
                 <th>No</th>
