@@ -1,6 +1,13 @@
 $(document).ready(function() {
 
     populateTopics();
+
+    $('#modal-add-topic').on('shown.bs.modal', (e) => {
+
+        $('#iframe-video').css('display', 'none');
+        $('#iframe-video').attr('src', '');
+        $('[name=video]').val('');
+    });
 });
 
 function populateTopics() {
