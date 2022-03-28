@@ -38,6 +38,10 @@ function populateTopics() {
     });
 }
 
+function updateVideo(obj) {
+    document.getElementById('iframe-video').src = window.URL.createObjectURL(obj.files[0]);
+}
+
 function validateForm() {
 
     if ($('#sub_category').val().trim() === '') {
