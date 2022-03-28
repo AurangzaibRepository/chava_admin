@@ -23,7 +23,7 @@
 
                     <div class="col-12 text-end">
                         {{Form::submit('Save', ['class' => 'btn btn-primary'])}}
-                        {{Form::button('Cancel', ['class' => 'btn btn-secondary'])}}
+                        {{Form::button('Cancel', ['class' => 'btn btn-secondary', 'data-bs-dismiss' => 'modal'])}}
                     </div>
                 </div>
             </div>
