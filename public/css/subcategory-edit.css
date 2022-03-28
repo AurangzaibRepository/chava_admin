@@ -13,3 +13,10 @@
 #col-buttons div {
     margin-top: 15px;
 }
+
+#dv-header-label {
+    border-bottom: 1px solid #c0c0c0;
+    font-weight: 600;
+    margin-bottom: 22px;
+    padding-bottom: 4px;
+}
