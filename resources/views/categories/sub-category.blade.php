@@ -51,6 +51,8 @@
 
 </div>
 
+@include('categories.add-topic')
+
 @endsection
 
 @push('scripts')
