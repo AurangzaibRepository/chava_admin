@@ -13,7 +13,8 @@ class TopicsController extends Controller
     ) {
     }
 
-    public function listing(Request $request): JsonResponse
+    public function listing($subCategoryID): JsonResponse
     {
+        return $this->topic->getListing($subCategoryID);
     }
 }
