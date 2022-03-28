@@ -28,3 +28,8 @@
 #tbl-topics tr td:last-child svg {
     color: #0b5ed7
 }
+
+#modal-add-topic iframe {
+    height: 237px;
+    width: 100%;
+}
