@@ -33,3 +33,7 @@
     height: 237px;
     width: 100%;
 }
+
+#iframe-video {
+    display: none;
+}
