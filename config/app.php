@@ -237,4 +237,10 @@ return [
         'Inactive' => 'Inactive',
         'Current' => 'Current'
     ],
+
+    'topic_types' =>[
+        '' => '-- Select --',
+        'video' => 'video',
+        'article' => 'article'
+    ];
 ];
