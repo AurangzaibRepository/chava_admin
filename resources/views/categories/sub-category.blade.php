@@ -37,6 +37,10 @@
     <div id="dv-header-label">
         <label>Topics</label>
     </div>
+    <div class="text-end">
+        {{Form::button('Add New', ['class' => 'btn btn-primary', 'data-bs-toggle' => 'modal',
+        'data-bs-target' => '#modal-add-topic' ])}}
+    </div>
 
     <table id="tbl-topics" class="table table-bordered table-striped">
         <thead>

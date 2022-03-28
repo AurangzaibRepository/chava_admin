@@ -29,7 +29,7 @@ function populateTopics() {
                 'class': 'text-center',
                 'render': function(data) {
                     return `
-                        <a><i class="far fa-edit"></i></a>
+                        <a data-bs-toggle="modal" data-bs-target="#modal-add-topic"><i class="far fa-edit"></i></a>
                     `;
                 }
             }
