@@ -19,7 +19,6 @@
                         {{Form::file('video', ['onChange' => 'updateVideo(this)'])}}
                     </div>
                     <div class="co-12" id="dv-article">
-
                     </div>
                 </div>
             </div>
@@ -27,5 +26,4 @@
         </div>
     </div>
 </div>
-
 </div>
