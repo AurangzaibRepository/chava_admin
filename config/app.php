@@ -242,5 +242,5 @@ return [
         '' => '-- Select --',
         'video' => 'video',
         'article' => 'article'
-    ];
+    ]
 ];
