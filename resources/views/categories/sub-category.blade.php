@@ -32,6 +32,22 @@
         </div>
         {{Form::close()}}
     </div>
+
+    <br />
+    <div id="dv-header-label">
+        <label>Topics</label>
+    </div>
+
+    <table id="" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Topic</th>
+                <th></th>
+            </tr>
+        </thead>
+    </table>
+
 </div>
 
 @endsection
