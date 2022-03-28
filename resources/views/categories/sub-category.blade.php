@@ -43,6 +43,7 @@
             <tr>
                 <th>No</th>
                 <th>Topic</th>
+                <th>Type</th>
                 <th></th>
             </tr>
         </thead>
