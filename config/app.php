@@ -240,7 +240,7 @@ return [
 
     'topic_types' =>[
         '' => '-- Select --',
-        'video' => 'video',
-        'article' => 'article'
+        'video' => 'Video',
+        'article' => 'Article'
     ]
 ];
