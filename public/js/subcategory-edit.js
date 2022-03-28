@@ -25,7 +25,13 @@ function populateTopics() {
             },
             {
                 'targets': 3,
-                'width': '10%'
+                'width': '10%',
+                'class': 'text-center',
+                'render': function(data) {
+                    return `
+                        <a><i class="far fa-edit"></i></a>
+                    `;
+                }
             }
         ],
         'ajax': '/topics/' + $('[name=subcategory_id]').val()
