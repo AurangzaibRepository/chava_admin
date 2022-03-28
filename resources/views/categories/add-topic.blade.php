@@ -5,16 +5,27 @@
                 {{Form::label('header-label', 'Add Topic')}}
             </div>
             <div class="modal-body">
-                {{Form::open()}}
+                {{Form::open(['files' => true])}}
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 mb-3">
                         {{Form::label('type', 'Type')}}
                         {{Form::select('type', $topicTypes, null, ['class' => 'form-select'])}}
                     </div>
+                    <div class="col-12" id="dv-video">
+                        {{Form::label('video', 'Select Video')}}
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" id="iframe-video" allowfullscreen></iframe>
+                        </div>
+                        {{Form::file('video', ['onChange' => 'updateVideo(this)'])}}
+                    </div>
+                    <div class="co-12" id="dv-article">
+
+                    </div>
                 </div>
-                {{Form::close()}}
             </div>
+            {{Form::close()}}
         </div>
     </div>
+</div>
 
 </div>
