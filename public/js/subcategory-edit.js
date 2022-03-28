@@ -21,6 +21,10 @@ function populateTopics() {
             },
             {
                 'targets': 2,
+                'width': '15%'
+            },
+            {
+                'targets': 3,
                 'width': '10%'
             }
         ]
