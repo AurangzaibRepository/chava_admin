@@ -20,3 +20,11 @@
     margin-bottom: 22px;
     padding-bottom: 4px;
 }
+
+#tbl-topics td a {
+    cursor: pointer;
+}
+
+#tbl-topics tr td:last-child svg {
+    color: #0b5ed7
+}
