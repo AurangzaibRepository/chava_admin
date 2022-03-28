@@ -20,6 +20,11 @@
                     </div>
                     <div class="co-12" id="dv-article">
                     </div>
+
+                    <div class="col-12 text-end">
+                        {{Form::submit('Save', ['class' => 'btn btn-primary'])}}
+                        {{Form::button('Cancel', ['class' => 'btn btn-secondary'])}}
+                    </div>
                 </div>
             </div>
             {{Form::close()}}
