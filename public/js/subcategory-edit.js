@@ -79,10 +79,11 @@ function validateTopic() {
     validateFileType();
 
     if (isValid) {
+        $('#modal-add-topic .btn-primary').attr('disabled', true);
         $('#modal-add-topic .fa-spinner').css('display', 'block');
     }
 
-    return isValid;;
+    return isValid;
 }
 
 function validateField(elementID, errorID) {
