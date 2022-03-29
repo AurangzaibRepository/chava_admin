@@ -5,7 +5,7 @@
                 {{Form::label('header-label', 'Add Topic')}}
             </div>
             <div class="modal-body">
-                {{Form::open(['files' => true])}}
+                {{Form::open(['route' => 'addTopic', 'files' => true])}}
                 <div class="row">
                     <div class="col-12 mb-3">
                         {{Form::label('type', 'Type')}}
