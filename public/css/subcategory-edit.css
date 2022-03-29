@@ -42,3 +42,12 @@ input[name="video"] {
     margin-top: 10px;
     width: 100%
 }
+
+#modal-add-topic .fa-spinner {
+    color: #0b5ed7;
+    display: none;
+    font-size: 31px;
+    left: 44%;
+    position: absolute;
+    top: 29%;
+}
