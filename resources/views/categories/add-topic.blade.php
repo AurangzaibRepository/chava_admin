@@ -8,6 +8,7 @@
                 {{Form::open(['route' => 'addTopic', 'files' => true])}}
                 {{Form::hidden('sub_category_id', $data->id)}}
                 {{Form::hidden('category_id', $data->category_id)}}
+                <i class="fas fa-spin fa-spinner"></i>
 
                 <div class="row">
                     <div class="col-12 mb-3">
