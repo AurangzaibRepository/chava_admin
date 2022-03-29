@@ -75,6 +75,7 @@ function validateTopic() {
 
     validateField('type', 'error-type');
     validateField('topic', 'error-topic');
+    validateField('video', 'error-video');
 
     return isValid;
 }
