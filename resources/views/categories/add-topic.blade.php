@@ -11,6 +11,10 @@
                         {{Form::label('type', 'Type')}}
                         {{Form::select('type', $topicTypes, null, ['class' => 'form-select'])}}
                     </div>
+                    <div class="col-12 mb-3">
+                        {{Form::label('topic', 'Title')}}
+                        {{Form::text('topic', null, ['class' => 'form-control'])}}
+                    </div>
                     <div class="col-12" id="dv-video">
                         {{Form::label('video', 'Select Video')}}
                         <div class="embed-responsive embed-responsive-16by9">
