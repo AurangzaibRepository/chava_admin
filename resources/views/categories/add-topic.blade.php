@@ -6,6 +6,9 @@
             </div>
             <div class="modal-body">
                 {{Form::open(['route' => 'addTopic', 'files' => true])}}
+                {{Form::hidden('sub_category_id', $data->id)}}
+                {{Form::hidden('category_id', $data->category_id)}}
+
                 <div class="row">
                     <div class="col-12 mb-3">
                         {{Form::label('type', 'Type')}}
