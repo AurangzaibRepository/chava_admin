@@ -10,6 +10,8 @@ $(document).ready(function() {
         $('#modal-add-topic .field').val('');
         $('#iframe-video').css('display', 'none');
         $('#iframe-video').attr('src', '');
+        $('#modal-add-topic .btn-primary').attr('disabled', false);
+        $('#modal-add-topic .fa-spinner').css('display', 'none');
     });
 
     $('#iframe-video').on('load', function() {
