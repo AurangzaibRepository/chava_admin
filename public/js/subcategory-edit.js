@@ -1,3 +1,5 @@
+var isValid;
+
 $(document).ready(function() {
 
     populateTopics();
@@ -58,5 +60,24 @@ function validateForm() {
         $('#error-subcategory').css('display', 'block');
         $('#col-buttons div').css('margin-top', '-3px');
         return false;
+    }
+}
+
+function validateTopic() {
+    
+    isValid = true;
+    $('.spn-error').css('display', 'none');
+
+    validateField('type', 'error-type');
+    validateField('topic', 'error-topic');
+
+    return isValid;
+}
+
+function validateField(elementID, errorID) {
+
+    if ($(`#${elementID}`).val().trim() === '' ) {
+        isValid = false;
+        $(`#${errorID}`).css('display', 'block');
     }
 }
