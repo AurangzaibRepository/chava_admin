@@ -11,6 +11,10 @@ $(document).ready(function() {
         $('#iframe-video').css('display', 'none');
         $('#iframe-video').attr('src', '');
     });
+
+    $('#iframe-video').on('load', function() {
+        $("#iframe-video").contents().find("img").attr("style","width:100%");
+    });
 });
 
 function populateTopics() {
