@@ -78,7 +78,7 @@ function validateTopic() {
     validateField('video', 'error-video');
     validateFileType();
 
-    return false;;
+    return isValid;;
 }
 
 function validateField(elementID, errorID) {
