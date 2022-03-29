@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
 use App\Models\Topic;
 
 class TopicsController extends Controller
@@ -16,5 +17,13 @@ class TopicsController extends Controller
     public function listing($subCategoryID): JsonResponse
     {
         return $this->topic->getListing($subCategoryID);
+    }
+
+    public function add(Request $request): RedirectResponse
+    {
+        $this->topic->saveTopic($request);
+        session()->flash('success', 'Topic added successfully');
+
+        return redirect()->route('editSubCategory', $request->sub_category_id);
     }
 }
