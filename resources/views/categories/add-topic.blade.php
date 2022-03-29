@@ -10,10 +10,12 @@
                     <div class="col-12 mb-3">
                         {{Form::label('type', 'Type')}}
                         {{Form::select('type', $topicTypes, null, ['class' => 'form-select'])}}
+                        <span class="spn-error" id="error-type">Type required</span>
                     </div>
                     <div class="col-12 mb-3">
                         {{Form::label('topic', 'Title')}}
                         {{Form::text('topic', null, ['class' => 'form-control'])}}
+                        <span class="spn-error" id="error-topic">Title required</span>
                     </div>
                     <div class="col-12" id="dv-video">
                         {{Form::label('video', 'Select Video')}}
