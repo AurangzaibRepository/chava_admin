@@ -6,9 +6,10 @@ $(document).ready(function() {
 
     $('#modal-add-topic').on('shown.bs.modal', (e) => {
 
+        $('.spn-error').css('display', 'none');
+        $('#modal-add-topic .field').val('');
         $('#iframe-video').css('display', 'none');
         $('#iframe-video').attr('src', '');
-        $('[name=video]').val('');
     });
 });
 
