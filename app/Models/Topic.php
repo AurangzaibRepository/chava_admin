@@ -9,6 +9,8 @@ use Illuminate\Http\JsonResponse;
 class Topic extends Model
 {
     protected $table = 'sub_category_topics';
+    const CREATED_AT = 'createdAt';
+    const UPDATED_AT = 'updatedAt';
     protected $fillable = [
         'topic',
         'type',
