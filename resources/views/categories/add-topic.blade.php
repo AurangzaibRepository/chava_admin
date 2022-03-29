@@ -26,6 +26,7 @@
                             <iframe class="embed-responsive-item" id="iframe-video" allowfullscreen></iframe>
                         </div>
                         {{Form::file('video', ['onChange' => 'updateVideo(this)', 'class' => 'field'])}}
+                        <span class="spn-error" id="error-video">File required</span>
                     </div>
                     <div class="co-12" id="dv-article">
                     </div>
