@@ -9,12 +9,12 @@
                 <div class="row">
                     <div class="col-12 mb-3">
                         {{Form::label('type', 'Type')}}
-                        {{Form::select('type', $topicTypes, null, ['class' => 'form-select'])}}
+                        {{Form::select('type', $topicTypes, null, ['class' => 'form-select field'])}}
                         <span class="spn-error" id="error-type">Type required</span>
                     </div>
                     <div class="col-12 mb-3">
                         {{Form::label('topic', 'Title')}}
-                        {{Form::text('topic', null, ['class' => 'form-control'])}}
+                        {{Form::text('topic', null, ['class' => 'form-control field'])}}
                         <span class="spn-error" id="error-topic">Title required</span>
                     </div>
                     <div class="col-12" id="dv-video">
@@ -22,7 +22,7 @@
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe class="embed-responsive-item" id="iframe-video" allowfullscreen></iframe>
                         </div>
-                        {{Form::file('video', ['onChange' => 'updateVideo(this)'])}}
+                        {{Form::file('video', ['onChange' => 'updateVideo(this)', 'class' => 'field'])}}
                     </div>
                     <div class="co-12" id="dv-article">
                     </div>
