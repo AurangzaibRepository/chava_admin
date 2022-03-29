@@ -76,8 +76,9 @@ function validateTopic() {
     validateField('type', 'error-type');
     validateField('topic', 'error-topic');
     validateField('video', 'error-video');
+    validateFileType();
 
-    return isValid;
+    return false;;
 }
 
 function validateField(elementID, errorID) {
@@ -85,5 +86,25 @@ function validateField(elementID, errorID) {
     if ($(`#${elementID}`).val().trim() === '' ) {
         isValid = false;
         $(`#${errorID}`).css('display', 'block');
+    }
+}
+
+function validateFileType() {
+
+    let validExtensions = [];
+
+    if ($('#type').val() === 'article') {
+        validExtensions = ["doc", "docx", "pdf"];
+    }
+
+    if ($('#type').val() === 'video') {
+        validExtensions = ["mp4", "mov", "wmv", "avi"];
+    }
+
+    let file = $('#video').val().split('.').pop();
+
+    if (validExtensions.indexOf(file) == -1) {
+        isValid = false;
+        $('#error-video').css('display', 'block');
     }
 }
