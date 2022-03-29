@@ -53,5 +53,8 @@ class Topic extends Model
         
         $path = Storage::disk('s3')->put("{$category}/{$subcategory}", $request->video);
         $path = Storage::disk('s3')->url($path);
+
+        $request->request->add(['link' => $path]);
+        $this->create($request->all());
     }
 }
