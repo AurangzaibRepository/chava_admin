@@ -78,6 +78,10 @@ function validateTopic() {
     validateField('video', 'error-video');
     validateFileType();
 
+    if (isValid) {
+        $('#modal-add-topic .fa-spinner').css('display', 'block');
+    }
+
     return isValid;;
 }
 
@@ -92,12 +96,15 @@ function validateField(elementID, errorID) {
 function validateFileType() {
 
     let validExtensions = [];
+    let errorMsg = '';
 
     if ($('#type').val() === 'article') {
+        errorMsg = 'Only word and pdf files allowed';
         validExtensions = ["doc", "docx", "pdf"];
     }
 
     if ($('#type').val() === 'video') {
+        errorMsg = 'Only video files are allowed';
         validExtensions = ["mp4", "mov", "wmv", "avi"];
     }
 
@@ -106,5 +113,6 @@ function validateFileType() {
     if (validExtensions.indexOf(file) == -1) {
         isValid = false;
         $('#error-video').css('display', 'block');
+        $('#error-video').text(errorMsg);
     }
 }
