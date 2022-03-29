@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 
 class Topic extends Model
@@ -29,5 +30,10 @@ class Topic extends Model
         }
 
         return response()->json($data);
+    }
+
+    public function saveTopic(Request $request): void
+    {
+        $this->create($request->all());
     }
 }
