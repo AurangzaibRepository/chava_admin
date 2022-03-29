@@ -21,7 +21,7 @@
                         <span class="spn-error" id="error-topic">Title required</span>
                     </div>
                     <div class="col-12" id="dv-video">
-                        {{Form::label('video', 'Select Video')}}
+                        {{Form::label('video', 'Select File')}}
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe class="embed-responsive-item" id="iframe-video" allowfullscreen></iframe>
                         </div>
