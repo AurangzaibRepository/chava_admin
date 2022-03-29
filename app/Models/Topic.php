@@ -5,6 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use App\Models\Category;
+use App\Models\Subcategory;
+use Storage;
 
 class Topic extends Model
 {
@@ -43,6 +46,12 @@ class Topic extends Model
 
     public function saveTopic(Request $request): void
     {
-        $this->create($request->all());
+        $category = Category::find($request->category_id);
+        $subcategory = Subcategory::find($request->sub_category_id);
+        $category = ucwords($category->category);
+        $subcategory = ucwords($subcategory->sub_category);
+        
+        $path = Storage::disk('s3')->put("{$category}/{$subcategory}", $request->video);
+        $path = Storage::disk('s3')->url($path);
     }
 }
