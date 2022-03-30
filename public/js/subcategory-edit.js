@@ -15,6 +15,10 @@ $(document).ready(function() {
         $('#modal-add-topic .fa-spinner').css('display', 'none');
     });
 
+    $('#modal-add-topic').on('hidden.bs.modal', (e) => {
+        location.reload(); 
+    });
+
     $('#iframe-video').on('load', function() {
         $("#iframe-video").contents().find("img").attr("style","width:100%");
     });
