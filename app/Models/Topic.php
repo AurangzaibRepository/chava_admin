@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Models\Category;
-use App\Models\Subcategory;
+use App\Models\SubCategory;
 use Storage;
 
 class Topic extends Model
