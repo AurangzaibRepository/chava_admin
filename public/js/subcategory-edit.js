@@ -48,6 +48,7 @@ function populateTopics() {
                 'targets': 3,
                 'width': '10%',
                 'class': 'text-center',
+                'visible': false,
                 'render': function(data) {
                     return `
                         <a data-bs-toggle="modal" data-bs-target="#modal-add-topic"><i class="far fa-edit"></i></a>
