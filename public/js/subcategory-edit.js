@@ -90,9 +90,11 @@ function validateTopic() {
         $('#modal-add-topic .btn-primary').attr('disabled', true);
         $('#modal-add-topic #video').css('pointer-events', 'none');
         $('#modal-add-topic .fa-spinner').css('display', 'block');
-    }
 
-    $('#form-topic').submit();
+        $('#form-topic').submit();
+    }
+    
+    return false;
 }
 
 function validateField(elementID, errorID) {
