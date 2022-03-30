@@ -8,6 +8,9 @@ use Illuminate\Http\JsonResponse;
 use App\Models\Category;
 use App\Models\Subcategory;
 use Storage;
+use FFMpeg;
+use FFMpeg\Coordinate\Dimension;
+use FFMpeg\Format\Video\X264;
 
 class Topic extends Model
 {
@@ -50,11 +53,23 @@ class Topic extends Model
         $subcategory = Subcategory::find($request->sub_category_id);
         $category = ucwords($category->category);
         $subcategory = ucwords($subcategory->sub_category);
-        
-        $path = Storage::disk('s3')->put("{$category}/{$subcategory}", $request->video);
-        $path = Storage::disk('s3')->url($path);
 
-        $request->request->add(['link' => $path]);
-        $this->create($request->all());
+        Storage::disk('public')->put("/", $request->video);
+        $lowBitrateFormat = (new X264('libmp3lame', 'libx264'))->setKiloBitrate(500);
+        FFMpeg::fromDisk('public')
+        ->open($request->video->getClientOriginalName())
+        ->addFilter(function($filters) {
+            $filters->resize(new Dimension(960, 540));
+        })
+        ->export()
+        ->toDisk('public')
+        ->inFormat($lowBitrateFormat)
+        ->save("/");
+
+        //$path = Storage::disk('s3')->put("{$category}/{$subcategory}", $request->video);
+        //$path = Storage::disk('s3')->url($path);
+
+        //$request->request->add(['link' => $path]);
+        //$this->create($request->all());
     }
 }
