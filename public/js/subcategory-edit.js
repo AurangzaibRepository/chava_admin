@@ -93,7 +93,7 @@ function validateTopic() {
 
         $('#form-topic').submit();
     }
-    
+
     return false;
 }
 
@@ -126,5 +126,20 @@ function validateFileType() {
         isValid = false;
         $('#error-video').css('display', 'block');
         $('#error-video').text(errorMsg);
+    }
+
+    if (validExtensions.indexOf(file) != -1) {
+        validateFileSize();
+    }
+}
+
+function validateFileSize() {
+    fileSize = $('#video')[0].files[0].size;
+    fileSize = fileSize/1024/1024;
+    
+    if (fileSize >= 80) {
+        isValid = false;
+        $('#error-video').css('display', 'block');
+        $('#error-video').html('Maximum filesize allowed is 80MB');
     }
 }
