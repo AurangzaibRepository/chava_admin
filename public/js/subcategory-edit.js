@@ -85,7 +85,7 @@ function validateTopic() {
         $('#modal-add-topic .fa-spinner').css('display', 'block');
     }
 
-    return isValid;
+    $('#form-topic').submit();
 }
 
 function validateField(elementID, errorID) {
