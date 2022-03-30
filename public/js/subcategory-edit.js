@@ -11,6 +11,7 @@ $(document).ready(function() {
         $('#iframe-video').css('display', 'none');
         $('#iframe-video').attr('src', '');
         $('#modal-add-topic .btn-primary').attr('disabled', false);
+        $('#modal-add-topic #video').css('pointer-events', 'auto');
         $('#modal-add-topic .fa-spinner').css('display', 'none');
     });
 
@@ -82,6 +83,7 @@ function validateTopic() {
 
     if (isValid) {
         $('#modal-add-topic .btn-primary').attr('disabled', true);
+        $('#modal-add-topic #video').css('pointer-events', 'none');
         $('#modal-add-topic .fa-spinner').css('display', 'block');
     }
 
