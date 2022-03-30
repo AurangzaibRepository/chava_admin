@@ -53,7 +53,7 @@ function addCategory() {
             status: $('#status').val(),
             published: ($('#publish').is(':checked') ? 1 : 0)
         },
-        'url': 'topics/add',
+        'url': 'categories/add',
         success: function() {
             window.location = '/topics';
         },
