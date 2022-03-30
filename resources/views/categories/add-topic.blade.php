@@ -5,7 +5,7 @@
                 {{Form::label('header-label', 'Add Topic')}}
             </div>
             <div class="modal-body">
-                {{Form::open(['route' => 'addTopic', 'files' => true])}}
+                {{Form::open(['route' => 'addTopic', 'files' => true, 'id' => 'form-topic'])}}
                 {{Form::hidden('sub_category_id', $data->id)}}
                 {{Form::hidden('category_id', $data->category_id)}}
                 <i class="fas fa-spin fa-spinner"></i>
