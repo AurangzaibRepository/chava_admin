@@ -19,11 +19,9 @@ class TopicsController extends Controller
         return $this->topic->getListing($subCategoryID);
     }
 
-    public function add(Request $request): RedirectResponse
+    public function add(Request $request): void
     {
         $this->topic->saveTopic($request);
         session()->flash('success', 'Topic added successfully');
-
-        return redirect()->route('editSubCategory', $request->sub_category_id);
     }
 }
