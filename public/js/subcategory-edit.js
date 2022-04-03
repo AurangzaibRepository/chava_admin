@@ -12,7 +12,7 @@ $(document).ready(function() {
         $('#iframe-video').attr('src', '');
         $('#modal-add-topic .btn-primary').attr('disabled', false);
         $('#modal-add-topic #video').css('pointer-events', 'auto');
-        $('#modal-add-topic .fa-spinner').css('display', 'none');
+        $('#modal-add-topic #dv-loader').css('display', 'none');
     });
 
     $('#modal-add-topic').on('hidden.bs.modal', (e) => {
@@ -89,9 +89,9 @@ function validateTopic() {
     if (isValid) {
         $('#modal-add-topic .btn-primary').attr('disabled', true);
         $('#modal-add-topic #video').css('pointer-events', 'none');
-        $('#modal-add-topic .fa-spinner').css('display', 'block');
+        $('#modal-add-topic #dv-loader').css('display', 'inline-flex');
 
-        $('#form-topic').submit();
+        submitForm();
     }
 
     return false;
@@ -141,5 +141,53 @@ function validateFileSize() {
         isValid = false;
         $('#error-video').css('display', 'block');
         $('#error-video').html('Maximum filesize allowed is 80MB');
+    }
+}
+
+function submitForm() {
+    
+    $('#form-topic').on('submit', function(e) {
+
+        e.preventDefault();
+        $.ajax({
+
+            xhr: function() {
+                var xhr = new window.XMLHttpRequest();
+                xhr.upload.addEventListener("progress", function(evt) {
+
+                    showProgress(evt);
+                }, false);
+                return xhr;
+            },
+
+            type: 'POST',
+            url: '/topics/add',
+            contentType: false,
+            processData: false,
+            data: new FormData(this),
+            success: function(resp) {
+                location.reload();
+            }
+
+        }); //End ajax
+    }); // End form submit
+
+    $('#form-topic').submit();
+}
+
+function showProgress(event) {
+
+    if (event.lengthComputable) {
+
+        let percentComplete = ((event.loaded / event.total) * 100);
+
+        if (percentComplete < 100) {
+            percentComplete = Math.round(percentComplete);
+            $('#dv-loader span').html(`${percentComplete}%`);    
+        }
+
+        if (percentComplete === 100) {
+            $('#dv-loader span').text('processing...');
+        }
     }
 }
