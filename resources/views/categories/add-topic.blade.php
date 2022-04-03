@@ -8,7 +8,11 @@
                 {{Form::open(['route' => 'addTopic', 'files' => true, 'id' => 'form-topic'])}}
                 {{Form::hidden('sub_category_id', $data->id)}}
                 {{Form::hidden('category_id', $data->category_id)}}
-                <i class="fas fa-spin fa-spinner"></i>
+
+                <div id="dv-loader">
+                    <i class="fas fa-spin fa-spinner"></i>
+                    <span></span>
+                </div>
 
                 <div class="row">
                     <div class="col-12 mb-3">
