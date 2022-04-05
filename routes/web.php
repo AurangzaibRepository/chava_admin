@@ -9,6 +9,7 @@ use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\SubCategoriesController;
 use App\Http\Controllers\TopicsController;
+use App\Http\Controllers\CalendarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,4 +63,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/subcategories/update', [SubCategoriesController::class, 'update'])->name('updateSubCategory');
     Route::get('topics/{subCategoryID}', [TopicsController::class, 'listing'])->name('topicsListing');
     Route::post('topics/add', [TopicsController::class, 'add'])->name('addTopic');
+
+    // Calendar
+    Route::get('calendar', [CalendarController::class, 'index'])->name('calendar');
 });
