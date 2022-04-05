@@ -21,4 +21,9 @@
     </div>
 </div>
 
+<!-- Scripts -->
+@push('scripts')
+<script src="{{asset('js/calendar.js')}}"></script>
+@endpush
+
 @endsection
