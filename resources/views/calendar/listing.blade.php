@@ -2,4 +2,23 @@
 @section('contents')
 
 {{Form::label('lbl-page-header', $pageTitle, ['id' => 'lbl-page-header'])}}
+
+<div class="dv-base">
+    <div class="page-layout">
+
+        <table id="table-reminders" style="width: 100%" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Reminder</th>
+                    <th>Place</th>
+                    <th>Datetime</th>
+                    <th>User</th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
 @endsection
