@@ -9,5 +9,8 @@ class CalendarController extends Controller
 {
     public function index(): view
     {
+        return view('calendar.listing')->with([
+            'pageTitle' => 'Calendar'
+        ]);
     }
 }
