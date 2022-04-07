@@ -53,9 +53,13 @@ class Topic extends Model
         $subcategory = ucwords($subcategory->sub_category);
         
         $path = Storage::disk('s3')->put("{$category}/{$subcategory}", $request->video);
-        $path = Storage::disk('s3')->url($path);
+        $link = Storage::disk('s3')->url($path);
 
-        $request->request->add(['link' => $path]);
+        $request->request->add([
+            'link' => $link,
+            'path' => $path
+        ]);
+
         $this->create($request->all());
     }
 
