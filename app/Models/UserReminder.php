@@ -5,12 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Carbon\Carbon;
 
 class UserReminder extends Model
 {
     protected $table = 'user_reminders';
     const CREATED_AT = 'createdAt';
     const UPDATED_AT = 'updatedAt';
+
+    public function getDateAttribute($value)
+    {
+        return Carbon::parse($value)->format('d/m/Y');
+    }
+
+    public function getTimeAttribute($value)
+    {
+        return Carbon::parse($value)->format('H:i');
+    }
 
     public function getListing(Request $request): JsonResponse
     {
