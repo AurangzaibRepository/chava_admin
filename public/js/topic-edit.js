@@ -6,3 +6,15 @@ $(document).ready(function(){
        $('#modal-delete-topic #spn-topic').text($(e.relatedTarget).data('topic'));
     });
 });
+
+
+function deleteTopic() {
+
+    $.ajax({
+        type: 'DELETE',
+        url: '/topics/' + $('#modal-delete-topic [name=topic_id]').val(),
+        success: function(response) {
+            location.reload();
+        }
+    });
+}
