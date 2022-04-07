@@ -12,7 +12,7 @@
                     </div>
                     <div class="col-12 text-end">
                         {{Form::button('Yes', ['class' => 'btn btn-primary'])}}
-                        {{Form::button('No', ['class' => 'btn btn-secondary'])}}
+                        {{Form::button('No', ['class' => 'btn btn-secondary', 'data-bs-dismiss' => 'modal'])}}
                     </div>
                 </div>
             </div>
