@@ -62,4 +62,5 @@
 
 @push('scripts')
 <script src="{{asset('js/subcategory-edit.js')}}"></script>
+<script src="{{asset('js/topic-edit.js')}}"></script>
 @endpush
