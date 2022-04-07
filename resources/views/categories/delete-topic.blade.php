@@ -7,6 +7,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-12 mb-3">
+                        {{Form::hidden('topic_id')}}
                         <label>Are you sure you want to delete this topic?</label>
                     </div>
                     <div class="col-12 text-end">
