@@ -68,3 +68,7 @@ input[name="video"] {
     color: #0b5ed7;
     font-size: 31px;
 }
+
+#modal-delete-topic #spn-topic {
+    font-weight: bold;
+}
