@@ -29,6 +29,11 @@
     color: #0b5ed7
 }
 
+#tbl-topics tr td:last-child {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 #modal-add-topic iframe {
     height: 210px;
     width: 100%;
