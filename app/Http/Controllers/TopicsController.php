@@ -27,7 +27,7 @@ class TopicsController extends Controller
 
     public function delete($id): void
     {
-        $this->topic->deleteTopic($request);
+        $this->topic->deleteTopic($id);
         session()->flash('success', 'Topic deleted successfully');
     }
 }
