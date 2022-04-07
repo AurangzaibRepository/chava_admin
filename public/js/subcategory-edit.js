@@ -51,7 +51,7 @@ function populateTopics() {
                 'render': function(data) {
                     return `
                         <a data-bs-toggle="modal" data-bs-target="#modal-add-topic"><i class="far fa-edit"></i></a>
-                        <a data-bs-toggle="modal" data-bs-target="#modal-delete-topic"><i class="fas fa-trash-alt"></i></a>
+                        <a data-bs-toggle="modal" data-bs-target="#modal-delete-topic" data-topicid="${data}"><i class="fas fa-trash-alt"></i></a>
                     `;
                 }
             }
