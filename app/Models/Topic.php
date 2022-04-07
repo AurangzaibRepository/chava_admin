@@ -57,4 +57,11 @@ class Topic extends Model
         $request->request->add(['link' => $path]);
         $this->create($request->all());
     }
+
+    public function deleteTopic($id): void
+    {
+        $topic = $this->find($id);
+        Storage::disk('s3')->delete($topic->path);
+        $this->destroy($id);
+    }
 }
