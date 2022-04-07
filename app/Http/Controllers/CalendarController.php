@@ -23,6 +23,6 @@ class CalendarController extends Controller
 
     public function listing(Request $request) : JsonResponse
     {
-        $this->reminder->getListing($request);
+        return $this->reminder->getListing($request);
     }
 }
