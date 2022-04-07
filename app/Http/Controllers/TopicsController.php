@@ -24,4 +24,10 @@ class TopicsController extends Controller
         $this->topic->saveTopic($request);
         session()->flash('success', 'Topic added successfully');
     }
+
+    public function delete($id): void
+    {
+        $this->topic->deleteTopic($request);
+        session()->flash('success', 'Topic deleted successfully');
+    }
 }
