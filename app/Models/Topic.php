@@ -18,6 +18,7 @@ class Topic extends Model
         'topic',
         'type',
         'link',
+        'path',
         'sub_category_id',
         'category_id'
     ];
