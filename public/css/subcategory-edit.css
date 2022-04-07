@@ -69,6 +69,15 @@ input[name="video"] {
     font-size: 31px;
 }
 
+#modal-delete-topic .fa-spinner {
+    color: #0b5ed7;
+    display: none;
+    font-size: 27px;
+    left: 43%;
+    position: absolute;
+    top: 53px
+}
+
 #modal-delete-topic #spn-topic {
     font-weight: bold;
 }
