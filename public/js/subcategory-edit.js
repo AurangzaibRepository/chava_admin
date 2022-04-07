@@ -48,10 +48,11 @@ function populateTopics() {
                 'targets': 3,
                 'width': '10%',
                 'class': 'text-center',
-                'render': function(data) {
+                'data': null,
+                'render': function(row, data) {
                     return `
                         <a data-bs-toggle="modal" data-bs-target="#modal-add-topic"><i class="far fa-edit"></i></a>
-                        <a data-bs-toggle="modal" data-bs-target="#modal-delete-topic" data-topicid="${data}"><i class="fas fa-trash-alt"></i></a>
+                        <a data-bs-toggle="modal" data-bs-target="#modal-delete-topic" data-topicid="${row[3]}" data-topic="${row[1]}"><i class="fas fa-trash-alt"></i></a>
                     `;
                 }
             }
