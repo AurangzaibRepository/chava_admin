@@ -56,6 +56,7 @@
 </div>
 
 @include('categories.add-topic')
+@include('categories.edit-topic');
 @include('categories.delete-topic');
 
 @endsection
