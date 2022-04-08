@@ -40,7 +40,8 @@ table th, table td {
     border-radius: 0px !important;
 }
 
-.modal {top: 10%}
+.modal {top: 3%}
+
 .modal-header {
     background-color: #0b5ed7;
     padding: 0.8rem 1rem
