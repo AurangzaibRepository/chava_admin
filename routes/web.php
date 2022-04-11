@@ -64,6 +64,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('topics/{subCategoryID}', [TopicsController::class, 'listing'])->name('topicsListing');
     Route::post('topics/add', [TopicsController::class, 'add'])->name('addTopic');
     Route::delete('topics/{id}', [TopicsController::class, 'delete'])->name('deleteTopic');
+    Route::post('topics/update', [TopicsController::class, 'update'])->name('updateTopic');
 
     // Calendar
     Route::get('calendar', [CalendarController::class, 'index'])->name('calendar');
