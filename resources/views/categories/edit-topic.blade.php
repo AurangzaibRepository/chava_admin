@@ -25,7 +25,7 @@
                         <span class="spn-error" id="error-video">File required</span>
                     </div>
                     <div class="col-12 text-end">
-                        {{Form::button('Save', ['class' => 'btn btn-primary'])}}
+                        {{Form::button('Save', ['class' => 'btn btn-primary', 'onClick' => 'updateTopic()'])}}
                         {{Form::button('Cancel', ['class' => 'btn btn-secondary', 'data-bs-dismiss' => 'modal' ])}}
                     </div>
                 </div>

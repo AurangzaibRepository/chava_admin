@@ -1,3 +1,4 @@
+var isValid;
 $(document).ready(function(){
 
     $('#modal-delete-topic').on('shown.bs.modal', (e) => {
@@ -20,4 +21,13 @@ function deleteTopic() {
             location.reload();
         }
     });
+}
+
+function updateTopic() {
+    
+    isValid = true;
+    $('.spn-error').css('display', 'none');
+
+    validateField('modal-edit-topic #type', 'modal-edit-topic #error-type');
+    validateField('modal-edit-topic #title', 'modal-edit-topic #error-title');
 }
