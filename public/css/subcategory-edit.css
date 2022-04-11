@@ -41,6 +41,7 @@
 
 #iframe-video {
     display: none;
+    width: 100%
 }
 
 input[name="video"] {
