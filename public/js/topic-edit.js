@@ -45,4 +45,30 @@ function updateTopic() {
 
     validateField('modal-edit-topic #type', 'modal-edit-topic #error-type');
     validateField('modal-edit-topic #title', 'modal-edit-topic #error-title');
+    validateFileType();
+}
+
+function validateFileType() {
+
+    let extensionList = [];
+    let errorMessage = '';
+    let type = $('#modal-edit-topic #type').val();
+
+    if (type === 'article') {
+        errorMessage = 'Only word and pdf files are allowed';
+        extensionList = ['doc', 'docx', 'pdf'];
+    }
+
+    if (type === 'video') {
+        extensionList = ['mp4', 'mp3', 'wmv', 'avi', 'mov'];
+        errorMessage = 'Only video files are allowed';
+    }
+
+    let extension = $('#modal-edit-topic #video').val().split('.').pop();
+
+    if (extensionList.indexOf(extension) === -1) {
+        isValid = false;
+        $('#modal-edit-topic #error-video').html(errorMessage);
+        $('#modal-edit-topic #error-video').css('display', 'block');
+    }
 }
