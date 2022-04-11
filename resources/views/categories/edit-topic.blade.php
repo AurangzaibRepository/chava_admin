@@ -21,7 +21,9 @@
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe class="embed-responsive-item" id="iframe-video" allowfullscreen></iframe>
                         </div>
-                        {{Form::file('video')}}
+
+                        {{Form::file('video', ['onChange' => 'updateVideo(this, "modal-edit-topic")', 'class' =>
+                        'field'])}}
                         <span class="spn-error" id="error-video">File required</span>
                     </div>
                     <div class="col-12 text-end">
