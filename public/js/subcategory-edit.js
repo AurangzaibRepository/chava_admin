@@ -55,6 +55,10 @@ function populateTopics() {
                         <a data-bs-toggle="modal" data-bs-target="#modal-delete-topic" data-topicid="${row[3]}" data-topic="${row[1]}"><i class="fas fa-trash-alt"></i></a>
                     `;
                 }
+            },
+            {
+                'targets': 4,
+                'visible': false,
             }
         ],
         'ajax': '/topics/' + $('[name=subcategory_id]').val()
