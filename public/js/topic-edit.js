@@ -7,6 +7,10 @@ $(document).ready(function(){
        $('#modal-delete-topic [name="topic_id"]').val($(e.relatedTarget).data('topicid') );
        $('#modal-delete-topic #spn-topic').text($(e.relatedTarget).data('topic'));
     });
+
+    $('#modal-edit-topic').on('shown.bs.modal', (e) => {
+        $('.spn-error').css('display', 'none');
+    });
 });
 
 
