@@ -90,7 +90,7 @@ function validateTopic() {
     isValid = true;
     $('.spn-error').css('display', 'none');
 
-    validateField('type', 'error-type');
+    validateField('modal-add-topic #type', 'modal-add-topic #error-type');
     validateField('topic', 'error-topic');
     validateField('video', 'error-video');
     validateFileType();
