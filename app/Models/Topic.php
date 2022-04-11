@@ -38,7 +38,8 @@ class Topic extends Model
                 ($key+1),
                 $value->topic,
                 $value->type,
-                $value->id
+                $value->id,
+                $value->link
             ];
         }
 
