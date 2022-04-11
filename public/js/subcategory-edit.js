@@ -182,7 +182,7 @@ function submitForm(form, url) {
         }); //End ajax
     }); // End form submit
 
-    $('#form-topic').submit();
+    $(`#${form}`).submit();
 }
 
 function showProgress(event) {
