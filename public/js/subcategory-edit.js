@@ -51,8 +51,12 @@ function populateTopics() {
                 'data': null,
                 'render': function(row, data) {
                     return `
-                        <a data-bs-toggle="modal" data-bs-target="#modal-edit-topic"><i class="far fa-edit"></i></a>
-                        <a data-bs-toggle="modal" data-bs-target="#modal-delete-topic" data-topicid="${row[3]}" data-topic="${row[1]}"><i class="fas fa-trash-alt"></i></a>
+                        <a data-bs-toggle="modal" data-bs-target="#modal-edit-topic" 
+                        data-topicid="${row[3]}" data-type="${row[1]}" data-title="${row[2]}" data-link="${row[4]}">
+                        <i class="far fa-edit"></i></a>
+                        <a data-bs-toggle="modal" data-bs-target="#modal-delete-topic" 
+                        data-topicid="${row[3]}" data-topic="${row[1]}">
+                        <i class="fas fa-trash-alt"></i></a>
                     `;
                 }
             },
