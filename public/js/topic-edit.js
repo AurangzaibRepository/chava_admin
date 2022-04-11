@@ -23,6 +23,7 @@ $(document).ready(function(){
 
 function populateTopicData(e) {
 
+    $('#modal-edit-topic [name=topic_id]').val($(e.relatedTarget).data('topicid') );
     $('#modal-edit-topic #type').val( $(e.relatedTarget).data('type') );
     $('#modal-edit-topic #title').val($(e.relatedTarget).data('title') );
     $('#modal-edit-topic iframe').attr('src', $(e.relatedTarget).data('link') );
