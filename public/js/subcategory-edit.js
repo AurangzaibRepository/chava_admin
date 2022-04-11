@@ -101,7 +101,7 @@ function validateTopic() {
         $('#modal-add-topic #video').css('pointer-events', 'none');
         $('#modal-add-topic #dv-loader').css('display', 'inline-flex');
 
-        submitForm();
+        submitForm('form-topic', '/topics/add');
     }
 
     return false;
@@ -154,9 +154,9 @@ function validateFileSize() {
     }
 }
 
-function submitForm() {
+function submitForm(form, url) {
     
-    $('#form-topic').on('submit', function(e) {
+    $(`#${form}`).on('submit', function(e) {
 
         e.preventDefault();
         $.ajax({
@@ -171,7 +171,7 @@ function submitForm() {
             },
 
             type: 'POST',
-            url: '/topics/add',
+            url: url,
             contentType: false,
             processData: false,
             data: new FormData(this),
