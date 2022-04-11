@@ -7,6 +7,11 @@
             <div class="modal-body">
 
                 {{Form::open(['id' => 'form-edit-topic'])}}
+                <div id="dv-loader">
+                    <i class="fas fa-spin fa-spinner"></i>
+                    <span></span>
+                </div>
+
                 <div class="row">
                     <div class="col-12 mb-3">
                         {{Form::label('type', 'Type')}}
