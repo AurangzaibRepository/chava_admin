@@ -80,8 +80,8 @@ function validateType() {
 function validateSize() {
 
     let size = $('#modal-edit-topic #video')[0].files[0].size;
-
-    if (size > 80) {
+    
+    if (size/1024/1024 > 80) {
         isValid = false;
         $('#modal-edit-topic #error-video').text('Maximum file size allowed is 80MB');
         $('#modal-edit-topic #error-video').css('display', 'block');
