@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-12 mb-3">
                         {{Form::label('type', 'Type')}}
-                        {{Form::select('type', [], null, ['class' => 'form-select'])}}
+                        {{Form::select('type', $topicTypes, null, ['class' => 'form-select'])}}
                         <span class="spn-error" id="error-type">Type required</span>
                     </div>
                     <div class="col-12 mb-3">
