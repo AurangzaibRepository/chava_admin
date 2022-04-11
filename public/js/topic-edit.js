@@ -14,6 +14,10 @@ $(document).ready(function(){
 
         populateTopicData(e);
     });
+
+    $('#modal-edit-topic').on('hidden.bs.modal', (e) => {
+        location.reload();
+    });
 });
 
 
@@ -46,6 +50,13 @@ function updateTopic() {
     validateField('modal-edit-topic #type', 'modal-edit-topic #error-type');
     validateField('modal-edit-topic #title', 'modal-edit-topic #error-title');
     validateType();
+
+    if (isValid) {
+        $('#modal-edit-topic .btn-primary').attr('disabled', true);
+        $('#modal-edit-topic #dv-loader').css('display', 'inline-flex');
+
+        submitForm('form-edit-topic', '/topics/update');
+    }
 }
 
 function validateType() {
