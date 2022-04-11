@@ -10,8 +10,19 @@ $(document).ready(function(){
 
     $('#modal-edit-topic').on('shown.bs.modal', (e) => {
         $('.spn-error').css('display', 'none');
+        $('#modal-edit-topic iframe').css('display', 'block');
+
+        populateTopicData(e);
     });
 });
+
+
+function populateTopicData(e) {
+
+    $('#modal-edit-topic #type').val( $(e.relatedTarget).data('type') );
+    $('#modal-edit-topic #title').val($(e.relatedTarget).data('title') );
+    $('#modal-edit-topic iframe').attr('src', $(e.relatedTarget).data('link') );
+}
 
 
 function deleteTopic() {
