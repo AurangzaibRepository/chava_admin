@@ -69,10 +69,11 @@ function populateTopics() {
     });
 }
 
-function updateVideo(obj) {
+function updateVideo(obj, modal) {
 
     $('#iframe-video').css('display', 'block');
-    document.getElementById('iframe-video').src = window.URL.createObjectURL(obj.files[0]);
+    //document.getElementById('iframe-video').src = window.URL.createObjectURL(obj.files[0]);
+    $(`#${modal} #iframe-video`).attr('src', window.URL.createObjectURL(obj.files[0]) );
 }
 
 function validateForm() {
