@@ -25,6 +25,12 @@ class TopicsController extends Controller
         session()->flash('success', 'Topic added successfully');
     }
 
+    public function update(Request $request): void
+    {
+        $this->topic->updateTopic($request);
+        session()->flash('success', 'Topic updated successfully');
+    }
+
     public function delete($id): void
     {
         $this->topic->deleteTopic($id);
