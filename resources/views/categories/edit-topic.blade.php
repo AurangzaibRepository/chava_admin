@@ -5,6 +5,8 @@
                 {{Form::label('header-label', 'Edit Topic')}}
             </div>
             <div class="modal-body">
+
+                {{Form::open(['id' => 'form-edit-topic'])}}
                 <div class="row">
                     <div class="col-12 mb-3">
                         {{Form::label('type', 'Type')}}
@@ -31,6 +33,7 @@
                         {{Form::button('Cancel', ['class' => 'btn btn-secondary', 'data-bs-dismiss' => 'modal' ])}}
                     </div>
                 </div>
+                {{Form::close()}}
             </div>
         </div>
     </div>
