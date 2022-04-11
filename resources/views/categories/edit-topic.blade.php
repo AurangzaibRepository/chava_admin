@@ -7,6 +7,7 @@
             <div class="modal-body">
 
                 {{Form::open(['id' => 'form-edit-topic'])}}
+                {{Form::hidden('topic_id')}}
                 <div id="dv-loader">
                     <i class="fas fa-spin fa-spinner"></i>
                     <span></span>
