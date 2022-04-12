@@ -77,8 +77,14 @@ class Topic extends Model
         $path = Storage::disk('s3')->put("{$category}/{$subcategory}", $request->video);
         $link = Storage::disk('s3')->url($path);
 
-
+        $this
+            ->where('id', $request->topic_id)
+            ->update([
+                'link' => $link,
+                'path' => $path
+            ]);
     }
+
 
     public function deleteTopic($id): void
     {
