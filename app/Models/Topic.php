@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Models\Category;
 use App\Models\SubCategory;
+use Illuminate\Support\Str;
 use Storage;
 
 class Topic extends Model
@@ -49,9 +50,10 @@ class Topic extends Model
     public function saveTopic(Request $request): void
     {
         $category = Category::find($request->category_id);
+        $category = Str::replace('/', '_', $category->category);
+
         $subcategory = Subcategory::find($request->sub_category_id);
-        $category = ucwords($category->category);
-        $subcategory = ucwords($subcategory->sub_category);
+        $subcategory = Str::replace('/', '_', $subcategory->sub_category);
         
         $path = Storage::disk('s3')->put("{$category}/{$subcategory}", $request->video);
         $link = Storage::disk('s3')->url($path);
@@ -68,10 +70,11 @@ class Topic extends Model
     {
         $topic = $this->find($request->topic_id);
         $category = Category::find($topic->category_id);
-        $category = ucwords($category->category);
+        $category = Str::replace('/', '_', $category->category);
 
         $subcategory = Subcategory::find($topic->sub_category_id);
-        $subcategory = ucwords($subcategory->sub_category);
+        //$subcategory = ucwords($subcategory->sub_category);
+        $subcategory = Str::replace('/', '_', $subcategory->sub_category);
 
         Storage::disk('s3')->delete($topic->path);
         $path = Storage::disk('s3')->put("{$category}/{$subcategory}", $request->video);
