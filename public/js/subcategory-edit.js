@@ -127,7 +127,7 @@ function validateFileType() {
 
     if ($('#type').val() === 'video') {
         errorMsg = 'Only video files are allowed';
-        validExtensions = ["mp4", "mov", "wmv", "avi"];
+        validExtensions = ["mp4", "mp3", "mov", "wmv", "avi"];
     }
 
     let file = $('#video').val().split('.').pop();
