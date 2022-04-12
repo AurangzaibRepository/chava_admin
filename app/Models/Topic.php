@@ -64,6 +64,22 @@ class Topic extends Model
         $this->create($request->all());
     }
 
+    public function updateTopic(Request $request): void
+    {
+        $topic = $this->find($request->topic_id);
+        $category = Category::find($topic->category_id);
+        $category = ucwords($category->category);
+
+        $subcategory = Subcategory::find($topic->sub_category_id);
+        $subcategory = ucwords($subcategory->sub_category);
+
+        Storage::disk('s3')->delete($topic->path);
+        $path = Storage::disk('s3')->put("{$category}/{$subcategory}", $request->video);
+        $link = Storage::disk('s3')->url($path);
+
+
+    }
+
     public function deleteTopic($id): void
     {
         $topic = $this->find($id);
