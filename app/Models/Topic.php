@@ -83,6 +83,8 @@ class Topic extends Model
         $this
             ->where('id', $request->topic_id)
             ->update([
+                'topic' => $request->title,
+                'type' => $request->type,
                 'link' => $link,
                 'path' => $path
             ]);
