@@ -36,10 +36,10 @@ class UserReminder extends Model
         $response = $this->getTotal($query, $response);
 
         $data = $query->limit(10)->offset($request->start)
-                      ->orderBy('user_reminders.id', 'desc')
-                      ->get();
+                      ->orderBy('user_reminders.id', 'desc');
 
-        foreach ($data as $key => $value) {
+        foreach ($data->get() as $key => $value) {
+            
             $response['data'][] = [
                 ($key+1),
                 $value->reminder,
