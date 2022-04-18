@@ -31,13 +31,12 @@ class UserReminder extends Model
             'data' => []
         ];
 
-        $query = $this
-                    ->join('users', 'users.id', 'user_reminders.user_id')
-                    ->select('user_reminders.*', 'users.user_name');
+        $query = $this->getQuery();
 
         $response = $this->getTotal($query, $response);
 
-        $data = $query->orderBy('user_reminders.id', 'desc')
+        $data = $query->limit(10)->offset($request->start)
+                      ->orderBy('user_reminders.id', 'desc')
                       ->get();
 
         foreach ($data as $key => $value) {
@@ -61,5 +60,12 @@ class UserReminder extends Model
         $data['recordsFiltered'] = $data['recordsTotal'];
 
         return $data;
+    }
+
+    private function getQuery(): Builder
+    {
+        return $this
+                ->join('users', 'users.id', 'user_reminders.user_id')
+                ->select('user_reminders.*', 'users.user_name');
     }
 }
