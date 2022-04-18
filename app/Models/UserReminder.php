@@ -35,7 +35,7 @@ class UserReminder extends Model
         $data = $this
                     ->join('users', 'users.id', 'user_reminders.user_id')
                     ->select('user_reminders.*', 'users.user_name')
-                    ->orderBy('id', 'desc')
+                    ->orderBy('user_reminders.id', 'desc')
                     ->get();
 
         foreach ($data as $key => $value) {
