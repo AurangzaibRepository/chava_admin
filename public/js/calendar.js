@@ -15,6 +15,7 @@ function populateReminders() {
             'width': '8%',
             'class': 'text-center'
         }],
+        'serverSide': true,
         'ajax': '/calendar/listing'
     });
 }
