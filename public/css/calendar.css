@@ -1,0 +1,5 @@
+#table-reminders tr td:last-child 
+{
+    display: flex;
+    justify-content: space-evenly;
+}
