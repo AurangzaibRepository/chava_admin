@@ -1,6 +1,10 @@
 @extends('layouts.main')
 @section('contents')
 
+@push('styles')
+    <link rel="stylesheet" href="{{asset('css/calendar.css')}}"></link>
+@endpush
+
 {{Form::label('lbl-page-header', $pageTitle, ['id' => 'lbl-page-header'])}}
 
 <div class="dv-base">
