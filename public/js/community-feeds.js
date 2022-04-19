@@ -51,15 +51,15 @@ function populateFeeds()
             {'targets': 6, 'width': '10%', 
                 'render': function(data, type, row){
 
-                    statusString = '';
+                    statusString = '<div>';
                     if (row.statusText !== 'accepted'){
-                        statusString = `<a data-bs-toggle="modal" data-bs-target="#modal-approval" data-id="${row.id}"><i class="fa fa-check icon-primary"></i></a>`;
+                        statusString += `<a data-bs-toggle="modal" data-bs-target="#modal-approval" data-id="${row.id}"><i class="fa fa-check icon-primary"></i></a>`;
                     }
 
                     if (row.statusText !== 'rejected'){
                         statusString += `<a href="javascript:;" onClick="changeStatus(${row.id}, 'rejected')"><i class="fa fa-times icon-secondary"></i></a>`;
                     }
-                    return statusString;
+                    return statusString + '</div>';
                 }}
         ],
         'ajax': {
