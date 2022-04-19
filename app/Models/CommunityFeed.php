@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Query\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
@@ -44,15 +45,10 @@ class CommunityFeed extends Model
             'data' => []
         ];
 
-        $response['recordsFiltered'] = $this->getCount();
-        $response['recordsTotal'] = $response['recordsFiltered'];
+        $query = $this->getQuery();
+        $response = $this->getCount($query, $response);
 
-        $data = DB::table('community_feeds')
-                    ->join('users', 'users.id', 'community_feeds.user_id')
-                    ->select(
-                        'community_feeds.*',
-                        'users.user_name'
-                    )
+        $data = $query
                     ->limit(10)
                     ->offset($request->start)
                     ->orderBy('community_feeds.id', 'desc')
@@ -68,9 +64,21 @@ class CommunityFeed extends Model
         return response()->json($response);
     }
 
-    private function getCount(): int
+    private function getQuery(): Builder
     {
         return DB::table('community_feeds')
-                ->count();
+                    ->join('users', 'users.id', 'community_feeds.user_id')
+                    ->select(
+                        'community_feeds.*',
+                        'users.user_name'
+                    );
+    }
+
+    private function getCount(Builder $query, array $response): array
+    {
+        $response['recordsTotal'] = $query->count();
+        $response['recordsFiltered'] = $response['recordsTotal'];
+
+        return $response;
     }
 }
