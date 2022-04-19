@@ -9,6 +9,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use App\Models\Category;
 use Carbon\Carbon;
 
 class CommunityFeed extends Model
@@ -55,9 +56,13 @@ class CommunityFeed extends Model
                     ->get();
 
         $response['data'] = $data->map(function ($feed) {
+
+            $category = Category::find($feed->category_id);
+            $feed->category = ($category != null ? $category->category : '');
             $feed->statusText = $feed->status;
             $feed->status = Str::replace('accepted', 'approved', $feed->status);
             $feed->status = "<span class='{$feed->status}'>".Str::ucfirst($feed->status)."</span>";
+            
             return $feed;
         });
 

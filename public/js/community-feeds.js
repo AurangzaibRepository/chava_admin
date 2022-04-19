@@ -39,7 +39,7 @@ function populateFeeds()
                 }},
             {'targets': 1, 'data': 'question'},
             {'targets': 2, 'data': 'user_name'},
-            {'targets': 3, 'data': 'category_id'},
+            {'targets': 3, 'data': 'category'},
             {'targets': 4, 'data': 'createdAt', 
                 'render': function(data){
                     let date = new Date(data);
