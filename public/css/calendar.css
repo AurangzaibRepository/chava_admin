@@ -1,0 +1,12 @@
+#table-reminders tr td:last-child {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#table-reminders .fa-times {
+    color: red
+}
+
+#table-reminders .fa-eye {
+    color: #0b5ed7
+}

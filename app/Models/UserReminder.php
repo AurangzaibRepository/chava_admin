@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Carbon\Carbon;
@@ -26,19 +27,19 @@ class UserReminder extends Model
     public function getListing(Request $request): JsonResponse
     {
         $response = [
-            'draw' => 1,
-            'recordsTotal' => 20,
-            'recordsFiltered' => 20,
+            'draw' => $request->draw,
             'data' => []
         ];
 
-        $data = $this
-                    ->join('users', 'users.id', 'user_reminders.user_id')
-                    ->select('user_reminders.*', 'users.user_name')
-                    ->orderBy('id', 'desc')
-                    ->get();
+        $query = $this->getQuery();
 
-        foreach ($data as $key => $value) {
+        $response = $this->getTotal($query, $response);
+
+        $data = $query->limit(10)->offset($request->start)
+                      ->orderBy('user_reminders.id', 'desc');
+
+        foreach ($data->get() as $key => $value) {
+            
             $response['data'][] = [
                 ($key+1),
                 $value->reminder,
@@ -50,5 +51,21 @@ class UserReminder extends Model
         }
 
         return response()->json($response);
+    }
+
+    private function getTotal(Builder $query, array $data): array
+    {
+        $recordCount = $query;
+        $data['recordsTotal'] = $recordCount->count();
+        $data['recordsFiltered'] = $data['recordsTotal'];
+
+        return $data;
+    }
+
+    private function getQuery(): Builder
+    {
+        return $this
+                ->join('users', 'users.id', 'user_reminders.user_id')
+                ->select('user_reminders.*', 'users.user_name');
     }
 }
