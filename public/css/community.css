@@ -1,6 +1,10 @@
 .ul-left-menu a.community {background: #f2f2f2; border-left: 3px solid #0b5ed7}
 .ul-left-menu a.community span, .ul-left-meny a.community svg{color: #0b5ed7}
 
+.dv-base.row {
+    justify-content: center;
+}
+
 #dv-community{display: none;}
 #tbl-community-users {margin-top: 14px !important; width: 100%}
 #tbl-community-users tbody tr:first-child {border-top: 1px solid #c0c0c0;}
