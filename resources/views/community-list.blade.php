@@ -22,6 +22,7 @@
                     <th>No</th>
                     <th>Question</th>
                     <th>User</th>
+                    <th>Category</th>
                     <th>Posted Date</th>
                     <th>Status</th>
                     <th></th>
