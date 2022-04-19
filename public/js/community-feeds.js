@@ -39,15 +39,16 @@ function populateFeeds()
                 }},
             {'targets': 1, 'data': 'question'},
             {'targets': 2, 'data': 'user_name'},
-            {'targets': 3, 'data': 'createdAt', 
+            {'targets': 3, 'data': 'category_id'},
+            {'targets': 4, 'data': 'createdAt', 
                 'render': function(data){
                     let date = new Date(data);
                     return date.toLocaleDateString('en-GB');
                 }
             },
-            {'targets': 4, 'data': 'status'},
+            {'targets': 5, 'data': 'status', 'width': '12%'},
             {'targets': [2,3,4], 'width': '15%'},
-            {'targets': 5, 'width': '10%', 
+            {'targets': 6, 'width': '10%', 
                 'render': function(data, type, row){
 
                     statusString = '';
