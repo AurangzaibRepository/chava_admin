@@ -55,7 +55,10 @@ class Topic extends Model
         $subcategory = Subcategory::find($request->sub_category_id);
         $subcategory = Str::replace('/', '_', $subcategory->sub_category);
         
-        $path = Storage::disk('s3')->put("{$category}/{$subcategory}", $request->video);
+        //$path = Storage::disk('s3')->put("{$category}/{$subcategory}/test.pdf", $request->video);
+        $path = $request->video->storeAs('', 
+        "{$category}/{$subcategory}/{$request->video->getClientOriginalName()}", 
+        ['disk' => 's3']);
         $link = Storage::disk('s3')->url($path);
 
         $request->request->add([
@@ -77,7 +80,11 @@ class Topic extends Model
         $subcategory = Str::replace('/', '_', $subcategory->sub_category);
 
         Storage::disk('s3')->delete($topic->path);
-        $path = Storage::disk('s3')->put("{$category}/{$subcategory}", $request->video);
+        //$path = Storage::disk('s3')->put("{$category}/{$subcategory}", $request->video);
+        $path = $request->video->storeAs('',
+        "{$category}/{$subcategory}/{$request->video->getClientOriginalName()}",
+        ['disk' => 's3']
+        );
         $link = Storage::disk('s3')->url($path);
 
         $this
