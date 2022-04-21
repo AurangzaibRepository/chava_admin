@@ -25,7 +25,12 @@ class SubCategory extends Model
                     ->get();
             
         foreach ($subCategoryList as $key => $value) {
-            $data['data'][] = [($key+1), $value->sub_category, $value->status, $value->id];
+            $data['data'][] = [
+                ($key+1), 
+                $value->sub_category, 
+                $value->status, 
+                $value->id
+            ];
         }
 
         return response()->json($data);
