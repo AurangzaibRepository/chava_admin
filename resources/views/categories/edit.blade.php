@@ -54,6 +54,7 @@
             <tr>
                 <th>No</th>
                 <th>Subcategory</th>
+                <th>Status</th>
                 <th></th>
             </tr>
         </thead>
