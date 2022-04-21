@@ -26,6 +26,10 @@ function populateSubCategories() {
             },
             {
                 'targets': 2,
+                'width': '15%'
+            },
+            {
+                'targets': 3,
                 'width': '10%',
                 'class': 'text-center',
                 render: function(data){
