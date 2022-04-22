@@ -10,7 +10,7 @@ use Illuminate\Support\Collection;
 class SubCategory extends Model
 {
     protected $table = 'sub_categories';
-    protected $fillable = ['sub_category', 'category_id'];
+    protected $fillable = ['sub_category', 'introduction_text', 'status', 'category_id'];
     const CREATED_AT = 'createdAt';
     const UPDATED_AT = 'updatedAt';
 
