@@ -23,7 +23,21 @@
                     {{Form::hidden('subcategory_id', $data->id)}}
                 </div>
             </div>
-            <div class="col-8" id="col-buttons">
+            <div class="col-4">
+                <div class="mb-3">
+                    {{Form::label('status', 'Status')}}
+                    {{Form::select('status', [], null, ['class' => 'form-select'])}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="mb-3">
+                    {{Form::label('introduction-text', 'Inroduction Text')}}
+                    {{Form::textarea('introduction-text', null, ['class' => 'form-control'])}}
+                </div>
+            </div>
+            <div class="col-4" id="col-buttons">
                 <div>
                     {{Form::submit('Save', ['class' => 'btn btn-primary', 'onClick' => 'return validateForm()' ])}}
                     {{link_to_route('editCategory', 'Back', $data->category_id, ['class' => 'btn btn-secondary'])}}
