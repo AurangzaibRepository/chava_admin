@@ -82,3 +82,8 @@ input[name="video"] {
 #modal-delete-topic #spn-topic {
     font-weight: bold;
 }
+
+#introduction-text {
+    height: 80px;
+    resize: none;
+}
