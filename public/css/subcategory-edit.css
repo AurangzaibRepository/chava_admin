@@ -6,8 +6,9 @@
 }
 
 #col-buttons {
-    align-items: center;
+    align-items: flex-end;
     display: inline-flex;
+    margin-bottom: 1rem;
 }
 
 #col-buttons div {
