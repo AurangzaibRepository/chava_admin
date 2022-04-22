@@ -84,7 +84,7 @@ input[name="video"] {
     font-weight: bold;
 }
 
-#introduction-text {
+#introduction_text {
     height: 80px;
     resize: none;
 }

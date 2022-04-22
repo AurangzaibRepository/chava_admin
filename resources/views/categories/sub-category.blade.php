@@ -33,8 +33,8 @@
         <div class="row">
             <div class="col-8">
                 <div class="mb-3">
-                    {{Form::label('introduction-text', 'Inroduction Text')}}
-                    {{Form::textarea('introduction-text', null, ['class' => 'form-control'])}}
+                    {{Form::label('introduction_text', 'Inroduction Text')}}
+                    {{Form::textarea('introduction_text', null, ['class' => 'form-control'])}}
                 </div>
             </div>
             <div class="col-4" id="col-buttons">
