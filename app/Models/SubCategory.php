@@ -50,6 +50,6 @@ class SubCategory extends Model
     {
         $this
             ->where('id', $request->subcategory_id)
-            ->update($request->only('sub_category'));
+            ->update($request->only(['sub_category', 'introduction_text', 'status']));
     }
 }
