@@ -78,12 +78,13 @@ function updateVideo(obj, modal) {
 
 function validateForm() {
 
-    if ($('#sub_category').val().trim() === '') {
+    isValid = true;
 
-        $('#error-subcategory').css('display', 'block');
-        $('#col-buttons div').css('margin-top', '-3px');
-        return false;
-    }
+    validateField('sub_category', 'error-subcategory');
+    validateField('introduction_text', 'error-introduction');
+    validateField('status', 'error-status');
+ 
+    return isValid;
 }
 
 function validateTopic() {
