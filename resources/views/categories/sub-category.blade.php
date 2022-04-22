@@ -27,7 +27,7 @@
                 <div class="mb-3">
                     {{Form::label('status', 'Status')}}
                     {{Form::select('status', $statusArray, $data->status, ['class' => 'form-select'])}}
-                    <span class="spn-error" id="error-status">Status</span>
+                    <span class="spn-error" id="error-status">Status required</span>
                 </div>
             </div>
         </div>
