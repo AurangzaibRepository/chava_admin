@@ -27,6 +27,7 @@
                 <div class="mb-3">
                     {{Form::label('status', 'Status')}}
                     {{Form::select('status', $statusArray, $data->status, ['class' => 'form-select'])}}
+                    <span class="spn-error" id="error-status">Status</span>
                 </div>
             </div>
         </div>
@@ -35,6 +36,7 @@
                 <div class="mb-3">
                     {{Form::label('introduction_text', 'Inroduction Text')}}
                     {{Form::textarea('introduction_text', $data->introduction_text, ['class' => 'form-control'])}}
+                    <span class="spn-error" id="error-introduction">Introduction required</span>
                 </div>
             </div>
             <div class="col-4" id="col-buttons">
