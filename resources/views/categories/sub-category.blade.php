@@ -26,7 +26,7 @@
             <div class="col-4">
                 <div class="mb-3">
                     {{Form::label('status', 'Status')}}
-                    {{Form::select('status', $statusArray, null, ['class' => 'form-select'])}}
+                    {{Form::select('status', $statusArray, $data->status, ['class' => 'form-select'])}}
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@
             <div class="col-8">
                 <div class="mb-3">
                     {{Form::label('introduction_text', 'Inroduction Text')}}
-                    {{Form::textarea('introduction_text', null, ['class' => 'form-control'])}}
+                    {{Form::textarea('introduction_text', $data->introduction_text, ['class' => 'form-control'])}}
                 </div>
             </div>
             <div class="col-4" id="col-buttons">
