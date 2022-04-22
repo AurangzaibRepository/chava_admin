@@ -48,6 +48,8 @@ function save() {
     $('.spn-error').css('display', 'none');
 
     validateFiled('subcategory', 'spn-subcategory');
+    validateFiled('modal-subcategory #status', 'error-status');
+    validateFiled('introduction_text', 'error-introduction');
 
     if (!isValid) {
         return;
