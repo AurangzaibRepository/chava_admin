@@ -7,6 +7,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use App\Models\SubCategory;
+use Illuminate\Support\Arr;
 
 class SubCategoriesController extends Controller
 {
@@ -29,11 +30,14 @@ class SubCategoriesController extends Controller
     public function edit($subCategoryID): View
     {
         $data = $this->subCategory->get($subCategoryID);
+        $statusArray = config('app.user_status');
+        Arr::forget($statusArray, 'Current');
 
         return view('categories.sub-category')
                     ->with([
                        'pageTitle' => "Edit {$data->sub_category}",
                        'topicTypes' => config('app.topic_types'),
+                       'statusArray' => $statusArray,
                        'data' => $data
                     ]);
     }

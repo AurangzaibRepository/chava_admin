@@ -26,7 +26,7 @@
             <div class="col-4">
                 <div class="mb-3">
                     {{Form::label('status', 'Status')}}
-                    {{Form::select('status', [], null, ['class' => 'form-select'])}}
+                    {{Form::select('status', $statusArray, null, ['class' => 'form-select'])}}
                 </div>
             </div>
         </div>
