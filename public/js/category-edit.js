@@ -57,7 +57,9 @@ function save() {
 
     $.post('/subcategories/add', {
         category_id: $('[name=id]').val(),
-        sub_category: $('#subcategory').val()
+        sub_category: $('#subcategory').val(),
+        introduction_text: $('#introduction_text').val(),
+        status: $('#modal-subcategory #status').val()
     }, 
     function(response) {
         window.location = '/topics/edit/' + $('[name=id]').val();
