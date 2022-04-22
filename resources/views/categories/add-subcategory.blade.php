@@ -13,7 +13,7 @@
                     </div>
                     <div class="col-12">
                         {{Form::label('status', 'Status')}}
-                        {{Form::select('status', [], null, ['class' => 'form-select'])}}
+                        {{Form::select('status', $statusArray, null, ['class' => 'form-select'])}}
                         <span class="spn-error" id="error-status">Status required</span>
                     </div>
                     <div class="col-12">
