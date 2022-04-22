@@ -14,10 +14,12 @@
                     <div class="col-12">
                         {{Form::label('status', 'Status')}}
                         {{Form::select('status', [], null, ['class' => 'form-select'])}}
+                        <span class="spn-error" id="error-status">Status required</span>
                     </div>
                     <div class="col-12">
                         {{Form::label('introduction_text', 'Introduction Text')}}
                         {{Form::textarea('introduction_text', null, ['class' => 'form-control'])}}
+                        <span class="spn-error" id="error-introduction">Introduction required</span>
                     </div>
                     <div class="col-12 text-end col-buttons">
                         {{Form::button('Save', ['class' => 'btn btn-primary', 'onClick' => 'save()'])}}
