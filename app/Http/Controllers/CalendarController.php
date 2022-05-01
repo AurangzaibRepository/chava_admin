@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use App\Models\UserReminder;
 
@@ -21,8 +22,14 @@ class CalendarController extends Controller
         ]);
     }
 
-    public function listing(Request $request) : JsonResponse
+    public function listing(Request $request): JsonResponse
     {
         return $this->reminder->getListing($request);
+    }
+
+    public function delete($id): RedirectResponse
+    {
+        UserReminder::destroy($id);
+        return redirect()->back()->with('success', 'Reminder deleted successfully');
     }
 }
