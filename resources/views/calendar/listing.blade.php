@@ -2,10 +2,15 @@
 @section('contents')
 
 @push('styles')
-    <link rel="stylesheet" href="{{asset('css/calendar.css')}}"></link>
+<link rel="stylesheet" href="{{asset('css/calendar.css')}}">
+</link>
 @endpush
 
 {{Form::label('lbl-page-header', $pageTitle, ['id' => 'lbl-page-header'])}}
+
+@if (session()->has('success'))
+<div class="alert alert-success">{{session()->get('success')}}</div>
+@endif
 
 <div class="dv-base">
     <div class="page-layout">
