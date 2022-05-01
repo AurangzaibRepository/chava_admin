@@ -32,4 +32,11 @@ class CalendarController extends Controller
         UserReminder::destroy($id);
         return redirect()->back()->with('success', 'Reminder deleted successfully');
     }
+
+    public function add(Request $request): view
+    {
+        return view('calendar.add', [
+            'pageTitle' => 'Add Reminder'
+        ]);
+    }
 }
