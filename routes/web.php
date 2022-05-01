@@ -68,4 +68,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('calendar', [CalendarController::class, 'index'])->name('calendar');
     Route::get('calendar/listing', [CalendarController::class, 'listing'])->name('calendarListing');
     Route::get('calendar/delete/{id}', [CalendarController::class, 'delete'])->name('deleteCalendar');
+    Route::get('/calendar/add', [CalendarController::class, 'add'])->name('addCalendar');
 });
