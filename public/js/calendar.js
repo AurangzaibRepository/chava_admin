@@ -22,7 +22,7 @@ function populateReminders() {
             render: function(data, row) {
                 return `
                         <a> <i class="far fa-edit"></i></a>
-                        <a> <i class="fa fa-times"></i> </a>
+                        <a href="/calendar/delete/${data}"> <i class="fa fa-times"></i> </a>
                         `;
             }
         }
