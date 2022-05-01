@@ -15,7 +15,7 @@
 {{Form::open()}}
 <div class="row">
     <div class="d-flex justify-content-end">
-        {{link_to('#', 'Add New', ['class' => 'btn btn-primary'])}}
+        {{link_to_route('addCalendar', 'Add New', null, ['class' => 'btn btn-primary'])}}
     </div>
 </div>
 {{Form::close()}}
