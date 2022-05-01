@@ -12,6 +12,14 @@
 <div class="alert alert-success">{{session()->get('success')}}</div>
 @endif
 
+{{Form::open()}}
+<div class="row">
+    <div class="d-flex justify-content-end">
+        {{link_to('#', 'Add New', ['class' => 'btn btn-primary'])}}
+    </div>
+</div>
+{{Form::close()}}
+
 <div class="dv-base">
     <div class="page-layout">
 
