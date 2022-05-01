@@ -36,7 +36,7 @@ class CalendarController extends Controller
     public function add(Request $request): view
     {
         return view('calendar.add', [
-            'pageTitle' => 'Add Reminder'
+            'pageTitle' => 'Add Calendar'
         ]);
     }
 }
