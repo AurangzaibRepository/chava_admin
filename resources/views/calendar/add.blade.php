@@ -1,6 +1,8 @@
 @extends('layouts.main')
 @section('contents')
 
+@push('styles')
+<link rel="stylesheet" href="{{asset('css/daterangepicker.css')}}" />
 <style>
     .ul-left-menu a.calendar {
         background: #f2f2f2;
@@ -12,6 +14,7 @@
         color: #0b5ed7
     }
 </style>
+@endpush
 
 {{Form::label('lbl-page-header', $pageTitle, ['id' => 'lbl-page-header'])}}
 
@@ -55,5 +58,7 @@
 @endsection
 
 @push('scripts')
+<script src="{{asset('js/moment.js')}}"></script>
+<script src="{{asset('js/daterangepicker.min.js')}}"></script>
 <script src="{{asset('js/calendar-add.js')}}"></script>
 @endpush
