@@ -53,3 +53,7 @@
 </div>
 
 @endsection
+
+@push('scripts')
+<script src="{{asset('js/calendar-add.js')}}"></script>
+@endpush
