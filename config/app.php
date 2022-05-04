@@ -247,5 +247,11 @@ return [
     'repeat_values' => [
         'True' => 'True',
         'False' => 'False'
+    ],
+
+    'reminder_priorities' => [
+        'más o menos' => 'más o menos',
+        'no importance' => 'no importance',
+        'urgente' => 'urgente'
     ]
 ];
