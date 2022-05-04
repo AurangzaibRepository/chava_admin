@@ -38,7 +38,8 @@ class CalendarController extends Controller
     {
         return view('calendar.add', [
             'pageTitle' => 'Add Calendar',
-            'repeat' => Arr::prepend(config('app.repeat_values'), '-- Select --', '')
+            'repeat' => Arr::prepend(config('app.repeat_values'), '-- Select --', ''),
+            'priorities' => Arr::prepend(config('app.reminder_priorities'), '-- Select --', '')
         ]);
     }
 }
