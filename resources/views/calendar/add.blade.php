@@ -1,6 +1,18 @@
 @extends('layouts.main')
 @section('contents')
 
+<style>
+    .ul-left-menu a.calendar {
+        background: #f2f2f2;
+        border-left: 3px solid #0b5ed7
+    }
+
+    .ul-left-menu a.calendar span,
+    .ul-left-menu a.calendar svg {
+        color: #0b5ed7
+    }
+</style>
+
 {{Form::label('lbl-page-header', $pageTitle, ['id' => 'lbl-page-header'])}}
 
 <div class="dv-base">
