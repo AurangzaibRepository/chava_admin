@@ -253,5 +253,15 @@ return [
         'más o menos' => 'más o menos',
         'no importance' => 'no importance',
         'urgente' => 'urgente'
+    ],
+
+    'reminder_values' => [
+        'Anillo vaginal' => 'Anillo vaginal',
+        'DIU' => 'DIU',
+        'Implante' => 'Implante',
+        'Inyección' => 'Inyección',
+        'Métodos naturales' => 'Métodos naturales',
+        'Parche' => 'Parche',
+        'Píldora anticonceptiva' => 'Píldora anticonceptiva'
     ]
 ];
