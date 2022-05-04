@@ -242,5 +242,10 @@ return [
         '' => '-- Select --',
         'video' => 'Video',
         'article' => 'Article'
+    ],
+
+    'repeat_values' => [
+        'True' => 'True',
+        'False' => 'False'
     ]
 ];
