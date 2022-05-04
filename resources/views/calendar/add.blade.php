@@ -38,7 +38,7 @@
         </div>
         <div class="row mb-3">
             <div class="col-2 d-flex flex-wrap align-content-center">{{Form::label('repeat', 'Repeat')}}</div>
-            <div class="col-4">{{Form::select('repeat', [], null, ['class' => 'form-select'])}}</div>
+            <div class="col-4">{{Form::select('repeat', $repeat, null, ['class' => 'form-select'])}}</div>
             <div class="col-2 d-flex flex-wrap align-content-center">{{Form::label('userid', 'User')}}</div>
             <div class="col-4">{{Form::select('userid', [], null, ['class' => 'form-select'])}}</div>
         </div>
