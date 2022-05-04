@@ -30,6 +30,12 @@
             <div class="col-2 d-flex flex-wrap align-content-center">{{Form::label('userid', 'User')}}</div>
             <div class="col-4">{{Form::select('userid', [], null, ['class' => 'form-select'])}}</div>
         </div>
+        <div class="row">
+            <div class="col-12 d-flex flex-wrap justify-content-end">
+                {{Form::submit('Save', ['class' => 'btn btn-primary'])}}
+                {{link_to_route('calendar', 'Back', null, ['class' => 'btn btn-secondary'])}}
+            </div>
+        </div>
         {{Form::close()}}
     </div>
 </div>
