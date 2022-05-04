@@ -28,7 +28,7 @@
             <div class="col-2 d-flex flex-wrap align-content-center">{{Form::label('grades', 'Grades')}}</div>
             <div class="col-4">{{Form::text('grades', null, ['class' => 'form-control'])}}</div>
             <div class="col-2 d-flex flex-wrap align-content-center">{{Form::label('priorities', 'Priorities')}}</div>
-            <div class="col-4">{{Form::select('priorities', [], null, ['class' => 'form-select'])}}</div>
+            <div class="col-4">{{Form::select('priorities', $priorities, null, ['class' => 'form-select'])}}</div>
         </div>
         <div class="row mb-3">
             <div class="col-2 d-flex flex-wrap align-content-center">{{Form::label('date', 'Date')}}</div>
