@@ -118,3 +118,7 @@ table th, table td {
 .icon-secondary {
     color: red
 }
+
+form label {
+    font-size: 14px
+}
