@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
+use Illuminate\Support\Arr;
 use App\Models\UserReminder;
 
 class CalendarController extends Controller
@@ -37,7 +38,7 @@ class CalendarController extends Controller
     {
         return view('calendar.add', [
             'pageTitle' => 'Add Calendar',
-            'repeat' => config('app.repeat_values')
+            'repeat' => Arr::prepend(config('app.repeat_values'), '-- Select --', '')
         ]);
     }
 }
