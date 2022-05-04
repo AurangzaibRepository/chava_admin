@@ -5,8 +5,13 @@ $(function() {
 
 function initializeDatepicker() {
     $('#date').daterangepicker({
-        format: 'DD/MM/YY'
+        singleDatePicker: true,
+        showDropdowns: true
     });
 
     $('#date').val('');
+
+    $('#date').on('apply.daterangepicker', function(ev, picker) {
+        $('#date').val(picker.startDate.format('DD/MM/YYYY'));
+    });
 }
