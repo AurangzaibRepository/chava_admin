@@ -116,10 +116,11 @@ class User extends Authenticatable
     {
         $data = $this
                     ->where('user_name', '!=', 'admin')
+                    ->orderBy('user_name')
                     ->limit(10)
                     ->offset($offset)
-                    ->get()
-                    ->pluck('user_name', 'id');
+                    ->select('id', 'user_name')
+                    ->get();
 
         return response()->json($data);
     }
