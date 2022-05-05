@@ -1,7 +1,10 @@
+var offset = 0;
+
 $(function() {
     
     initializeDatepicker();
     initializeTimepicker();
+    initializeUserDropdown();
 });
 
 function initializeDatepicker() {
@@ -35,4 +38,12 @@ function initializeTimepicker() {
     });
 
     $('#time').val('');
+}
+
+function initializeUserDropdown() {
+
+    $.get(`/users/all/${offset}`,
+    function(response) {
+
+    });
 }
