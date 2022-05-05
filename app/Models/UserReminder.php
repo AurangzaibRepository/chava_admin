@@ -12,6 +12,8 @@ use Carbon\Carbon;
 class UserReminder extends Model
 {
     protected $table = 'user_reminders';
+    protected $fillable = ['reminder', 'place', 'grades', 'priorities', 'date', 'time', 'repeat', 'user_id'];
+
     const CREATED_AT = 'createdAt';
     const UPDATED_AT = 'updatedAt';
 
