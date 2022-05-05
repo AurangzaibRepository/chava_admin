@@ -4,7 +4,7 @@ $(function() {
     
     initializeDatepicker();
     initializeTimepicker();
-    //initializeUserDropdown();
+    initializeUserDropdown();
 });
 
 function initializeDatepicker() {
@@ -42,12 +42,13 @@ function initializeTimepicker() {
 
 function initializeUserDropdown() {
 
-    let userDropdown = $('#userid');
+    let userDropdown = $('#user_id');
 
     $.get(`/users/all/${offset}`,
     function(response) {
-        response.each(function() {
-            userDropdown.append(`<option value=""></option>`);
+
+        $.each(response, function(key, value) {
+            userDropdown.append(`<option value="${value.id}">${value.user_name}</option>`);
         });
     });
 }
