@@ -115,10 +115,9 @@ class User extends Authenticatable
     public function get($offset): JsonResponse
     {
         $data = $this
-                    ->where('user_name', '!=', 'admin')
+                    ->where('role', 'User')
+                    ->where('user_name', '!=', null)
                     ->orderBy('user_name')
-                    ->limit(10)
-                    ->offset($offset)
                     ->select('id', 'user_name')
                     ->get();
 
