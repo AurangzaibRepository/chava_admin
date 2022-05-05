@@ -41,6 +41,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('users/{status?}', [UsersController::class, 'index'])->name('users');
     Route::get('users/change-status/{id}/{status}', [UsersController::class, 'changeStatus'])->name('changeStatus');
     Route::post('users-listing', [UsersController::class, 'listing'])->name('usersListing');
+    Route::get('/users/all/{offset}', [UsersController::class, 'all'])->name('allUsers');
 
     // Whatsapp
     Route::get('whatsapp-sessions', [WhatsappSessionsController::class, 'index'])->name('whatsappSessions');
