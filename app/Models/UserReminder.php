@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Str;
 use Carbon\Carbon;
 
 class UserReminder extends Model
@@ -65,5 +66,13 @@ class UserReminder extends Model
         return $this
                 ->join('users', 'users.id', 'user_reminders.user_id')
                 ->select('user_reminders.*', 'users.user_name');
+    }
+
+    public function saveData(array $data): void
+    {
+        $data['date'] = Str::replace('/', '-', $data['date']);
+        $data['date'] = date('Y-m-d', strtotime($data['date']));
+  
+        $this->create($data);
     }
 }
