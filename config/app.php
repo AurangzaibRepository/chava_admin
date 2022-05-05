@@ -251,7 +251,7 @@ return [
 
     'reminder_priorities' => [
         'más o menos' => 'más o menos',
-        'no importance' => 'no importance',
+        'no importante' => 'no importante',
         'urgente' => 'urgente'
     ],
 
