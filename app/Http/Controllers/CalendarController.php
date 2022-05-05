@@ -48,6 +48,7 @@ class CalendarController extends Controller
     {
         return view('calendar.edit', [
             'pageTitle' => 'Edit Calendar',
+            'data' => UserReminder::find($id),
             'repeat' => Arr::prepend(config('app.repeat_values'), '-- Select --', ''),
             'priorities' => Arr::prepend(config('app.reminder_priorities'), '-- Select --', ''),
             'reminder' => Arr::prepend(config('app.reminder_values'), '-- Select --', '')
