@@ -71,4 +71,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('calendar/delete/{id}', [CalendarController::class, 'delete'])->name('deleteCalendar');
     Route::get('/calendar/add', [CalendarController::class, 'add'])->name('addCalendar');
     Route::post('calendar/save', [CalendarController::class, 'save'])->name('saveCalendar');
+    Route::get('calendar/edit/{id}', [CalendarController::class, 'edit'])->name('editCalendar');
 });
