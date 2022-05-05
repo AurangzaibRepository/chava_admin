@@ -3,17 +3,8 @@
 
 @push('styles')
 <link rel="stylesheet" href="{{asset('css/daterangepicker.css')}}" />
-<style>
-    .ul-left-menu a.calendar {
-        background: #f2f2f2;
-        border-left: 3px solid #0b5ed7
-    }
-
-    .ul-left-menu a.calendar span,
-    .ul-left-menu a.calendar svg {
-        color: #0b5ed7
-    }
-</style>
+<link rel="stylesheet" href="{{asset('css/select2.min.css')}}" />
+<link rel="stylesheet" href="{{asset('css/calendar-add.css')}}" />
 @endpush
 
 {{Form::label('lbl-page-header', $pageTitle, ['id' => 'lbl-page-header'])}}
@@ -64,5 +55,6 @@
 @push('scripts')
 <script src="{{asset('js/moment.js')}}"></script>
 <script src="{{asset('js/daterangepicker.min.js')}}"></script>
+<script src="{{asset('js/select2.min.js')}}"></script>
 <script src="{{asset('js/calendar-add.js')}}"></script>
 @endpush
