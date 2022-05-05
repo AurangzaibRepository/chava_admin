@@ -43,4 +43,8 @@ class CalendarController extends Controller
             'reminder' => Arr::prepend(config('app.reminder_values'), '-- Select --', '')
         ]);
     }
+
+    public function save(Request $request): RedirectResponse
+    {
+    }
 }
