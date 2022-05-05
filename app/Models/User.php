@@ -112,7 +112,7 @@ class User extends Authenticatable
         return $userListing->get();
     }
 
-    public function get($offset): JsonResponse
+    public function get(): JsonResponse
     {
         $data = $this
                     ->where('role', 'User')

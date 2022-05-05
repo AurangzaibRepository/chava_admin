@@ -44,8 +44,8 @@ class UsersController extends Controller
                 ->with('success', "User {$statusText} successfully");
     }
 
-    public function all($offset): JsonResponse
+    public function all(): JsonResponse
     {
-        return $this->user->get($offset);
+        return $this->user->get();
     }
 }
