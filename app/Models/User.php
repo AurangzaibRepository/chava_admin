@@ -111,4 +111,16 @@ class User extends Authenticatable
 
         return $userListing->get();
     }
+
+    public function get($offset): JsonResponse
+    {
+        $data = $this
+                    ->where('user_name', '!=', 'admin')
+                    ->limit(10)
+                    ->offset($offset)
+                    ->get()
+                    ->pluck('user_name', 'id');
+
+        return response()->json($data);
+    }
 }
