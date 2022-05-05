@@ -1,5 +1,3 @@
-var offset = 0;
-
 $(function() {
     
     initializeDatepicker();
@@ -44,11 +42,13 @@ function initializeUserDropdown() {
 
     let userDropdown = $('#user_id');
 
-    $.get(`/users/all/${offset}`,
+    $.get(`/users/all`,
     function(response) {
 
         $.each(response, function(key, value) {
             userDropdown.append(`<option value="${value.id}">${value.user_name}</option>`);
         });
     });
+
+    $('select').select2();
 }
