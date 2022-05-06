@@ -1,5 +1,6 @@
 $(function() {
     selectDate();
+    selectTime();
 });
 
 function selectUser() {
@@ -8,4 +9,8 @@ function selectUser() {
 
 function selectDate() {
     $('#date').val($("[name=hdn_date]").val() );
+}
+
+function selectTime() {
+    $('#time').val($('[name=hdn_time]').val());
 }
