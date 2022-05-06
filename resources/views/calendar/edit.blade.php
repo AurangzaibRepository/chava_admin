@@ -48,9 +48,7 @@
             <div class="col-2 d-flex flex-wrap align-content-center">{{Form::label('repeat', 'Repeat')}}</div>
             <div class="col-4">{{Form::select('repeat', $repeat, $data->repeat, ['class' => 'form-select'])}}</div>
             <div class="col-2 d-flex flex-wrap align-content-center">{{Form::label('user_id', 'User')}}</div>
-            <div class="col-4">
-                {{Form::select('user_id', ['' => '-- Select --'], '', ['class' =>'form-select'])}}
-            </div>
+            <div class="col-4">{{Form::select('user_id', ['' => '-- Select --'], '', ['class' =>'form-select'])}}</div>
         </div>
         <div class="row">
             <div class="col-12 d-flex flex-wrap justify-content-end">
