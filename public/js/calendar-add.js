@@ -1,4 +1,5 @@
 var  userDropdown = $('#user_id');
+var edit = $('[name=id]').length;
 
 $(function() {
     
@@ -22,8 +23,6 @@ function initializeDatepicker() {
     $('#date').on('hide.daterangepicker', function(ev, picker) {
         $('#date').val(picker.startDate.format('DD/MM/YYYY'));
     });
-
-    selectDate();
 }
 
 function initializeTimepicker() {
