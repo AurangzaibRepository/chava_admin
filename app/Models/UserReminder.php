@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Str;
+use Illuminate\Support\Arr;
 use Carbon\Carbon;
 
 class UserReminder extends Model
@@ -72,9 +73,17 @@ class UserReminder extends Model
 
     public function saveData(array $data): void
     {
+        $data = Arr::except($data, ['_token', 'hdn_date', 'hdn_time', 'hdn_userid']);
         $data['date'] = Str::replace('/', '-', $data['date']);
         $data['date'] = date('Y-m-d', strtotime($data['date']));
-  
-        $this->create($data);
+        
+        if (!Arr::exists($data, 'id')) {
+            $this->create($data);
+            return;
+        }
+        
+        $this
+            ->where('id', $data['id'])
+            ->update($data);
     }
 }
