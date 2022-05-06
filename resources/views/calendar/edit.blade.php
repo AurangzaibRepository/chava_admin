@@ -18,6 +18,7 @@
         {{Form::open(['route' => 'saveCalendar'])}}
         {{Form::hidden('id', $data->id)}}
         {{Form::hidden('hdn_date', $data->date)}}
+        {{Form::hidden('hdn_time', $data->time)}}
         {{Form::hidden('hdn_userid', $data->user_id)}}
 
         <div class="row mb-3">
