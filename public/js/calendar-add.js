@@ -22,6 +22,8 @@ function initializeDatepicker() {
     $('#date').on('hide.daterangepicker', function(ev, picker) {
         $('#date').val(picker.startDate.format('DD/MM/YYYY'));
     });
+
+    selectDate();
 }
 
 function initializeTimepicker() {
