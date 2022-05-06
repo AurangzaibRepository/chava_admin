@@ -59,6 +59,6 @@ class CalendarController extends Controller
     {
         $this->reminder->saveData($request->all());
         
-        return redirect()->back()->with('success', 'Calendar added successfully');
+        return redirect()->to('/calendar')->with('success', 'Calendar added successfully');
     }
 }
