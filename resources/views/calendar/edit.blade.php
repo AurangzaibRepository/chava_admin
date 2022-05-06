@@ -16,6 +16,10 @@
 <div class="dv-base">
     <div class="page-layout">
         {{Form::open(['route' => 'saveCalendar'])}}
+        {{Form::hidden('id', $data->id)}}
+        {{Form::hidden('hdn_date', $data->date)}}
+        {{Form::hidden('hdn_userid', $data->user_id)}}
+
         <div class="row mb-3">
             <div class="col-2 d-flex flex-wrap align-content-center">{{Form::label('reminder', 'Reminder')}}</div>
             <div class="col-4">{{Form::select('reminder', $reminder, $data->reminder, ['class' => 'form-select'])}}
@@ -34,7 +38,6 @@
             <div class="col-2 d-flex flex-wrap align-content-center">{{Form::label('date', 'Date')}}</div>
             <div class="col-4">
                 {{Form::text('date', '', ['class' => 'form-control', 'readonly' =>'readonly'])}}
-                {{Form::hidden('hdn_date', $data->date)}}
             </div>
             <div class="col-2 d-flex flex-wrap align-content-center">{{Form::label('time', 'Time')}}</div>
             <div class="col-4">{{Form::text('time', null, ['class' => 'form-control', 'readonly' =>
@@ -46,7 +49,6 @@
             <div class="col-2 d-flex flex-wrap align-content-center">{{Form::label('user_id', 'User')}}</div>
             <div class="col-4">
                 {{Form::select('user_id', ['' => '-- Select --'], '', ['class' =>'form-select'])}}
-                {{Form::hidden('hdn_userid', $data->user_id)}}
             </div>
         </div>
         <div class="row">
