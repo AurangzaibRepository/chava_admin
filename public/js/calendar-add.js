@@ -1,3 +1,5 @@
+var  userDropdown = $('#user_id');
+
 $(function() {
     
     initializeDatepicker();
@@ -39,15 +41,14 @@ function initializeTimepicker() {
 }
 
 function initializeUserDropdown() {
-
-    let userDropdown = $('#user_id');
-
     $.get(`/users/all`,
     function(response) {
 
         $.each(response, function(key, value) {
             userDropdown.append(`<option value="${value.id}">${value.user_name}</option>`);
         });
+       
+        selectUser();
     });
 
     $('select').select2();
