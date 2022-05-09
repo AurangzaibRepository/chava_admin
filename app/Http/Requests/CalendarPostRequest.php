@@ -29,4 +29,11 @@ class CalendarPostRequest extends FormRequest
             'user_id' => 'required'
         ];
     }
+
+    public function attributes()
+    {
+        return [
+            'user_id' => 'User'
+        ];
+    }
 }
