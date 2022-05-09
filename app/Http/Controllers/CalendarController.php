@@ -8,6 +8,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use Illuminate\Support\Arr;
 use App\Models\UserReminder;
+use App\Http\Requests\CalendarPostRequest;
 
 class CalendarController extends Controller
 {
@@ -55,7 +56,7 @@ class CalendarController extends Controller
         ]);
     }
 
-    public function save(Request $request): RedirectResponse
+    public function save(Request $request, CalendarPostRequest $postRequest): RedirectResponse
     {
         $this->reminder->saveData($request->all());
         
