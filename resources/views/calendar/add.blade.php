@@ -15,6 +15,8 @@
     <div class="page-layout">
         {{Form::open(['route' => 'saveCalendar'])}}
         {{Form::hidden('hdn_userid', old('user_id'))}}
+        {{Form::hidden('hdn_date', old('date'))}}
+        {{Form::hidden('hdn_time', old('time'))}}
 
         <div class="row mb-3">
             <div class="col-2 d-flex flex-wrap align-content-center">{{Form::label('reminder', 'Reminder')}}</div>
