@@ -14,6 +14,8 @@
 <div class="dv-base">
     <div class="page-layout">
         {{Form::open(['route' => 'saveCalendar'])}}
+        {{Form::hidden('hdn_userid', old('user_id'))}}
+
         <div class="row mb-3">
             <div class="col-2 d-flex flex-wrap align-content-center">{{Form::label('reminder', 'Reminder')}}</div>
             <div class="col-4">{{Form::select('reminder', $reminder, old('reminder'), ['class' => 'form-select'])}}
@@ -60,4 +62,5 @@
 <script src="{{asset('js/daterangepicker.min.js')}}"></script>
 <script src="{{asset('js/select2.min.js')}}"></script>
 <script src="{{asset('js/calendar-add.js')}}"></script>
+<script src="{{asset('js/calendar-edit.js')}}"></script>
 @endpush
