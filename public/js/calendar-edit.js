@@ -5,9 +5,12 @@ $(function() {
 
 function selectUser() {
     userDropdown.val($("[name=hdn_userid]").val());
-    userDropdown.select2({
-        disabled: true
-    });
+
+    if (edit) {
+        userDropdown.select2({
+            disabled: true
+        });
+    }
 }
 
 function selectDate() {
