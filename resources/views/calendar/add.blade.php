@@ -9,9 +9,7 @@
 
 {{Form::label('lbl-page-header', $pageTitle, ['id' => 'lbl-page-header'])}}
 
-@if(session()->has('success'))
-<div class="alert alert-success">{{session()->get('success')}}</div>
-@endif
+@include('calendar.messages')
 
 <div class="dv-base">
     <div class="page-layout">
