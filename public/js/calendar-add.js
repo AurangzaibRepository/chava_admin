@@ -49,9 +49,8 @@ function initializeUserDropdown() {
             userDropdown.append(`<option value="${value.id}">${value.user_name}</option>`);
         });
        
-        if (edit) {
-            selectUser();
-        }
+        selectUser();
+        
     });
 
     $('select').select2();
