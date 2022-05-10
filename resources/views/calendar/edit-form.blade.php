@@ -55,7 +55,7 @@
 </div>
 <div class="row">
     <div class="col-12 d-flex flex-wrap justify-content-end">
-        {{Form::submit('Save', ['class' => 'btn btn-primary'])}}
+        {{Form::submit('Save', ['class' => 'btn btn-primary', 'onClick' => 'return validateForm()'])}}
         {{link_to_route('calendar', 'Back', null, ['class' => 'btn btn-secondary'])}}
     </div>
 </div>
