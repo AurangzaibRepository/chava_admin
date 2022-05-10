@@ -56,9 +56,10 @@ function PopulateUsers()
             }
         },
         columnDefs:[
-            {'targets': [0,1,2,3,4], 'width': '15%' },
+            {'targets': [0,1,2,3], 'width': '15%' },
+            {'targets': 4, 'width': '10%'},
             {'targets': 5, 'width': '10%', 'data': null,
-        render: function(row, data){
+            render: function(row, data){
 
             if (row[4] === 'Active'){
                 icon = 'fa-toggle-on';
