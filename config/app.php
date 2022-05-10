@@ -242,5 +242,26 @@ return [
         '' => '-- Select --',
         'video' => 'Video',
         'article' => 'Article'
+    ],
+
+    'repeat_values' => [
+        'True' => 'True',
+        'False' => 'False'
+    ],
+
+    'reminder_priorities' => [
+        'más o menos' => 'más o menos',
+        'no importante' => 'no importante',
+        'urgente' => 'urgente'
+    ],
+
+    'reminder_values' => [
+        'Anillo vaginal' => 'Anillo vaginal',
+        'DIU' => 'DIU',
+        'Implante' => 'Implante',
+        'Inyección' => 'Inyección',
+        'Métodos naturales' => 'Métodos naturales',
+        'Parche' => 'Parche',
+        'Píldora anticonceptiva' => 'Píldora anticonceptiva'
     ]
 ];

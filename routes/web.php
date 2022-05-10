@@ -38,6 +38,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('dashboard/get-activity-data', [DashboardController::class, 'activityData'])->name('activityData');
 
     // Users
+    Route::get('/users/all', [UsersController::class, 'all'])->name('allUsers');
     Route::get('users/{status?}', [UsersController::class, 'index'])->name('users');
     Route::get('users/change-status/{id}/{status}', [UsersController::class, 'changeStatus'])->name('changeStatus');
     Route::post('users-listing', [UsersController::class, 'listing'])->name('usersListing');
@@ -69,4 +70,8 @@ Route::group(['middleware' => 'auth'], function () {
     // Calendar
     Route::get('calendar', [CalendarController::class, 'index'])->name('calendar');
     Route::get('calendar/listing', [CalendarController::class, 'listing'])->name('calendarListing');
+    Route::get('calendar/delete/{id}', [CalendarController::class, 'delete'])->name('deleteCalendar');
+    Route::get('/calendar/add', [CalendarController::class, 'add'])->name('addCalendar');
+    Route::post('calendar/save', [CalendarController::class, 'save'])->name('saveCalendar');
+    Route::get('calendar/edit/{id}', [CalendarController::class, 'edit'])->name('editCalendar');
 });

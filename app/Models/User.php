@@ -111,4 +111,16 @@ class User extends Authenticatable
 
         return $userListing->get();
     }
+
+    public function get(): JsonResponse
+    {
+        $data = $this
+                    ->where('role', 'User')
+                    ->where('user_name', '!=', null)
+                    ->orderBy('user_name')
+                    ->select('id', 'user_name')
+                    ->get();
+
+        return response()->json($data);
+    }
 }

@@ -119,3 +119,16 @@ table th, table td {
 .icon-secondary {
     color: red
 }
+
+form label, .modal label {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+form .form-control {
+    font-size: 13px;
+}
+
+form .btn-secondary {
+    margin-left: 8px
+}

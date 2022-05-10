@@ -43,4 +43,9 @@ class UsersController extends Controller
         return redirect('/users')
                 ->with('success', "User {$statusText} successfully");
     }
+
+    public function all(): JsonResponse
+    {
+        return $this->user->get();
+    }
 }
