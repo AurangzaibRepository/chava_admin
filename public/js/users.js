@@ -79,7 +79,7 @@ function PopulateUsers()
             <a class="change-status" onClick="confirmStatusChange(${row[1]}, '${status}')">
             <i class="fa ${icon}"></i>
             </a>
-            <a> <i class="fa fa-trash-alt"></i></a>
+            <a href="/users/delete/${row[1]}"> <i class="fa fa-trash-alt"></i></a>
             `;
         }}
         ]
