@@ -12,6 +12,5 @@ function selectDate() {
 }
 
 function selectTime() {
-    alert($('[name=hdn_time]').val());
     $('#time').val($('[name=hdn_time]').val());
 }
