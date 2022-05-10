@@ -24,4 +24,5 @@
 <script src="{{asset('js/daterangepicker.min.js')}}"></script>
 <script src="{{asset('js/select2.min.js')}}"></script>
 <script src="{{asset('js/calendar-add.js')}}"></script>
+<script src="{{asset('js/calendar-validate.js')}}"></script>
 @endpush
