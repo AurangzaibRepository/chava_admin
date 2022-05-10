@@ -56,7 +56,7 @@ class CalendarController extends Controller
         ]);
     }
 
-    public function save(Request $request, CalendarPostRequest $postRequest): RedirectResponse
+    public function save(Request $request): RedirectResponse
     {
         $this->reminder->saveData($request->all());
         
