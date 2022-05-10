@@ -79,7 +79,7 @@ function PopulateUsers()
             <a class="change-status" onClick="confirmStatusChange(${row[1]}, '${status}')">
             <i class="fa ${icon}"></i>
             </a>
-            <a href="/users/delete/${row[1]}"> <i class="fa fa-trash-alt"></i></a>
+            <a onClick="confirmDelete(${row[1]}, '${row[0]}')"> <i class="fa fa-trash-alt"></i></a>
             `;
         }}
         ]
@@ -93,6 +93,13 @@ function confirmStatusChange(userID, status)
     if (confirm(`Are you sure you want to ${statusText}?`))
     {
         window.location.href = `/users/change-status/${userID}/${status}`;
+    }
+}
+
+function confirmDelete(userID, userName) {
+
+    if (confirm(`Are you sure you want to delete ${userName}?`)) {
+        window.location.href = `/users/delete/${userID}`;
     }
 }
 
