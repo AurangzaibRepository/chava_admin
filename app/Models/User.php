@@ -125,7 +125,7 @@ class User extends Authenticatable
 
     public function deleteRecord(int $userID): void
     {
-        DB::table('feed_reactions')->where('user_id', $userID)->delete();
+        DB::table('feeds_reactions')->where('user_id', $userID)->delete();
         DB::table('community_feeds')->where('user_id', $userID)->delete();
         DB::table('user_registration_answers')->where('user_id', $userID)->delete();
         DB::table('user_cycle_answers')->where('user_id', $userID)->delete();
