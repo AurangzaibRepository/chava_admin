@@ -14,22 +14,19 @@
 <div class="dv-base">
     <div class="page-layout">
         {{Form::open(['route' => 'saveCalendar'])}}
-        {{Form::hidden('hdn_userid', old('user_id'))}}
-        {{Form::hidden('hdn_date', old('date'))}}
-        {{Form::hidden('hdn_time', old('time'))}}
 
         <div class="row mb-3">
             <div class="col-2 d-flex flex-wrap align-content-center">{{Form::label('reminder', 'Reminder')}}</div>
-            <div class="col-4">{{Form::select('reminder', $reminder, old('reminder'), ['class' => 'form-select'])}}
+            <div class="col-4">{{Form::select('reminder', $reminder, '', ['class' => 'form-select'])}}
             </div>
             <div class="col-2 d-flex flex-wrap align-content-center">{{Form::label('place', 'Place')}}</div>
-            <div class="col-4">{{Form::text('place', old('place'), ['class' => 'form-control'])}}</div>
+            <div class="col-4">{{Form::text('place', '', ['class' => 'form-control'])}}</div>
         </div>
         <div class="row mb-3">
             <div class="col-2 d-flex flex-wrap align-content-center">{{Form::label('grades', 'Grades')}}</div>
-            <div class="col-4">{{Form::text('grades', old('grades'), ['class' => 'form-control'])}}</div>
+            <div class="col-4">{{Form::text('grades', '', ['class' => 'form-control'])}}</div>
             <div class="col-2 d-flex flex-wrap align-content-center">{{Form::label('priorities', 'Priorities')}}</div>
-            <div class="col-4">{{Form::select('priorities', $priorities, old('priorities'), ['class' =>
+            <div class="col-4">{{Form::select('priorities', $priorities, '', ['class' =>
                 'form-select'])}}</div>
         </div>
         <div class="row mb-3">
@@ -42,9 +39,9 @@
         </div>
         <div class="row mb-3">
             <div class="col-2 d-flex flex-wrap align-content-center">{{Form::label('repeat', 'Repeat')}}</div>
-            <div class="col-4">{{Form::select('repeat', $repeat, old('repeat'), ['class' => 'form-select'])}}</div>
+            <div class="col-4">{{Form::select('repeat', $repeat, '', ['class' => 'form-select'])}}</div>
             <div class="col-2 d-flex flex-wrap align-content-center">{{Form::label('user_id', 'User')}}</div>
-            <div class="col-4">{{Form::select('user_id', ['' => '-- Select --'], null, ['class' =>
+            <div class="col-4">{{Form::select('user_id', ['' => '-- Select --'], '', ['class' =>
                 'form-select'])}}</div>
         </div>
         <div class="row">
