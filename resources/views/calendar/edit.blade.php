@@ -73,4 +73,5 @@
 <script src="{{asset('js/select2.min.js')}}"></script>
 <script src="{{asset('js/calendar-add.js')}}"></script>
 <script src="{{asset('js/calendar-edit.js')}}"></script>
+<script src="{{asset('js/calendar-validate.js')}}"></script>
 @endpush
