@@ -119,8 +119,13 @@ table th, table td {
     color: red
 }
 
-form label {
-    font-size: 14px
+form label, .modal label {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+form .form-control {
+    font-size: 13px;
 }
 
 form .btn-secondary {
