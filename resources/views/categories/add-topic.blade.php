@@ -38,7 +38,7 @@
                     <div class="col-12">
                         {{Form::label('thumbnail', 'Thumbnail')}}
                         <img id="img-thumbnail"></img>
-                        {{Form::file('thumbnail')}}
+                        {{Form::file('thumbnail', ['onchange' => 'previewThumbnail(this)'])}}
                     </div>
                     <div class="co-12" id="dv-article">
                     </div>
