@@ -44,8 +44,9 @@
                     </div>
 
                     <div class="col-12 text-end">
-                        {{Form::submit('Save', ['class' => 'btn btn-primary', 'onClick' => 'return validateTopic()'])}}
-                        {{Form::button('Cancel', ['class' => 'btn btn-secondary', 'data-bs-dismiss' => 'modal'])}}
+                        {{Form::submit('Save', ['class' => 'btn btn-primary', 'onClick' => 'return
+                        validateTopic()'])}}{{Form::button('Cancel', ['class' => 'btn btn-secondary', 'data-bs-dismiss'
+                        => 'modal'])}}
                     </div>
                 </div>
             </div>
