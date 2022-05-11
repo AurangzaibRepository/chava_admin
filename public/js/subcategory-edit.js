@@ -94,6 +94,7 @@ function validateTopic() {
 
     validateField('modal-add-topic #type', 'modal-add-topic #error-type');
     validateField('topic', 'error-topic');
+    validateThumbnail();
     validateFileType();
 
     if (isValid) {
