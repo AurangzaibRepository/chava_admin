@@ -20,6 +20,7 @@ class Topic extends Model
         'type',
         'link',
         'path',
+        'thumbnail_path',
         'sub_category_id',
         'category_id'
     ];
@@ -55,15 +56,21 @@ class Topic extends Model
         $subcategory = Subcategory::find($request->sub_category_id);
         $subcategory = Str::replace('/', '_', $subcategory->sub_category);
         
+        $thumbnailPath = "images/topic-thumbnails/{$category}/{$subcategory}/{$request->thumbnail->getClientOriginalName()}";
+        $request->thumbnail->move(public_path("images/topic-thumbnails/{$category}/{$subcategory}"), $request->thumbnail->getClientOriginalName());
+
         //$path = Storage::disk('s3')->put("{$category}/{$subcategory}/test.pdf", $request->video);
-        $path = $request->video->storeAs('', 
-        "{$category}/{$subcategory}/{$request->video->getClientOriginalName()}", 
-        ['disk' => 's3']);
+        $path = $request->video->storeAs(
+            '',
+            "{$category}/{$subcategory}/{$request->video->getClientOriginalName()}",
+            ['disk' => 's3']
+        );
         $link = Storage::disk('s3')->url($path);
 
         $request->request->add([
             'link' => $link,
-            'path' => $path
+            'path' => $path,
+            'thumbnail_path' => $thumbnailPath
         ]);
 
         $this->create($request->all());
@@ -81,9 +88,10 @@ class Topic extends Model
 
         Storage::disk('s3')->delete($topic->path);
         //$path = Storage::disk('s3')->put("{$category}/{$subcategory}", $request->video);
-        $path = $request->video->storeAs('',
-        "{$category}/{$subcategory}/{$request->video->getClientOriginalName()}",
-        ['disk' => 's3']
+        $path = $request->video->storeAs(
+            '',
+            "{$category}/{$subcategory}/{$request->video->getClientOriginalName()}",
+            ['disk' => 's3']
         );
         $link = Storage::disk('s3')->url($path);
 
