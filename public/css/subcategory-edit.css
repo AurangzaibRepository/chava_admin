@@ -45,7 +45,7 @@
     width: 100%
 }
 
-input[name="video"] {
+input[name="video"], #thumbnail {
     margin-top: 10px;
     width: 100%
 }
