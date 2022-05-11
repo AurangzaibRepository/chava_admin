@@ -94,7 +94,6 @@ function validateTopic() {
 
     validateField('modal-add-topic #type', 'modal-add-topic #error-type');
     validateField('topic', 'error-topic');
-    validateField('video', 'error-video');
     validateFileType();
 
     if (isValid) {
