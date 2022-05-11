@@ -50,6 +50,12 @@ input[name="video"], #thumbnail {
     width: 100%
 }
 
+#img-thumbnail {
+    display: none;
+    height: 100px;
+    margin-top: 10px;
+    width: 100px;
+}
 
 .modal #dv-loader {
     align-items: center;
