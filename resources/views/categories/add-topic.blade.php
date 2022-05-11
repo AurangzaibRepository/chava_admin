@@ -25,7 +25,7 @@
                         {{Form::text('topic', null, ['class' => 'form-control field'])}}
                         <span class="spn-error" id="error-topic">Title required</span>
                     </div>
-                    <div class="col-12" id="dv-video">
+                    <div class="col-12 mb-3" id="dv-video">
                         {{Form::label('video', 'Select File')}}
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe class="embed-responsive-item" id="iframe-video" allowfullscreen></iframe>
@@ -34,6 +34,9 @@
                         {{Form::file('video', ['onChange' => 'updateVideo(this, "modal-add-topic")', 'class' =>
                         'field'])}}
                         <span class="spn-error" id="error-video">File required</span>
+                    </div>
+                    <div class="col-12">
+                        {{Form::label('thumbnail', 'Thumbnail')}}
                     </div>
                     <div class="co-12" id="dv-article">
                     </div>
