@@ -24,7 +24,7 @@
                         {{Form::text('title', null, ['class' => 'form-control'])}}
                         <span class="spn-error" id="error-title">Title required</span>
                     </div>
-                    <div class="col-12">
+                    <div class="col-12 mb-3">
                         {{Form::label('video', 'Select File')}}
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe class="embed-responsive-item" id="iframe-video" allowfullscreen></iframe>
