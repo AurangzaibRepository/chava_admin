@@ -25,6 +25,11 @@
                         <span class="spn-error" id="error-title">Title required</span>
                     </div>
                     <div class="col-12 mb-3">
+                        {{Form::label('thumbnail', 'Thumbnail')}}
+                        <img id="img-thumbnail"></img>
+                        {{Form::file('thumbnail')}}
+                    </div>
+                    <div class="col-12">
                         {{Form::label('video', 'Select File')}}
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe class="embed-responsive-item" id="iframe-video" allowfullscreen></iframe>
@@ -34,12 +39,6 @@
                         'field'])}}
                         <span class="spn-error" id="error-video">File required</span>
                     </div>
-                    <div class="col-12">
-                        {{Form::label('thumbnail', 'Thumbnail')}}
-                        <img id="img-thumbnail"></img>
-                        {{Form::file('thumbnail')}}
-                    </div>
-
                     <div class="col-12 text-end">
                         {{Form::button('Save', ['class' => 'btn btn-primary', 'onClick' => 'updateTopic()'])}}
                         {{Form::button('Cancel', ['class' => 'btn btn-secondary', 'data-bs-dismiss' => 'modal' ])}}
