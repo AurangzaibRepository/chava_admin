@@ -57,6 +57,10 @@ input[name="video"], #thumbnail {
     width: 100px;
 }
 
+#form-edit-topic #img-thumbnail {
+    display: block;
+}
+
 .modal #dv-loader {
     align-items: center;
     display: none;
