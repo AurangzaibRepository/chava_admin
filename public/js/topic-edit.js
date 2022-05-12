@@ -27,6 +27,7 @@ function populateTopicData(e) {
     $('#modal-edit-topic #type').val( $(e.relatedTarget).data('type') );
     $('#modal-edit-topic #title').val($(e.relatedTarget).data('title') );
     $('#modal-edit-topic iframe').attr('src', $(e.relatedTarget).data('link') );
+    $('#modal-edit-topic #img-thumbnail').attr('src', $(e.relatedTarget).data('thumbnaillink') );
 }
 
 
