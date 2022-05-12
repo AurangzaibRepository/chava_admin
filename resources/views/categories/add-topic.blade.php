@@ -25,7 +25,13 @@
                         {{Form::text('topic', null, ['class' => 'form-control field'])}}
                         <span class="spn-error" id="error-topic">Title required</span>
                     </div>
-                    <div class="col-12 mb-3" id="dv-video">
+                    <div class="col-12 mb-3">
+                        {{Form::label('thumbnail', 'Thumbnail')}}
+                        <img id="img-thumbnail"></img>
+                        {{Form::file('thumbnail', ['onchange' => 'previewThumbnail(this)'])}}
+                        <span class="spn-error" id="error-thumbnail">Thumbnail required</span>
+                    </div>
+                    <div class="col-12" id="dv-video">
                         {{Form::label('video', 'Select File')}}
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe class="embed-responsive-item" id="iframe-video" allowfullscreen></iframe>
@@ -35,13 +41,6 @@
                         'field'])}}
                         <span class="spn-error" id="error-video">File required</span>
                     </div>
-                    <div class="col-12">
-                        {{Form::label('thumbnail', 'Thumbnail')}}
-                        <img id="img-thumbnail"></img>
-                        {{Form::file('thumbnail', ['onchange' => 'previewThumbnail(this)'])}}
-                        <span class="spn-error" id="error-thumbnail">Thumbnail required</span>
-                    </div>
-
                     <div class="col-12 text-end">
                         {{Form::submit('Save', ['class' => 'btn btn-primary', 'onClick' => 'return validateTopic()'])}}
                         {{Form::button('Cancel', ['class' => 'btn btn-secondary', 'data-bs-dismiss'
