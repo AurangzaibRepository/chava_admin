@@ -51,7 +51,6 @@ function updateTopic() {
 
     validateField('modal-edit-topic #type', 'modal-edit-topic #error-type');
     validateField('modal-edit-topic #title', 'modal-edit-topic #error-title');
-    validateType();
 
     if (isValid) {
         $('#modal-edit-topic .btn-primary').attr('disabled', true);
