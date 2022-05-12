@@ -104,6 +104,7 @@ class Topic extends Model
     {
         $topic = $this->find($id);
         Storage::disk('s3')->delete($topic->path);
+        Storage::disk('s3')->delete($topic->thumbnail_path);
         $this->destroy($id);
     }
 
