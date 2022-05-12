@@ -122,6 +122,13 @@ function validateFileType() {
     let validExtensions = [];
     let errorMsg = '';
 
+    if ($('#video').get(0).files.length == 0) {
+        $('#error-video').html('File required');
+        $('#error-video').css('display', 'block');
+        isValid = false;
+        return;
+    }
+
     if ($('#type').val() === 'article') {
         errorMsg = 'Only word and pdf files allowed';
         validExtensions = ["doc", "docx", "pdf"];
