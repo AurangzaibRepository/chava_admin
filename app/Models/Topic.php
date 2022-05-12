@@ -20,7 +20,7 @@ class Topic extends Model
         'type',
         'link',
         'path',
-        'thumbnail_path',
+        'thumbnail_link',
         'sub_category_id',
         'category_id'
     ];
@@ -56,8 +56,7 @@ class Topic extends Model
         $subcategory = Subcategory::find($request->sub_category_id);
         $subcategory = Str::replace('/', '_', $subcategory->sub_category);
         
-        $thumbnailPath = "images/topic-thumbnails/{$category}/{$subcategory}/{$request->thumbnail->getClientOriginalName()}";
-        $request->thumbnail->move(public_path("images/topic-thumbnails/{$category}/{$subcategory}"), $request->thumbnail->getClientOriginalName());
+        $thumbnailLink = $this->uploadThumbnail($category, $subcategory, $request->thumbnail);
 
         //$path = Storage::disk('s3')->put("{$category}/{$subcategory}/test.pdf", $request->video);
         $path = $request->video->storeAs(
@@ -70,7 +69,7 @@ class Topic extends Model
         $request->request->add([
             'link' => $link,
             'path' => $path,
-            'thumbnail_path' => $thumbnailPath
+            'thumbnail_link' => $thumbnailLink
         ]);
 
         $this->create($request->all());
@@ -105,11 +104,22 @@ class Topic extends Model
             ]);
     }
 
-
     public function deleteTopic($id): void
     {
         $topic = $this->find($id);
         Storage::disk('s3')->delete($topic->path);
         $this->destroy($id);
+    }
+
+    private function uploadThumbnail(string $category, string $subcategory, $file): string
+    {
+        //$request->thumbnail->move(public_path("images/topic-thumbnails/{$category}/{$subcategory}"), $request->thumbnail->getClientOriginalName());
+        $path = $file->storeAs(
+            '',
+            "thumbnails/{$category}/{$subcategory}/{$file->getClientOriginalName()}",
+            ['disk' => 's3']
+        );
+
+        return Storage::disk('s3')->url($path);
     }
 }
