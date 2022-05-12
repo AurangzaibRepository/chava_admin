@@ -42,7 +42,8 @@ class Topic extends Model
                 $value->topic,
                 $value->type,
                 $value->id,
-                $value->link
+                $value->link,
+                $value->thumbnail_link
             ];
         }
 
