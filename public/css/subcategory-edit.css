@@ -35,7 +35,7 @@
     justify-content: space-evenly;
 }
 
-#modal-add-topic iframe {
+#modal-add-topic iframe, #modal-edit-topic iframe {
     height: 210px;
     width: 100%;
 }
