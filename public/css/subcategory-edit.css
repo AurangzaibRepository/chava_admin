@@ -66,7 +66,7 @@ input[name="video"], #thumbnail {
     display: none;
     left: 44%;
     position: absolute;
-    top: 30.5%;
+    top: 22.5%;
 }
 
 .modal #dv-loader span {
