@@ -34,6 +34,12 @@
                         'field'])}}
                         <span class="spn-error" id="error-video">File required</span>
                     </div>
+                    <div class="col-12">
+                        {{Form::label('thumbnail', 'Thumbnail')}}
+                        <img id="img-thumbnail"></img>
+                        {{Form::file('thumbnail')}}
+                    </div>
+
                     <div class="col-12 text-end">
                         {{Form::button('Save', ['class' => 'btn btn-primary', 'onClick' => 'updateTopic()'])}}
                         {{Form::button('Cancel', ['class' => 'btn btn-secondary', 'data-bs-dismiss' => 'modal' ])}}
