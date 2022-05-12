@@ -74,31 +74,34 @@ class Topic extends Model
 
     public function updateTopic(Request $request): void
     {
+        $updateArray = [
+            'topic' => $request->title,
+            'type' => $request->type
+        ];
+
         $topic = $this->find($request->topic_id);
         $category = Category::find($topic->category_id);
         $category = Str::replace('/', '_', $category->category);
 
         $subcategory = Subcategory::find($topic->sub_category_id);
-        //$subcategory = ucwords($subcategory->sub_category);
         $subcategory = Str::replace('/', '_', $subcategory->sub_category);
 
-        Storage::disk('s3')->delete($topic->path);
-        //$path = Storage::disk('s3')->put("{$category}/{$subcategory}", $request->video);
-        $path = $request->video->storeAs(
-            '',
-            "{$category}/{$subcategory}/{$request->video->getClientOriginalName()}",
-            ['disk' => 's3']
-        );
-        $link = Storage::disk('s3')->url($path);
+        if ($request->video) {
+            Storage::disk('s3')->delete($topic->path);
+            //$path = Storage::disk('s3')->put("{$category}/{$subcategory}", $request->video);
+            $path = $request->video->storeAs(
+                '',
+                "{$category}/{$subcategory}/{$request->video->getClientOriginalName()}",
+                ['disk' => 's3']
+            );
+
+            $updateArray['link'] = Storage::disk('s3')->url($path);
+            $updateArray['path'] = $path;
+        }
 
         $this
             ->where('id', $request->topic_id)
-            ->update([
-                'topic' => $request->title,
-                'type' => $request->type,
-                'link' => $link,
-                'path' => $path
-            ]);
+            ->update($updateArray);
     }
 
     public function deleteTopic($id): void
