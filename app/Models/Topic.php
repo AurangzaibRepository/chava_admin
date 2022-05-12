@@ -89,6 +89,7 @@ class Topic extends Model
         if ($request->video) {
             Storage::disk('s3')->delete($topic->path);
             //$path = Storage::disk('s3')->put("{$category}/{$subcategory}", $request->video);
+
             $path = $request->video->storeAs(
                 '',
                 "{$category}/{$subcategory}/{$request->video->getClientOriginalName()}",
@@ -97,6 +98,19 @@ class Topic extends Model
 
             $updateArray['link'] = Storage::disk('s3')->url($path);
             $updateArray['path'] = $path;
+        }
+
+        if ($request->thumbnail) {
+            Storage::disk('s3')->delete($topic->thumbnail_path);
+            
+            $path = $request->thumbnail->storeAs(
+                '',
+                "thumbnails/{$category}/{$subcategory}/{$request->thumbnail->getCLientOriginalName()}",
+                ['disk' => 's3']
+            );
+
+            $updateArray['thumbnail_link'] = Storage::disk('s3')->url($path);
+            $updateArray['thumbnail_path'] = $path;
         }
 
         $this
