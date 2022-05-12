@@ -21,6 +21,7 @@ class Topic extends Model
         'link',
         'path',
         'thumbnail_link',
+        'thumbnail_path',
         'sub_category_id',
         'category_id'
     ];
@@ -63,7 +64,8 @@ class Topic extends Model
         $request->request->add([
             'link' => $LinkArray['videoLink'],
             'path' => "{$category}/{$subcategory}/{$request->video->getClientOriginalName()}",
-            'thumbnail_link' => $LinkArray['thumbnailLink']
+            'thumbnail_link' => $LinkArray['thumbnailLink'],
+            'thumbnail_path' => "thumbnails/{$category}/{$subcategory}/{$request->thumbnail->getClientOriginalName()}"
         ]);
 
         $this->create($request->all());
