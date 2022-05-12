@@ -178,7 +178,7 @@ function submitForm(form, url) {
             processData: false,
             data: new FormData(this),
             success: function(resp) {
-                //location.reload();
+                location.reload();
             }
 
         }); //End ajax
