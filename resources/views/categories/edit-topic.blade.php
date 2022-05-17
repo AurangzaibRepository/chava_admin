@@ -30,6 +30,7 @@
                         {{Form::file('thumbnail', [
                         'onChange' => "previewThumbnail(this, 'form-edit-topic #img-thumbnail')"
                         ])}}
+                        <span class="spn-error" id="error-thumbnail">Thumbnail cannot be greater than 5MB</span>
                     </div>
                     <div class="col-12">
                         {{Form::label('video', 'Select File')}}

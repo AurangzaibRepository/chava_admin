@@ -51,6 +51,7 @@ function updateTopic() {
 
     validateField('modal-edit-topic #type', 'modal-edit-topic #error-type');
     validateField('modal-edit-topic #title', 'modal-edit-topic #error-title');
+    validateEditThumbnail();
 
     if (isValid) {
         $('#modal-edit-topic .btn-primary').attr('disabled', true);
@@ -97,5 +98,15 @@ function validateSize() {
         isValid = false;
         $('#modal-edit-topic #error-video').text('Maximum file size allowed is 80MB');
         $('#modal-edit-topic #error-video').css('display', 'block');
+    }
+}
+
+
+function validateEditThumbnail() {
+    let file = $('#form-edit-topic #thumbnail').get(0).files;
+
+    if (file[0]['size']/1024/1024 > 5) {
+        $('#form-edit-topic #error-thumbnail').css('display', 'block');
+        isValid = false;
     }
 }
