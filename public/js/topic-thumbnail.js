@@ -21,4 +21,10 @@ function validateThumbnail() {
         isValid = false;
     }
 
+    if (file[0]['size']/1024/1024 > 5) {
+        $('#error-thumbnail').html('Thumbnail cannot be greater than 5MB');
+        $('#error-thumbnail').css('display', 'block');
+        isValid = false;
+    }
+
 }
