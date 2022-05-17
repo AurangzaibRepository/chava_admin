@@ -27,7 +27,9 @@
                     <div class="col-12 mb-3">
                         {{Form::label('thumbnail', 'Thumbnail')}}
                         <img id="img-thumbnail"></img>
-                        {{Form::file('thumbnail')}}
+                        {{Form::file('thumbnail', [
+                        'onChange' => "previewThumbnail(this, 'form-edit-topic #img-thumbnail')"
+                        ])}}
                     </div>
                     <div class="col-12">
                         {{Form::label('video', 'Select File')}}

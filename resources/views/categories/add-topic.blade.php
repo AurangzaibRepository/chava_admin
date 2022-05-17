@@ -28,7 +28,9 @@
                     <div class="col-12 mb-3">
                         {{Form::label('thumbnail', 'Thumbnail')}}
                         <img id="img-thumbnail"></img>
-                        {{Form::file('thumbnail', ['onchange' => 'previewThumbnail(this)'])}}
+                        {{Form::file('thumbnail', [
+                        'onchange' => "previewThumbnail(this, 'form-topic #img-thumbnail')"
+                        ])}}
                         <span class="spn-error" id="error-thumbnail">Thumbnail required</span>
                     </div>
                     <div class="col-12" id="dv-video">
