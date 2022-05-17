@@ -1,7 +1,7 @@
-function previewThumbnail(obj) {
+function previewThumbnail(obj, elementID) {
     
-    $('#img-thumbnail').css('display', 'block');
-    $('#img-thumbnail').attr('src', URL.createObjectURL(obj.files[0]) );
+    $(`#${elementID}`).css('display', 'block');
+    $(`#${elementID}`).attr('src', URL.createObjectURL(obj.files[0]) );
 }
 
 function validateThumbnail() {
