@@ -36,7 +36,8 @@ class CommunityFeed extends Model
             ->update([
                 'status' => $request->status,
                 'answer' => $request->answer,
-                'category_id' => $request->category_id
+                'category_id' => $request->category_id,
+                'updatedAt' => Carbon::now()
             ]);
     }
 
