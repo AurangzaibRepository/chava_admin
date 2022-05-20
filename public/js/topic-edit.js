@@ -105,6 +105,10 @@ function validateSize() {
 function validateEditThumbnail() {
     let file = $('#form-edit-topic #thumbnail').get(0).files;
 
+    if (file.length === 0) {
+        return;
+    }
+
     if (file[0]['size']/1024/1024 > 5) {
         $('#form-edit-topic #error-thumbnail').css('display', 'block');
         isValid = false;
