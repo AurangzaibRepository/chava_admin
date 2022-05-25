@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class Category extends Model
 {
@@ -43,7 +45,17 @@ class Category extends Model
 
     public function saveRecord(Request $request): void
     {
-        $this->create($request->all());
+        $categoryProfile = $this->create($request->all());
+
+        DB::table('registration_question_answers')
+            ->insert([
+                'label' => $categoryProfile->category,
+                'value' => $categoryProfile->category,
+                'question_id' => 4,
+                'category_id' => $categoryProfile->id,
+                'createdAt' => Carbon::now(),
+                'updatedAt' => Carbon::now()
+            ]);
     }
 
     public function get(int $id): Category
