@@ -10,11 +10,11 @@ function validateThumbnail() {
     let validImageTypes = ["image/gif", "image/jpeg", "image/png"];
 
     if (file.length == 0) {
-        $('#error-thumbnail').css('display', 'block');
-        isValid = false;
+        //$('#error-thumbnail').css('display', 'block');
+        //isValid = false;
         return;
-    }   
-
+    }
+    
     if ($.inArray(file[0]['type'], validImageTypes) < 0 ) {
         $('#error-thumbnail').html('Thumbnail must be image file');
         $('#error-thumbnail').css('display', 'block');
