@@ -58,15 +58,19 @@ class Topic extends Model
         $subcategory = Subcategory::find($request->sub_category_id);
         $subcategory = Str::replace('/', '_', $subcategory->sub_category);
         
-        $LinkArray = $this->uploadMedia($category, $subcategory, $request->thumbnail, $request->video);
+        if ($request->thumbnail) {
+            $thumbnailLink = $this->uploadThumbnail($category, $subcategory, $request->thumbnail);
+            //$path = Storage::disk('s3')->put("{$category}/{$subcategory}/test.pdf", $request->video);
 
-        //$path = Storage::disk('s3')->put("{$category}/{$subcategory}/test.pdf", $request->video);
+            $request->request->add([
+                'thumbnail_path' => "thumbnails/{$category}/{$subcategory}/{$request->thumbnail->getClientOriginalName()}",
+                'thumbnail_link' => $thumbnailLink
+            ]);
+        }
 
         $request->request->add([
-            'link' => $LinkArray['videoLink'],
             'path' => "{$category}/{$subcategory}/{$request->video->getClientOriginalName()}",
-            'thumbnail_link' => $LinkArray['thumbnailLink'],
-            'thumbnail_path' => "thumbnails/{$category}/{$subcategory}/{$request->thumbnail->getClientOriginalName()}"
+            'link' => $this->uploadVideo($category, $subcategory, $request->video)
         ]);
 
         $this->create($request->all());
@@ -126,27 +130,25 @@ class Topic extends Model
         $this->destroy($id);
     }
 
-    private function uploadMedia(string $category, string $subcategory, $file, $video): array
+    private function uploadThumbnail(string $category, string $subcategory, $file): string
     {
-        $response = [];
-
-        //$request->thumbnail->move(public_path("images/topic-thumbnails/{$category}/{$subcategory}"), $request->thumbnail->getClientOriginalName());
         $path = $file->storeAs(
-            '',
+            "",
             "thumbnails/{$category}/{$subcategory}/{$file->getClientOriginalName()}",
-            ['disk' => 's3']
+            ["disk" => "s3"]
         );
 
-        $response['thumbnailLink'] = Storage::disk('s3')->url($path);
+        return Storage::disk('s3')->url($path);
+    }
 
+    private function uploadVideo(string $category, string $subcategory, $video): string
+    {
         $path = $video->storeAs(
-            '',
-            "{$category}/{$subcategory}/{$video->getClientOriginalName()}",
-            ['disk' => 's3']
+            "",
+            "thumbnails/{$category}/{$subcategory}/{$video->getClientOriginalName()}",
+            ["disk" => "s3"]
         );
 
-        $response['videoLink'] = Storage::disk('s3')->url($path);
-
-        return $response;
+        return Storage::disk('s3')->url($path);
     }
 }
