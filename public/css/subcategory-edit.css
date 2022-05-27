@@ -58,7 +58,7 @@ input[name="video"], #thumbnail {
 }
 
 #form-edit-topic #img-thumbnail {
-    display: block;
+    display: none;
 }
 
 .modal #dv-loader {
