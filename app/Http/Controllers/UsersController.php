@@ -21,7 +21,7 @@ class UsersController extends Controller
         $pageTitle = 'Manage Users';
         $userStatus = config('app.user_status');
 
-        return view('users', [
+        return view('users.users', [
             'pageTitle' => $pageTitle,
             'userStatus' => $userStatus,
             'status' => ucfirst($status)
