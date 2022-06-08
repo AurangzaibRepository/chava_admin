@@ -26,6 +26,9 @@
                     </div>
                 </div>
                 <div class="col-md-4">
+                    {{Form::text('phone', '', ['class' => 'form-control', 'placeholder' => 'Phone Number'])}}
+                </div>
+                <div class="col-md-4">
                     {{Form::select('status', $userStatus, $status, ['class' => 'form-select'])}}
                 </div>
                 <div class="col-md-4">
