@@ -28,7 +28,7 @@
                     {{Form::select('status', $statusArray, $data->status, ['class' => 'form-select'])}}
                 </div>
             </div>
-            <div class="col-4 dv-checkbox">
+            <div class="col-4 dv-checkbox" id="dv-publish">
                 {{Form::checkbox('published', 1, $data->published)}}
                 {{Form::label('published', 'Publish')}}
             </div>

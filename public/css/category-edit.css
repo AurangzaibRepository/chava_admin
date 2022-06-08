@@ -30,3 +30,7 @@ table td:last-child svg {
 #modal-subcategory .col-buttons {
     margin-top: 2px
 }
+
+#dv-publish {
+    display: none;
+}
