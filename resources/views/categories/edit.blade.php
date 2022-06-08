@@ -20,12 +20,14 @@
                     {{Form::hidden('id', $data->id)}}
                     {{Form::label('category', 'Category')}}
                     {{Form::text('category', $data->category, ['class' => 'form-control'])}}
+                    <span class="spn-error" id="error-category">Category required</span>
                 </div>
             </div>
             <div class="col-4">
                 <div class="mb-3">
                     {{Form::label('status', 'Status')}}
                     {{Form::select('status', $statusArray, $data->status, ['class' => 'form-select'])}}
+                    <span class="spn-error" id="error-category-status">Status required</span>
                 </div>
             </div>
             <div class="col-4 dv-checkbox" id="dv-publish">
@@ -33,7 +35,7 @@
                 {{Form::label('published', 'Publish')}}
             </div>
             <div class="col-12 text-end">
-                {{Form::submit('Save', ['class' => 'btn btn-primary'])}}
+                {{Form::submit('Save', ['class' => 'btn btn-primary', 'onClick' => 'return validateCategory()'])}}
                 {{link_to('topics', 'Back', ['class' => 'btn btn-secondary'] )}}
             </div>
         </div>

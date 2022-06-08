@@ -66,6 +66,17 @@ function save() {
     });
 }
 
+function validateCategory() {
+
+    isValid = true;
+    $('.spn-error').css('display', 'none');
+
+    validateFiled('category', 'error-category');
+    validateFiled('status', 'error-category-status');
+
+    return isValid;
+}
+
 function validateFiled(elementID, errorID) {
 
     if ($(`#${elementID}`).val().trim() === '') {
