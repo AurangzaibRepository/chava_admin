@@ -16,7 +16,7 @@
             {{Form::text('joining_date', '', ['class' => 'form-control', 'placeholder' => 'Joining Date',
             'id' => 'joining_date', 'readonly' => 'readonly'])}}
         </div>
-        <div class="col-md-8">
+        <div class="col-md-4">
             <label id="lbl-new" class="checkbox"><input type="checkbox" id="new" {{($status=='New' ? 'checked' : '' )}}>
                 New
                 Visitor</label>
