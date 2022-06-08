@@ -65,7 +65,6 @@
                 <th>Topic</th>
                 <th>Type</th>
                 <th></th>
-                <th></th>
             </tr>
         </thead>
     </table>
