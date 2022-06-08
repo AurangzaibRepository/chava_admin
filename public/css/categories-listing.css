@@ -36,6 +36,9 @@
   visibility: hidden;
 }
 
+#dv-publish {
+  display: none
+}
 
 /* Slider */
 .slick-slide {

@@ -18,7 +18,7 @@
                             <span class="spn-error" id="spn-status">Status required</span>
                         </div>
                     </div>
-                    <div class="col-12 dv-checkbox">
+                    <div class="col-12 dv-checkbox" id="dv-publish">
                         {{Form::checkbox('publish', '', false, ['id' => 'publish'])}}
                         {{Form::label('publish', 'Publish')}}
                     </div>
