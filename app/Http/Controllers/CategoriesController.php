@@ -25,7 +25,7 @@ class CategoriesController extends Controller
             'pageTitle' => 'Topic',
             'activeCategories' => $this->category->getAll('Active'),
             'inactiveCategories' => $this->category->getAll('Inactive'),
-            'draftCategories' => $this->category->getAll(null, true),
+            //'draftCategories' => $this->category->getAll(null, true),
             'statusArray' => $statusArray
         ]);
     }
