@@ -51,6 +51,7 @@ function populateTopics() {
                 'data': null,
                 'render': function(row, data) {
                     return `
+                        <div>
                         <a data-bs-toggle="modal" data-bs-target="#modal-edit-topic" 
                         data-topicid="${row[3]}" data-type="${row[2]}" data-title="${row[1]}" 
                         data-link="${row[4]}" data-thumbnaillink="${row[5]}">
@@ -58,6 +59,7 @@ function populateTopics() {
                         <a data-bs-toggle="modal" data-bs-target="#modal-delete-topic" 
                         data-topicid="${row[3]}" data-topic="${row[1]}">
                         <i class="fas fa-trash-alt"></i></a>
+                        </div>
                     `;
                 }
             },
