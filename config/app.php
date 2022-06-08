@@ -245,8 +245,9 @@ return [
     ],
 
     'repeat_values' => [
-        'True' => 'True',
-        'False' => 'False'
+        'Daily' => 'Daily',
+        'Weekly' => 'Weekly',
+        'Monthly' => 'Monthly'
     ],
 
     'reminder_priorities' => [
