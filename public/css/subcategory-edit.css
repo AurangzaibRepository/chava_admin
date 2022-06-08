@@ -30,7 +30,7 @@
     color: #0b5ed7
 }
 
-#tbl-topics tr td:last-child {
+#tbl-topics tr td:last-child div {
     display: flex;
     justify-content: space-evenly;
 }
