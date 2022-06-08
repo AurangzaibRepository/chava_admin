@@ -59,26 +59,6 @@
     </section>
 </div>
 
-<br />
-<!-- Drafts topics -->
-<label class="lbl-topic">Drafts Topics:</label>
-
-<div class="page-layout dv-topics" id="dv-drafts-topics">
-    <section class="logo-topics slider" data-arrows="true">
-
-        @foreach ($draftCategories as $category)
-        <div class="slide">
-            <a class="lnk-topic" href="{{route('editCategory', [$category->id])}}">
-                <div>
-                    <img src="{{url('images/leaf-icon.png')}}"></img>
-                </div>
-                <span>{{$category->category}}</span>
-            </a>
-        </div>
-        @endforeach
-    </section>
-</div>
-
 @include('categories.add-category')
 
 @endsection
