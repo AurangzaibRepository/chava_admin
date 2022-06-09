@@ -55,11 +55,4 @@ class WhatsappSession extends Model
 
         return $query;
     }
-
-    private function getUsersCount(): int
-    {
-        return DB::table('users')
-                ->where('role', '!=', 'Admin')
-                ->count();
-    }
 }
