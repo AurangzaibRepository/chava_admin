@@ -9,6 +9,8 @@
 
 <div class="dv-base">
     <div class="page-layout">
+
+        @include('whatsapp_sessions.filters')
         <table id="table-whatsapp" class="table table-striped table-bordered">
             <thead>
                 <tr>
