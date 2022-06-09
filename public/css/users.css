@@ -28,13 +28,6 @@ table thead tr{background: #0b5ed7; color: white}
 .tbl-users td:last-child {display: inline-flex; justify-content: space-around; width: 100%;}
 .tbl-users td {padding: 9px 0px}*/
 
-.dv-filter{
-    border-radius: 2px;
-    box-shadow: 0px 0px 2px 1px lightgray;
-    margin: 5px 0px 15px 0px;
-    padding: 15px;
-}
-
 label.checkbox{
     align-items: center;
     display: inline-flex;
