@@ -49,6 +49,7 @@ function PopulateUsers()
             url : '/users-listing',
             data: {
                 username: $('input[name=username]').val(),
+                phone: $('input[name="phone"]').val(),
                 status: $('select[name=status]').val(),
                 joining_date: $('input[name=joining_date]').val(),
                 new: $('#new')[0].checked,

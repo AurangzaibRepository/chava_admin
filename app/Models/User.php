@@ -78,6 +78,10 @@ class User extends Authenticatable
             $userListing = $userListing->where('user_name', 'LIKE', "%{$request->username}%");
         }
 
+        if ($request->phone !== '') {
+            $userListing = $userListing->where('phone_no', 'LIKE', "%{$request->phone}%");
+        }
+
         if ($request->status != '') {
             if ($request->status != 'Current') {
                 $userListing = $userListing->where('status', $request->status);
