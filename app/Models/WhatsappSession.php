@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Builder;
 class WhatsappSession extends Model
 {
     public $table = 'users';
-    
+
     public function getListing(Request $request): JsonResponse
     {
         $data = [
@@ -22,9 +22,8 @@ class WhatsappSession extends Model
         $query = $this->applyFilters($request);
         $data['recordsTotal'] = $query->count();
         $data['recordsFiltered'] = $data['recordsTotal'];
-
-        $userList = DB::table('users')
-                        ->where('role', '!=', 'Admin')
+        
+        $userList = $query
                         ->limit(10)
                         ->offset($request->start)
                         ->orderBy('id', 'desc')
@@ -51,7 +50,7 @@ class WhatsappSession extends Model
         }
 
         if ($request->phone) {
-            $query = $query->where('phone_no', 'LIKE', "%{$request->phone_no}%");
+            $query = $query->where('phone_no', 'LIKE', "%{$request->phone}%");
         }
 
         return $query;
