@@ -33,6 +33,8 @@ function PopulateUsers()
     });
 }
 
-function reset() {
-    $('#form-filter').reset();
+function resetFilters() {
+
+    $('#form-filter').trigger('reset');
+    PopulateUsers();
 }

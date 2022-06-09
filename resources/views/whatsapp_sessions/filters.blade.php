@@ -9,7 +9,7 @@
         </div>
         <div class="col-md-4 d-flex align-items-end justify-content-end mb-3">
             {{Form::button('Search', ['class' => 'btn btn-primary', 'onClick' => 'PopulateUsers()'])}}
-            {{Form::button('Reset', ['class' => 'btn btn-secondary', 'onClick' => 'reset()'])}}
+            {{Form::button('Reset', ['class' => 'btn btn-secondary', 'onClick' => 'resetFilters()'])}}
         </div>
     </div>
     {{Form::close()}}
