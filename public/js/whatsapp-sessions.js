@@ -24,3 +24,7 @@ function PopulateUsers()
         ajax: '/whatsapp-sessions/listing'
     });
 }
+
+function reset() {
+    $('#form-filter').reset();
+}
