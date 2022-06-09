@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Builder;
 
 class WhatsappSession extends Model
 {
@@ -16,8 +17,8 @@ class WhatsappSession extends Model
             'data' => []
         ];
 
+        $query = $this->applyFilters($request);
         $data['recordsTotal'] = $this->getUsersCount();
-
         $data['recordsFiltered'] = $data['recordsTotal'];
 
         $userList = DB::table('users')
@@ -35,8 +36,23 @@ class WhatsappSession extends Model
             ];
         }
 
-
         return response()->json($data);
+    }
+
+    
+    private function applyFilters(Request $request): Builder
+    {
+        $query = $this->where('role', '!=', 'Admin');
+
+        if ($request->name) {
+            $query = $query->where('user_name', 'LIKE', "%{$request->name}%");
+        }
+
+        if ($request->phone) {
+            $query = $query->where('phone_no', 'LIKE', "%{$request->phone_no}%");
+        }
+
+        return $query;
     }
 
     private function getUsersCount(): int
