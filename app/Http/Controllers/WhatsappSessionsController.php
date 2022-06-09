@@ -18,7 +18,7 @@ class WhatsappSessionsController extends Controller
     {
         $pageTitle = 'WhatsApp Sessions';
 
-        return view('whatsapp-sessions')->with([
+        return view('whatsapp_sessions.listing')->with([
             'pageTitle' => $pageTitle
         ]);
     }
