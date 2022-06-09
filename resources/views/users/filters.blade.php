@@ -26,7 +26,7 @@
                 WhatsApp Session
             </label>
         </div>
-        <div class="col-md-4 dv-buttons">
+        <div class="col-md-4 dv-buttons mb-3">
             {{Form::submit('Search', ['class' => 'btn btn-primary', 'id' => 'search'])}}
             {{Form::submit('Reset', ['class' => 'btn btn-secondary', 'id' => 'btn-reset'])}}
         </div>
