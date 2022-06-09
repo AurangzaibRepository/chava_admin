@@ -73,6 +73,7 @@ function PopulateUsers()
             }
 
             return `
+            <div>
             <a class="user-modal" data-bs-toggle="modal" data-bs-target="#modal-user" data-name="${row[0]}" data-last-active="${row[3]}" 
             data-country="${row[5]}"
             data-phone-no="${row[6]}" data-created-at="${row[7]}">
@@ -81,6 +82,7 @@ function PopulateUsers()
             <i class="fa ${icon}"></i>
             </a>
             <a onClick="confirmDelete(${row[1]}, '${row[0]}')"> <i class="fa fa-trash-alt"></i></a>
+            </div>
             `;
         }}
         ]
