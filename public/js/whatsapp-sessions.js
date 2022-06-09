@@ -22,7 +22,13 @@ function PopulateUsers()
             }
         }
         ],
-        ajax: '/whatsapp-sessions/listing'
+        ajax: {
+            url: '/whatsapp-sessions/listing',
+            data: {
+                name: $('input[name="name"]').val(),
+                phone: $('input[name="phone"]').val()
+            }
+        }
     });
 }
 
