@@ -24,6 +24,7 @@ function PopulateUsers()
         ],
         ajax: {
             url: '/whatsapp-sessions/listing',
+            type: 'POST',
             data: {
                 name: $('input[name="name"]').val(),
                 phone: $('input[name="phone"]').val()
