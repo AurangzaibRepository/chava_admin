@@ -6,17 +6,17 @@
                 {{Form::text('username', '', ['class' => 'form-control', 'placeholder' => 'Username'])}}
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 mb-3">
             {{Form::text('phone', '', ['class' => 'form-control', 'placeholder' => 'Phone Number'])}}
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 mb-3">
             {{Form::select('status', $userStatus, $status, ['class' => 'form-select'])}}
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 mb-3">
             {{Form::text('joining_date', '', ['class' => 'form-control', 'placeholder' => 'Joining Date',
             'id' => 'joining_date', 'readonly' => 'readonly'])}}
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 d-flex align-items-center">
             <label id="lbl-new" class="checkbox"><input type="checkbox" id="new" {{($status=='New' ? 'checked' : '' )}}>
                 New
                 Visitor</label>
