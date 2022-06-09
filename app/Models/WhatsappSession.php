@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Builder;
 
 class WhatsappSession extends Model
 {
+    public $table = 'users';
+    
     public function getListing(Request $request): JsonResponse
     {
         $data = [
@@ -18,7 +20,7 @@ class WhatsappSession extends Model
         ];
 
         $query = $this->applyFilters($request);
-        $data['recordsTotal'] = $this->getUsersCount();
+        $data['recordsTotal'] = $query->count();
         $data['recordsFiltered'] = $data['recordsTotal'];
 
         $userList = DB::table('users')
