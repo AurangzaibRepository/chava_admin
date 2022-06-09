@@ -132,3 +132,10 @@ form .form-control {
 form .btn-secondary {
     margin-left: 8px
 }
+
+.dv-filter {
+    border-radius: 2px;
+    box-shadow: 0px 0px 2px 1px lightgray;
+    margin: 5px 0px 15px 0px;
+    padding: 15px;
+}
