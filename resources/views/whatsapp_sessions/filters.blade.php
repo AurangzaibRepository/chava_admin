@@ -8,7 +8,7 @@
             {{Form::text('phone', '', ['class' => 'form-control', 'placeholder' => 'Phone Number'])}}
         </div>
         <div class="col-md-4 d-flex align-items-end justify-content-end">
-            {{Form::button('Search', ['class' => 'btn btn-primary'])}}
+            {{Form::button('Search', ['class' => 'btn btn-primary', 'onClick' => 'PopulateUsers()'])}}
             {{Form::button('Reset', ['class' => 'btn btn-secondary', 'onClick' => 'reset()'])}}
         </div>
     </div>
