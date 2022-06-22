@@ -31,3 +31,7 @@ function populateReminders() {
         'ajax': '/calendar/listing'
     });
 }
+
+function resetForm() {
+    $('#form-filter').trigger('reset');
+}
