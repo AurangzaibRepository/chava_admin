@@ -10,6 +10,7 @@ function populateReminders() {
         'searching': false,
         'bLengthChange': false,
         'bSort': false,
+        'destroy': true,
         'columnDefs': [{
             'targets': 0,
             'width': '8%',
