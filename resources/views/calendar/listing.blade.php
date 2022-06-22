@@ -41,6 +41,8 @@
 
 <!-- Scripts -->
 @push('scripts')
+<script src="{{asset('js/moment.js')}}"></script>
+<script src="{{asset('js/daterangepicker.min.js')}}"></script>
 <script src="{{asset('js/calendar.js')}}"></script>
 @endpush
 
