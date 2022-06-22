@@ -12,16 +12,17 @@
 <div class="alert alert-success">{{session()->get('success')}}</div>
 @endif
 
-{{Form::open()}}
-<div class="row">
-    <div class="d-flex justify-content-end">
-        {{link_to_route('addCalendar', 'Add New', null, ['class' => 'btn btn-primary'])}}
-    </div>
-</div>
-{{Form::close()}}
-
 <div class="dv-base">
     <div class="page-layout">
+
+        @include('calendar.filters')
+        {{Form::open()}}
+        <div class="row">
+            <div class="d-flex justify-content-end">
+                {{link_to_route('addCalendar', 'Add New', null, ['class' => 'btn btn-primary'])}}
+            </div>
+        </div>
+        {{Form::close()}}
 
         <table id="table-reminders" style="width: 100%" class="table table-bordered table-striped">
             <thead>
