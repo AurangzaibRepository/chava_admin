@@ -34,4 +34,5 @@ function populateReminders() {
 
 function resetForm() {
     $('#form-filter').trigger('reset');
+    populateReminders();
 }
