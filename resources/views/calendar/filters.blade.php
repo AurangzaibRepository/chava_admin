@@ -11,7 +11,7 @@
             {{Form::select('user', [], null, ['class' => 'form-select'])}}
         </div>
         <div class="col-md-4 mb-3">
-
+            {{Form::text('datetime', null, ['class' => 'form-control', 'placeholder' => 'Datetime'])}}
         </div>
     </div>
     {{Form::close()}}
