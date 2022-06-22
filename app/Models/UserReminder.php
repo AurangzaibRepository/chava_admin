@@ -34,16 +34,17 @@ class UserReminder extends Model
             'draw' => $request->draw,
             'data' => []
         ];
+        $offset = $request->start;
 
         $query = $this->getQuery();
         $response = $this->getTotal($query, $response);
 
-        $data = $query->limit(10)->offset($request->start)
+        $data = $query->limit(10)->offset($offset)
                       ->orderBy('user_reminders.id', 'desc');
 
         foreach ($data->get() as $key => $value) {
             $response['data'][] = [
-                ($key+1),
+                ++$offset,
                 $value->reminder,
                 $value->place,
                 "{$value->date} {$value->time}",
