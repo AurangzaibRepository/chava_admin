@@ -125,7 +125,7 @@ form label, .modal label {
     font-weight: bold;
 }
 
-form .form-control {
+form .form-control, form .form-select {
     font-size: 13px;
 }
 
