@@ -11,7 +11,8 @@
             {{Form::select('user', [], null, ['class' => 'form-select'])}}
         </div>
         <div class="col-md-4 mb-3">
-            {{Form::text('datetime', null, ['class' => 'form-control', 'placeholder' => 'Datetime'])}}
+            {{Form::text('datetime', null, ['class' => 'form-control', 'placeholder' => 'Datetime', 'readonly' =>
+            'readonly'])}}
         </div>
         <div class="col-md-8 mb-3 d-flex align-items-end justify-content-end">
             {{Form::button('Search', ['class' => 'btn btn-primary'])}}
