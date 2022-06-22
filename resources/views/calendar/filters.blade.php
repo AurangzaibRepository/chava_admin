@@ -15,7 +15,7 @@
         </div>
         <div class="col-md-8 mb-3 d-flex align-items-end justify-content-end">
             {{Form::button('Search', ['class' => 'btn btn-primary'])}}
-            {{Form::button('Reset', ['class' => 'btn btn-secondary'])}}
+            {{Form::button('Reset', ['class' => 'btn btn-secondary', 'onClick' => 'resetForm()'])}}
         </div>
     </div>
     {{Form::close()}}
