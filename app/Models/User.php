@@ -74,11 +74,11 @@ class User extends Authenticatable
     {
         $userListing = $this->where('role', 'User');
 
-        if ($request->username !== '') {
+        if ($request->username != '') {
             $userListing = $userListing->where('user_name', 'LIKE', "%{$request->username}%");
         }
 
-        if ($request->phone !== '') {
+        if ($request->phone != '') {
             $userListing = $userListing->where('phone_no', 'LIKE', "%{$request->phone}%");
         }
 
@@ -111,11 +111,10 @@ class User extends Authenticatable
         }
 
         $userListing = $userListing->orderBy('id', 'desc');
-
         return $userListing->get();
     }
 
-    /*public function get(): JsonResponse
+    public function get(): JsonResponse
     {
         $data = $this
                     ->where('role', 'User')
@@ -125,7 +124,7 @@ class User extends Authenticatable
                     ->get();
 
         return response()->json($data);
-    }*/
+    }
 
     public function deleteRecord(int $userID): void
     {
