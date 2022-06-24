@@ -115,7 +115,7 @@ class User extends Authenticatable
         return $userListing->get();
     }
 
-    public function get(): JsonResponse
+    /*public function get(): JsonResponse
     {
         $data = $this
                     ->where('role', 'User')
@@ -125,7 +125,7 @@ class User extends Authenticatable
                     ->get();
 
         return response()->json($data);
-    }
+    }*/
 
     public function deleteRecord(int $userID): void
     {
