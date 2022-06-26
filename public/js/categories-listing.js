@@ -2,6 +2,8 @@ var isValid;
 
 $(function() {
 
+    populateCategories();
+
     $('#modal-category').on('shown.bs.modal', (e) => {
         $('.spn-error').css('display', 'none');
         $('#error-response').css('visibility', 'hidden');
@@ -9,6 +11,15 @@ $(function() {
         $('.modal-body #publish').prop('checked', false);
     });
 });
+
+function populateCategories() {
+
+    $('#tbl-categories').DataTable({
+        'searching': false,
+        'bSort': false,
+        'bLengthChange': false
+    });
+}
 
 function addCategory() {
 
