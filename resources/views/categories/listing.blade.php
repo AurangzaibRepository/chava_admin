@@ -20,7 +20,7 @@
 <div class="dv-base">
     <div class="page-layout">
 
-        <table class="table table-striped table-bordered">
+        <table id="tbl-categories" class="table table-striped table-bordered">
             <thead>
                 <tr>
                     <th>No</th>
