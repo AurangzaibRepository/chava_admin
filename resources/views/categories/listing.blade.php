@@ -18,6 +18,22 @@
 
 @include('layouts.messages')
 
+<div class="dv-base">
+    <div class="page-layout">
+
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
 @include('categories.add-category')
 
 @endsection
