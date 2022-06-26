@@ -21,7 +21,7 @@
     </li>
     <li>
         <a href="{{route('topics')}}" class="topics">
-            <i class="fas fa-fan"></i><span>Manage Topics</span>
+            <i class="fas fa-fan"></i><span>Manage Categories</span>
         </a>
     </li>
     <li>
