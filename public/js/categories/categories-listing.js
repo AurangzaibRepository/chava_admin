@@ -17,7 +17,12 @@ function populateCategories() {
     $('#tbl-categories').DataTable({
         'searching': false,
         'bSort': false,
-        'bLengthChange': false
+        'bLengthChange': false,
+        'serverSide': true,
+        'ajax': {
+            type: 'POST',
+            url: '/categories/listing'
+        }
     });
 }
 
