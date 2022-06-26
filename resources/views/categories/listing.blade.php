@@ -39,5 +39,5 @@
 
 <!-- Scripts -->
 @push('scripts')
-<script src="{{asset('js/categories-listing.js')}}"></script>
+<script src="{{asset('js/categories/categories-listing.js')}}"></script>
 @endpush
