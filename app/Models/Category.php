@@ -28,21 +28,6 @@ class Category extends Model
         return $data;
     }
 
-    public function getAll(string $status = null, bool $draft = false): Collection
-    {
-        $data = $this->orderBy('id');
-
-        if ($status !== null) {
-            $data = $data->where('status', $status);
-        }
-
-        if ($draft) {
-            $data = $data->where('published', 0);
-        }
-
-        return $data->get();
-    }
-
     public function saveRecord(Request $request): void
     {
         $categoryProfile = $this->create($request->all());

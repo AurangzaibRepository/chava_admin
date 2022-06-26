@@ -23,8 +23,6 @@ class CategoriesController extends Controller
         
         return view('categories/listing', [
             'pageTitle' => 'Categories',
-            'activeCategories' => $this->category->getAll('Active'),
-            'inactiveCategories' => $this->category->getAll('Inactive'),
             'statusArray' => $statusArray
         ]);
     }
