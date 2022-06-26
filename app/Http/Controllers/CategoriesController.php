@@ -22,7 +22,7 @@ class CategoriesController extends Controller
         Arr::forget($statusArray, 'Current');
         
         return view('categories/listing', [
-            'pageTitle' => 'Topic',
+            'pageTitle' => 'Categories',
             'activeCategories' => $this->category->getAll('Active'),
             'inactiveCategories' => $this->category->getAll('Inactive'),
             'statusArray' => $statusArray
