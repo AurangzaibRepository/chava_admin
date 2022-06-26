@@ -20,7 +20,7 @@
         </a>
     </li>
     <li>
-        <a href="{{route('topics')}}" class="topics">
+        <a href="{{route('categories')}}" class="topics">
             <i class="fas fa-fan"></i><span>Manage Categories</span>
         </a>
     </li>
