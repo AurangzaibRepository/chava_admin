@@ -1,7 +1,6 @@
 var isValid;
 
 $(function() {
-    initializeSlick();
 
     $('#modal-category').on('shown.bs.modal', (e) => {
         $('.spn-error').css('display', 'none');
@@ -10,29 +9,6 @@ $(function() {
         $('.modal-body #publish').prop('checked', false);
     });
 });
-
-function initializeSlick() {
-    $('.logo-topics').slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        arrows: true,
-        dots: false,
-        pauseOnHover: false,
-        responsive: [{
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 4
-            }
-        }, {
-            breakpoint: 520,
-            settings: {
-                slidesToShow: 2
-            }
-        }]
-    });
-}
 
 function addCategory() {
 
