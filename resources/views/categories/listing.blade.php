@@ -18,45 +18,6 @@
 
 @include('layouts.messages')
 
-<!-- Active topics -->
-<label class="lbl-topic">Active Topics:</label>
-
-<div class="page-layout dv-topics">
-    <section class="logo-topics slider" data-arrows="true">
-
-        @foreach ($activeCategories as $category)
-        <div class="slide">
-            <a class="lnk-topic" href="{{route('editCategory', [$category->id])}}">
-                <div>
-                    <img src="{{url('images/leaf-icon.png')}}"></img>
-                </div>
-                <span>{{$category->category}}</span>
-            </a>
-        </div>
-        @endforeach
-    </section>
-</div>
-
-<br />
-<!-- Inactive topics -->
-<label class="lbl-topic">Inactive Topics:</label>
-
-<div class="page-layout dv-topics" id="dv-inactive-topics">
-    <section class="logo-topics slider" data-arrows="true">
-
-        @foreach ($inactiveCategories as $category)
-        <div class="slide">
-            <a class="lnk-topic" href="{{route('editCategory', [$category->id])}}">
-                <div>
-                    <img src="{{url('images/leaf-icon.png')}}"></img>
-                </div>
-                <span>{{$category->category}}</span>
-            </a>
-        </div>
-        @endforeach
-    </section>
-</div>
-
 @include('categories.add-category')
 
 @endsection
