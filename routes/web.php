@@ -55,7 +55,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('community/listing', [CommunityController::class, 'listing'])->name('communityListing');
 
     // Topic
-    Route::get('topics', [CategoriesController::class, 'index'])->name('topics');
+    Route::get('categories', [CategoriesController::class, 'index'])->name('categories');
     Route::post('categories/add', [CategoriesController::class, 'add'])->name('addCategory');
     Route::get('topics/edit/{id}', [CategoriesController::class, 'edit'])->name('editCategory');
     Route::post('update', [CategoriesController::class, 'update'])->name('updateCategory');
